@@ -1,3 +1,3 @@
-lua <<EOF
-print("Hello from lua")
-EOF
+lua require('plugins')
+lua require('keybindings')
+lua require('basic')
