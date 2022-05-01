@@ -18,4 +18,17 @@ Plug 'tpope/vim-repeat'
 -- https://github.com/junegunn/goyo.vim
 Plug('junegunn/goyo.vim', {['for'] = 'markdown'})
 
+-- Example of the do function in lua
+Plug('VonHeikemen/rubber-themes.vim', {
+  ['do'] = function()
+    vim.opt.termguicolors = true
+    vim.cmd('colorscheme rubber')
+  end
+})
+
+-- Plugin for live preview of markdown
+-- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
+-- https://github.com/iamcco/markdown-preview.nvim
+-- Plug('iamcco/markdown-preview.nvim', {['do'] = function { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}")
+
 vim.call('plug#end')
