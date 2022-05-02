@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="zhann"
 
 # Small options
 HYPHEN_INSENSITIVE="true"
@@ -40,7 +40,7 @@ unset __conda_setup
 
 #Aliases
 # The fun train
-alias sl="sl -F -l -a" 
+# alias sl="sl -F -l -a" 
 
 # Vim
 alias v="nvim"
