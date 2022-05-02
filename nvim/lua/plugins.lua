@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+
 -- Easier way of manipulating text objects
 -- https://github.com/wellle/targets.vim
 Plug 'wellle/targets.vim'
@@ -25,6 +26,37 @@ Plug('VonHeikemen/rubber-themes.vim', {
     vim.cmd('colorscheme rubber')
   end
 })
+
+-- Indentation marker for each indentation
+Plug 'Yggdroot/indentLine'
+
+-- Syntax check
+Plug 'w0rp/ale'
+
+-- Coc - Language Server
+Plug('neoclide/coc.nvim', {branch = 'release'})
+-- Coc specific options added here for more clarity
+-- Time before generally before updated
+-- Especially nice for coc updates
+vim.opt.updatetime=300
+-- Don't pass messages to |ins-completion-menu|
+vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.signcolumn='number'
+-- Not working right now
+-- vim.api.nvim_set_keymap(
+-- 	'i',
+-- 	'<Tab>',
+-- 	[[pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]],
+-- 	{ noremap = true, silent = true, expr = true }
+-- )
+
+function s:check_back_space() 
+
+end
+
+-- vim.api.nvim_set_keymap(
+-- 
+-- )
 
 -- Plugin for live preview of markdown
 -- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/

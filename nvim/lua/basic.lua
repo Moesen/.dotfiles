@@ -27,6 +27,9 @@ vim.o.hidden = true
 -- Enable mouse mode
 -- vim.o.mouse = 'a'
 
+-- Command height
+vim.opt.cmdheight=2
+
 -- Enable break indent
 -- The thing that makes level indents when making newline inside parenthesis
 vim.o.breakindent = true
@@ -35,6 +38,3 @@ vim.o.breakindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
