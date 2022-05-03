@@ -1,4 +1,4 @@
 lua require('plugins')
-lua require('keybindings')
+lua require('keymap')
 lua require('colors')
 lua require('basic')

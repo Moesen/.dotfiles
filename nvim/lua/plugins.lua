@@ -50,9 +50,9 @@ vim.o.signcolumn='number'
 -- 	{ noremap = true, silent = true, expr = true }
 -- )
 
-function s:check_back_space() 
-
-end
+-- function s:check_back_space() 
+-- 
+-- end
 
 -- vim.api.nvim_set_keymap(
 -- 
