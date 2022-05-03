@@ -25,6 +25,9 @@ antibody bundle < ~/.zsh_plugins.txt
 
 export EDITOR="nvim"
 
+# Ranger command to use config file instead
+RANGER_LOAD_DEFAULT_RC="false"
+
 # Conda
 __conda_setup="$('/home/snoooze/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then

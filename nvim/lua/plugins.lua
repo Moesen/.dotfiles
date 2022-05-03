@@ -27,6 +27,9 @@ Plug('VonHeikemen/rubber-themes.vim', {
   end
 })
 
+-- LaTeX suite for everything
+Plug 'lervag/vimtex'
+
 -- Indentation marker for each indentation
 Plug 'Yggdroot/indentLine'
 
