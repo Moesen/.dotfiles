@@ -4,6 +4,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="zhann"
 
+# VIM Binding for zsh
+bindkey -v
+
 # Small options
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
