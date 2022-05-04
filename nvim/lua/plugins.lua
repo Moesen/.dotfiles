@@ -34,7 +34,7 @@ Plug 'lervag/vimtex'
 Plug 'Yggdroot/indentLine'
 
 -- Syntax check
-Plug 'w0rp/ale'
+-- Plug 'w0rp/ale'
 
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})

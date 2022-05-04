@@ -1,4 +1,5 @@
 lua require('plugins')
 lua require('keymap')
+lua require('vimtex')
 lua require('colors')
 lua require('basic')
