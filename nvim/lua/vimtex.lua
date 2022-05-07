@@ -22,4 +22,12 @@ vim.g.vimtex_compiler_method = 'latexmk'
 -- following line. The default is usually fine and is the symbol "\".
 -- vim.maplocalleader = ","
 
+-- Disables rendering \ symbols in vim editor, but still shown in pdf
 vim.g.vimtex_syntax_conceal_disable = 1
+
+-- Stop showing quickfix after each render
+vim.g.Tex_GotoError = 0
+vim.g.Tex_ShowErrorContext = 0
+-- vim.g.vimtex_quickfix_enabled = 0
+vim.g.vimtex_quickfix_autoclose_after_keystrokes = 1
+
