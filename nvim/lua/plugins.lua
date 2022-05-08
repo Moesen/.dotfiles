@@ -26,7 +26,8 @@ Plug('VonHeikemen/rubber-themes.vim', {
 -- Another colorscheme
 --Plug 'drewtempelmeyer/palenight.vim'
 --Plug 'itchyny/lightline.vim'	
-Plug 'morhetz/gruvbox'
+--Plug 'morhetz/gruvbox'
+Plug 'projekt0n/github-nvim-theme'
 
 -- LaTeX suite for everything
 Plug 'lervag/vimtex'
