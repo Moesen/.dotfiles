@@ -6,11 +6,11 @@ vim.g.onedark_terminal_italics = 2
 -- Note, this does not set the background, it merely tells git
 -- whether the background is light/dark
 vim.o.background = 'dark'
-vim.cmd [[colorscheme rubber]]
+vim.cmd [[colorscheme gruvbox]]
 
 -- Set status bar settings
 vim.g.lightline = {
-  colorscheme = 'rubber-owl',
+  colorscheme = 'gruvbox',
   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
   component_function = { gitbranch = 'fugitive#head' },
 }

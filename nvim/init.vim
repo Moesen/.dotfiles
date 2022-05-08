@@ -23,6 +23,17 @@ inoremap <silent><expr> <Tab>
 
 " Improving the experience
 " Use <Tab> and <S-Tab> to navigate the completion list:
-
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Something with scrolling
+set scrolloff=10
+
+" Coc jump to next and previous diagnostic
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Bracket highlighting
+hi! MatchParen cterm=NONE,bold gui=NONE,bold  guibg=#eee8d5 guifg=NONE

@@ -28,7 +28,7 @@ vim.o.hidden = true
 -- vim.o.mouse = 'a'
 
 -- Command height
-vim.opt.cmdheight=2
+-- vim.opt.cmdheight=2
 
 -- Enable break indent
 -- The thing that makes level indents when making newline inside parenthesis

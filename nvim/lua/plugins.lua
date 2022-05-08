@@ -3,10 +3,9 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
-
 -- Easier way of manipulating text objects
 -- https://github.com/wellle/targets.vim
-Plug 'wellle/targets.vim'
+--Plug 'wellle/targets.vim'
 
 -- More commands for handling brackets or other stuff surrounding txt
 -- https://github.com/tpope/vim-surround
@@ -15,6 +14,7 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
+-- THEMES AND COLORS
 -- Example of the do function in lua
 Plug('VonHeikemen/rubber-themes.vim', {
   ['do'] = function()
@@ -23,6 +23,11 @@ Plug('VonHeikemen/rubber-themes.vim', {
   end
 })
 
+-- Another colorscheme
+--Plug 'drewtempelmeyer/palenight.vim'
+--Plug 'itchyny/lightline.vim'	
+Plug 'morhetz/gruvbox'
+
 -- LaTeX suite for everything
 Plug 'lervag/vimtex'
 
@@ -30,7 +35,7 @@ Plug 'lervag/vimtex'
 Plug 'Yggdroot/indentLine'
 
 -- Syntax check
--- Plug 'w0rp/ale'
+--Plug 'w0rp/ale'
 
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})

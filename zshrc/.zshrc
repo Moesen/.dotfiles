@@ -32,18 +32,18 @@ export EDITOR="nvim"
 RANGER_LOAD_DEFAULT_RC="false"
 
 # Conda
-__conda_setup="$('/home/snoooze/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/snoooze/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/snoooze/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/snoooze/anaconda3/bin:$PATH"
+        export PATH="/home/$USER/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-
+conda activate
 #Aliases
 # The fun train
 # alias sl="sl -F -l -a" 
@@ -54,7 +54,7 @@ alias vi="nvim"
 alias vim="nvim"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
