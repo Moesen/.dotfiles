@@ -12,7 +12,7 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git)
+plugins=(git, vi-mode)
 
 # oh-my-zsh Plugins
 plugins=(

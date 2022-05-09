@@ -16,12 +16,12 @@ Plug 'tpope/vim-repeat'
 
 -- THEMES AND COLORS
 -- Example of the do function in lua
-Plug('VonHeikemen/rubber-themes.vim', {
-  ['do'] = function()
-    vim.opt.termguicolors = true
-    vim.cmd('colorscheme rubber')
-  end
-})
+-- Plug('VonHeikemen/rubber-themes.vim', {
+--   ['do'] = function()
+--     vim.opt.termguicolors = true
+--     vim.cmd('colorscheme rubber')
+--   end
+-- })
 
 -- Another colorscheme
 --Plug 'drewtempelmeyer/palenight.vim'
@@ -37,6 +37,13 @@ Plug 'Yggdroot/indentLine'
 
 -- Syntax check
 --Plug 'w0rp/ale'
+
+-- CSS-color hihglight
+-- Only works for css
+-- Plug "ap/vim-css-color"
+
+-- Colorizer
+Plug 'chrisbra/colorizer'
 
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})
