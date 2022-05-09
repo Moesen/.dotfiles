@@ -9,6 +9,8 @@ if has('nvim') && !empty($CONDA_PREFIX)
 	let g:python3_host_prog = $CONDA_PREFIX . '/bin/python'
 endif
 
+set nowrap
+
 " Auto completion for coc using tab instead
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort

@@ -3,11 +3,10 @@
 # polybar-msg cmd quit
 # Otherwise you can use the nuclear option:
 killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-if ! pgrep -x polybar; then
-	polybar base &
-else
-	pkill -USR1 polybar
-fi
-
+polybar left &
+polybar mid &
+polybar right &
+polybar title
 echo "Bars launched..."
