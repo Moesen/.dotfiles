@@ -1,5 +1,4 @@
-# Loading colors
-exec xrdb -merge ~/.dotfiles/ColorThemes/.GithubDimmed
+# Loading colors exec xrdb -merge ~/.dotfiles/ColorThemes/.GithubDimmed
 set $mod Mod4
 
 # Making windows transparent
@@ -16,12 +15,12 @@ exec --no-startup-id nm-applet
 ## class                 border  backgr. text  indicator child_border  
 client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-client.focused          #d4be98 #d4be98 #d4be98 #d4be98 #d4be98 
+client.focused          #FFF 	#FFF 	#FFF 	#FFF 	#FFF
 # Set background
 exec feh --bg-fill ~/Pictures/dark_mountain_2.jpg
 
 # Leave only a small border of pixels
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # I3 gaps
 gaps inner 10
