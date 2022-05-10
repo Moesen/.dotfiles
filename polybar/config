@@ -108,7 +108,7 @@
 	font-1 			= FiraMono Nerd Font:pixelsize=13;2
 	font-2			= Material Design Icons:pixelsize=13:style:Regular;1
 
-	modules-center		= cpu sep temperature sep memory sep volume sep wlan
+	modules-center		= cpu sep temperature sep memory sep volume sep bluetooth sep wlan
 
 [module/sep]
 	type 			= custom/text
@@ -155,6 +155,15 @@
 	
 	ramp-volume-foreground = ${color.magenta}
 	ramp-volume-0 		= 
+
+[module/bluetooth]
+	type 			= custom/script
+	exec			= ~/.config/polybar/scripts/bluetooth.sh 
+	interval		= 2
+	click-left		= exec blueman-manager
+	click-right		= exec ~/.config.polybar/scripts/toggle_bluetooth.sh
+	format-padding		= 2
+	format-foreground	= #ffffff
 
 [module/spotify]
 	type 			= custom/script
