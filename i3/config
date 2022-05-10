@@ -65,7 +65,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 
 # Start rofi (program launcher)
-bindsym $mod+space exec rofi -show run
+# bindsym $mod+space exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -99,6 +99,9 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# Change keyboard layout
+# bindsym $mod+space exec ~/.config/i3/scripts/i3-keybourd-layout.sh cycle us dk
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

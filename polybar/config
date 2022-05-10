@@ -48,9 +48,9 @@
 
 [bar/title]
 	inherit 		= bar/main
-	width			= 22%
+	width			= 14%
 	height			= 26
-	offset-x		= 17%
+	offset-x		= 20%
 	offset-y 		= 7px
 	fixed-center		= false
 
@@ -93,9 +93,9 @@
 [bar/right]
 	inherit			= bar/main
 
-	width			= 30%
+	width			= 32%
 	height			= 26
-	offset-x		= 69%
+	offset-x		= 67%
 	offset-y		= 7px
 
 	background 		= ${colors.background}
@@ -106,9 +106,9 @@
 
 	font-0			= FiraCode Nerd Font:pixelsize=12;2
 	font-1 			= FiraMono Nerd Font:pixelsize=13;2
-	font-2			= Material Design Icons:pixelsize=13:style:Regular;1
+	font-2			= Material Design Icons:pixelsize=13:style:Regular;4
 
-	modules-center		= cpu sep temperature sep memory sep volume sep bluetooth sep wlan
+	modules-center		= cpu sep temperature sep memory sep volume sep bluetooth sep wlan sep xkeyboard
 
 [module/sep]
 	type 			= custom/text
@@ -126,7 +126,6 @@
 	thermal-zone		= 0
 	hwmon-path 		= /sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon4/temp1_input
 	warn-temperature 	= 80
-
 
 	format-prefix 		= " "
 	format-warn-prefix 	= " "
@@ -174,6 +173,7 @@
 	format-prefix-font	= 1
 	format-prefix-foreground= ${colors.green}
 	format			= <label>
+
 	exec			= ~/.config/polybar/scripts/scroll_spotify_status.sh
 
 [module/memory]
@@ -248,8 +248,14 @@
 	time 			= "%a %d %b %H:%M"
 	time-alt		= "%H:%M - %a %d.%m.%Y"
 
-	format-padding = 2
+	format-padding 		= 2
+	label 			= %time%
 
-	label = %time%
-
+[module/xkeyboard]
+	type 			= internal/xkeyboard
+	label-layout		= %icon%	
+	label-layout-font	= 2	
+	layout-icon-0		= dk;󰂣
+	layout-icon-1		= us;󰋧
+	label-layout-padding	= 2
 ; vim:set ft=dosini:
