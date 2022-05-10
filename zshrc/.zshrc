@@ -54,6 +54,10 @@ alias vi="nvim"
 alias vim="nvim"
 alias bis="echo 'jeg elsker bis'"
 
+# Firefox
+alias f="firefox"
+alias fn="firefox -n"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 

@@ -27,11 +27,11 @@
 
 [bar/left]
 	inherit			= bar/main
-	width 			= 13%
+	width 			= 8%
 	height			= 26
 	offset-x		= 1%
 	offset-y		= 7px
-	fixed-center		= false
+	fixed-center		= true
 
 	background		= ${colors.background}
 	foreground		= ${colors.green}
@@ -42,9 +42,29 @@
 	module-margin-left	= 1
 	module-margin-right	= 1
 
-	font-0 			= Fira Code Medium:pixelsize=12;2
+	font-0 			= Fira Code Medium:pixelsize=12;3
 	font-1 			= Material Design Icons:pixelsize=11:style:Regular;1
 	modules-center = date
+
+[bar/corona]
+	inherit			= bar/main
+	width			= 8%
+	height 			= 26
+	offset-x		= 10%
+	offset-y 		= 7px
+	fixed-center 		= false
+
+	background		= ${colors.magenta}
+	foreground		= ${colors.white}
+
+	padding-left		= 0
+	padding-right		= 2
+
+	module-margin-left	= 1
+	module-margin-right	= 1
+	
+	font-0 			= Fira Code Medium:pixelsize=12;3
+	modules-center		= corona
 
 [bar/title]
 	inherit 		= bar/main
@@ -64,8 +84,8 @@
 	module-margin-right	= 1
 	enable-ipc		= true
 
-	font-0			= FiraCode Nerd Font:pixelsize=12;2
-	font-1 			= FiraMono Nerd Font:pixelsize=13;2
+	font-0			= FiraCode Nerd Font:pixelsize=12;3.5
+	font-1 			= FiraMono Nerd Font:pixelsize=13;3
 	font-2			= Material Design Icons:pixelsize=13:style:Regular;1
 
 	modules-center		= spotify
@@ -76,6 +96,7 @@
 	height 			= 26
 	offset-x		= 42%
 	offset-y		= 7px
+	fixed-center		= true
 
 	background		= ${colors.background}
 	foreground		= ${colors.foreground}
@@ -86,16 +107,16 @@
 	module-margin-left	= 1
 	module-margin-right	= 1
 
-	font-0			= FiraMono Nerd Font:pixelsize=13;2
+	font-0			= FiraMono Nerd Font:pixelsize=13;3.5
 
 	modules-center 		= i3
 
 [bar/right]
 	inherit			= bar/main
 
-	width			= 32%
+	width			= 37%
 	height			= 26
-	offset-x		= 67%
+	offset-x		= 62%
 	offset-y		= 7px
 
 	background 		= ${colors.background}
@@ -104,16 +125,38 @@
 	padding-left		= 0
 	padding-right		= 1
 
-	font-0			= FiraCode Nerd Font:pixelsize=12;2
-	font-1 			= FiraMono Nerd Font:pixelsize=13;2
+	font-0			= FiraCode Nerd Font:pixelsize=12;4
+	font-1 			= FiraMono Nerd Font:pixelsize=13;3.5
 	font-2			= Material Design Icons:pixelsize=13:style:Regular;4
 
-	modules-center		= cpu sep temperature sep memory sep volume sep bluetooth sep wlan sep xkeyboard
+	modules-center		= battery sep cpu sep temperature sep memory sep volume sep bluetooth sep wlan sep xkeyboard
+
+[module/corona]
+	type			= custom/script
+	interval		= 3600
+	format			= <label>
 
 [module/sep]
 	type 			= custom/text
 	content			= |
 	content-foreground	= #555
+
+[module/battery]
+	type 			= internal/battery
+	
+	full-at			= 99
+	low-at			= 5
+
+	battery			= BAT1
+	adapter			= ACAD
+
+	poll-interval		= 2
+	
+	label-charging		= %percentage_raw%% %time:0:5%
+	label-discharging	= %percentage_raw%% %time:0:5%
+
+	format-padding		= 2
+
 [module/cpu]
 	type			= internal/cpu
 	interval		= 2
@@ -143,10 +186,12 @@
 
 [module/volume]
 	type 			= internal/pulseaudio
-
+	format-font 		= 2
 	use-ui-max 		= false
 	format-volume 		= <label-volume>
-	label-volume 		= "%{F#e002a5} 墳 %{F-}%percentage%% "
+	label-volume 		= 墳 %percentage:0:3%%
+	label-volume-minlen	= 6
+	label-volume-maxlen	= 6
 	label-volume-foreground = ${root.foreground}
 	label-muted 		= "     婢     "
 	label-muted-foreground 	= #666
@@ -157,6 +202,9 @@
 
 [module/bluetooth]
 	type 			= custom/script
+	label 			= %output:0:20%
+	label-minlen		= 20
+	label-maxlen 		= 20
 	exec			= ~/.config/polybar/scripts/bluetooth.sh 
 	interval		= 2
 	click-left		= exec blueman-manager
@@ -167,7 +215,11 @@
 [module/spotify]
 	type 			= custom/script
 	tail 			= true
-
+	
+	label 			= %output:0:28%
+	label-minlen		= 28
+	label-maxlen		= 28
+	label-font		= 2
 	format-foreground	= ${colors.green}
 	format-prefix		= "  "
 	format-prefix-font	= 1
@@ -237,6 +289,7 @@
 	label-urgent-padding    = 1
 
 	label-separator		= |
+	label-seperator-foreground	= #EEE
 
 [module/date]
 	type			= internal/date
