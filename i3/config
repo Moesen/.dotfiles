@@ -29,7 +29,7 @@ for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 10
 gaps top 30
-gaps bottom 10
+gaps bottom 30
 # smart_borders on
 # smart_gaps on
 
