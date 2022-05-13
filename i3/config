@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Making windows transparent
-exec picom
+exec picom --config ~/.config/picom/picon.conf
 
 font pango:SF Pro Display 12
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -17,8 +17,7 @@ client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.focused          #FFF 	#FFF 	#FFF 	#FFF 	#FFF
 # Set background
-exec feh --bg-fill ~/Pictures/dark_mountain_2.jpg
-
+exec feh --no-xinerama --bg-center ~/.dotfiles/wallpapers/raindance2.jpg 
 # Startup spotify on startup
 exec --no-startup-id i3-msg "workspace 10; exec /snap/bin/spotify"
 
@@ -26,10 +25,10 @@ exec --no-startup-id i3-msg "workspace 10; exec /snap/bin/spotify"
 for_window [class="^.*"] border pixel 1
 
 # I3 gaps
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 gaps top 30
-gaps bottom 30
+gaps bottom 5
 # smart_borders on
 # smart_gaps on
 
@@ -152,6 +151,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# Lock i3
+bindsym $mod+Shift+w exec "i3lock -n -f -e"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
