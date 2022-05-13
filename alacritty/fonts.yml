@@ -1,0 +1,14 @@
+font:
+  normal:
+    family: "Hasklug Nerd Font Mono"
+
+  bold:
+    family: "Hasklug Nerd Font Mono"
+
+  italic: 
+    family: "Hasklug Nerd Font Mono"
+
+  bold_italic:
+    family: "Hasklug Nerd Font Mono"
+
+  size: 15
