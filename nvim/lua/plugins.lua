@@ -14,14 +14,11 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- THEMES AND COLORS
--- Example of the do function in lua
--- Plug('VonHeikemen/rubber-themes.vim', {
---   ['do'] = function()
---     vim.opt.termguicolors = true
---     vim.cmd('colorscheme rubber')
---   end
--- })
+-- Ultisnips
+Plug 'SirVer/ultisnips'
+
+-- Snippets are seperated from engine, added this for snips
+Plug 'honza/vim-snippets'
 
 -- Another colorscheme
 --Plug 'drewtempelmeyer/palenight.vim'
@@ -34,13 +31,6 @@ Plug 'lervag/vimtex'
 
 -- Indentation marker for each indentation
 Plug 'Yggdroot/indentLine'
-
--- Syntax check
---Plug 'w0rp/ale'
-
--- CSS-color hihglight
--- Only works for css
--- Plug "ap/vim-css-color"
 
 -- Colorizer
 Plug 'chrisbra/colorizer'
@@ -55,5 +45,7 @@ vim.opt.updatetime=300
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'
 
+-- Indented lines
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 vim.call('plug#end')

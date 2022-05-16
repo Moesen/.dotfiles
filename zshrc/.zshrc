@@ -58,6 +58,9 @@ alias bis="echo 'jeg elsker bis'"
 alias f="firefox"
 alias fn="firefox -n"
 
+# Typing test
+alias tt="/opt/typioca/execs/typioca"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 

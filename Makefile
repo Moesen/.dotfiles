@@ -1,6 +1,5 @@
 setup:
 # Symlinks
-
 ## ZSH
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
 	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc
@@ -18,7 +17,7 @@ setup:
 	ln -sfn ~/.dotfiles/alacritty ~/.config/
 
 # Setup picom path
- 	ln -sf ~/.dotfiles/picom ~/.config
+	ln -sf ~/.dotfiles/picom ~/.config
 
 install:
 	# Installing neovim
@@ -31,3 +30,14 @@ install:
 	sudo add-apt-repository ppa:regolith-linux/release
 	sudo apt update
 	sudo apt install i3-gaps
+
+
+install_typetest:
+	sudo git clone https://github.com/bloznelis/typioca.git /opt/typioca
+	sudo make -C /opt/typioca build
+
+install_zscroll:
+	git clone https://github.com/noctuid/zscroll /tmp/zscroll
+	cd /tmp/zscroll
+	sudo python3 setup.py install
+	cd ~/.dotfiles
