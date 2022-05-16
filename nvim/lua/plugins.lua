@@ -15,10 +15,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 -- Ultisnips
-Plug 'SirVer/ultisnips'
+-- Plug 'SirVer/ultisnips'
 
 -- Snippets are seperated from engine, added this for snips
-Plug 'honza/vim-snippets'
+-- Plug 'honza/vim-snippets'
 
 -- Another colorscheme
 --Plug 'drewtempelmeyer/palenight.vim'
