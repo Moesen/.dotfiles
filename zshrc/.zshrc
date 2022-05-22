@@ -42,11 +42,17 @@ else
         export PATH="/home/$USER/anaconda3/bin:$PATH"
     fi
 fi
+
+
+
 unset __conda_setup
 conda activate
 #Aliases
 # The fun train
 # alias sl="sl -F -l -a" 
+
+# Xcliping to clipboard
+alias xc='xclip -selection clipboard'
 
 # Vim
 alias v="nvim"
@@ -60,6 +66,9 @@ alias fn="firefox -n"
 
 # Typing test
 alias tt="/opt/typioca/execs/typioca"
+
+# Something with colors in tmux
+# alias tmux="TERM=screen-256color tmux -2"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi

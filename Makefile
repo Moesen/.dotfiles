@@ -19,6 +19,9 @@ setup:
 # Setup picom path
 	ln -sf ~/.dotfiles/picom ~/.config
 
+# Setup tmux config file path
+	ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+
 install:
 	# Installing neovim
 	sudo snap install neovim --classic

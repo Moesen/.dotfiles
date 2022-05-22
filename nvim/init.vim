@@ -3,6 +3,11 @@ lua require('vimtex')
 lua require('colors')
 lua require('basic')
 
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+syntax enable
+
 " CONDA SETUP
 if has('nvim') && !empty($CONDA_PREFIX)
 	let g:python3_host_prog = $CONDA_PREFIX . '/bin/python'
@@ -32,6 +37,12 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" coc remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" black formating
+nmap <leader>bl :Black<CR>
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -49,10 +60,13 @@ function! s:show_documentation()
   endif
 endfunction
 
+nnoremap <leader>bl
+
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 
 " Something with scrolling
 set scrolloff=5
@@ -63,5 +77,32 @@ set scrolloff=5
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Bracket highlighting
-hi! MatchParen cterm=NONE,bold gui=NONE,bold  guibg=#eee8d5 guifg=NONE
+" Breakpoints for python
+" https://codereview.stackexchange.com/questions/217932/python-breakpoints-in-vim-vimscript
+
+" Comments binding
+nmap <leader>c <Plug>CommentaryLine
+vmap <leader>c <Plug>Commentary
+imap <leader>c <Esc><Plug>CommentaryLineA
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" Maps
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver
+
+" Setting tabs to work as normal
+nnoremap <S-Tab> <<
+nnoremap <Tab> >>
+vnoremap <S-Tab> <gv
+vnoremap <Tab> >gv
