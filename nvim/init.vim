@@ -106,3 +106,6 @@ nnoremap <S-Tab> <<
 nnoremap <Tab> >>
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv
+
+" yank to clipboard
+xnoremap <leader>yc "+y
