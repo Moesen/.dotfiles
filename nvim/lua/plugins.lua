@@ -7,24 +7,22 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- https://github.com/wellle/targets.vim
 --Plug 'wellle/targets.vim'
 
--- More commands for handling brackets or other stuff surrounding txt
+-- Comment and uncomment stuff
+-- tpope/vim-commentary
+Plug 'tpope/vim-commentary'
 -- https://github.com/tpope/vim-surround
+-- Creating characters around surrounding text
+-- Check :help surround for more info
 Plug 'tpope/vim-surround'
 
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- Ultisnips
--- Plug 'SirVer/ultisnips'
-
--- Snippets are seperated from engine, added this for snips
--- Plug 'honza/vim-snippets'
-
--- Another colorscheme
---Plug 'drewtempelmeyer/palenight.vim'
---Plug 'itchyny/lightline.vim'	
---Plug 'morhetz/gruvbox'
+-- Github colortheme
 Plug 'projekt0n/github-nvim-theme'
+
+-- Lightline plugin
+Plug 'itchyny/lightline.vim'
 
 -- LaTeX suite for everything
 Plug 'lervag/vimtex'
@@ -32,8 +30,18 @@ Plug 'lervag/vimtex'
 -- Indentation marker for each indentation
 Plug 'Yggdroot/indentLine'
 
--- Colorizer
+-- Switching between windows. Can distinguish between vim
+-- and tmux if tmux conf keystrokes are added as well
+-- checkout repo for more information
+-- https://github.com/christoomey/vim-tmux-navigator
+Plug 'christoomey/vim-tmux-navigator'
+
+-- Showing colors for hex and color valuse
+-- Use ToggleColor to turn on and off
 Plug 'chrisbra/colorizer'
+
+-- Debugger for vim
+Plug 'puremourning/vimspector'
 
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})
@@ -44,6 +52,8 @@ vim.opt.updatetime=300
 -- Don't pass messages to |ins-completion-menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'
+
+Plug('psf/black', {branc='stable'})
 
 -- Indented lines
 Plug 'lukas-reineke/indent-blankline.nvim'
