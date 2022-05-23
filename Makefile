@@ -1,4 +1,4 @@
-setup:
+symlinks:
 # Symlinks
 ## ZSH
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
@@ -20,7 +20,7 @@ setup:
 	ln -sf ~/.dotfiles/picom ~/.config
 
 # Setup tmux config file path
-	ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 install:
 	# Installing neovim

@@ -67,6 +67,9 @@ alias fn="firefox -n"
 # Typing test
 alias tt="/opt/typioca/execs/typioca"
 
+# Tmux configs
+alias tmu3="~/.dotfiles/tmux/tmux_layout_scripts/tmux3panestartup.sh"
+
 # Something with colors in tmux
 # alias tmux="TERM=screen-256color tmux -2"
 

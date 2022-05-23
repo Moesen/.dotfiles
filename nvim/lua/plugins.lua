@@ -29,6 +29,10 @@ Plug 'lervag/vimtex'
 
 -- Indentation marker for each indentation
 Plug 'Yggdroot/indentLine'
+-- ### This plugin introduces some weird behavior in md files###
+-- ### Line below fixes this ###
+vim.g.indentLine_fileTypeExclude = {"markdown"}
+
 
 -- Switching between windows. Can distinguish between vim
 -- and tmux if tmux conf keystrokes are added as well
