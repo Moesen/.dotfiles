@@ -44,3 +44,7 @@ install_zscroll:
 	cd /tmp/zscroll
 	sudo python3 setup.py install
 	cd ~/.dotfiles
+
+install_seamless_tv:
+	curl -fsSL https://raw.github.com/mislav/dotfiles/1500cd2/bin/tmux-vim-select-pane -o /usr/local/bin/tmux-vim-select-pane
+	chmod +x /usr/local/bin/tmux-vim-select-pane
