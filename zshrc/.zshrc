@@ -67,8 +67,12 @@ alias fn="firefox -n"
 # Typing test
 alias tt="/opt/typioca/execs/typioca"
 
-# Tmux configs
+    # Tmux configs
 alias tmu3="~/.dotfiles/tmux/tmux_layout_scripts/tmux3panestartup.sh"
+
+alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
+
+alias hpc="ssh s174169@login1.gbar.dtu.dk"
 
 # Something with colors in tmux
 # alias tmux="TERM=screen-256color tmux -2"
