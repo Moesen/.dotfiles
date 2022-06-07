@@ -18,11 +18,14 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- Github colortheme
-Plug 'projekt0n/github-nvim-theme'
+-- Everforest colortheme
+Plug 'sainnhe/everforest'
+
+-- Vimposter - Tmux integration
+Plug 'vimpostor/vim-tpipeline'
 
 -- Lightline plugin
-Plug 'itchyny/lightline.vim'
+-- Plug 'itchyny/lightline.vim'
 
 -- LaTeX suite for everything
 Plug 'lervag/vimtex'
@@ -40,12 +43,14 @@ vim.g.indentLine_fileTypeExclude = {"markdown"}
 -- https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
+-- Plugin for integrating vim into tmux
+
 -- Showing colors for hex and color valuse
 -- Use ToggleColor to turn on and off
 Plug 'chrisbra/colorizer'
 
 -- Debugger for vim
-Plug 'puremourning/vimspector'
+-- Plug 'puremourning/vimspector'
 
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})
@@ -53,6 +58,7 @@ Plug('neoclide/coc.nvim', {branch = 'release'})
 -- Time before generally before updated
 -- Especially nice for coc updates
 vim.opt.updatetime=300
+
 -- Don't pass messages to |ins-completion-menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'

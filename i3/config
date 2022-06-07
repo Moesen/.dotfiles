@@ -17,7 +17,7 @@ client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.focused          #539bf5 #539bf5 #539bf5	#539bf5	#539bf5
 # Set background
-exec feh --no-xinerama --bg-center ~/.dotfiles/wallpapers/everforest.jpg 
+exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/everforest.png 
 # Startup spotify on startup
 exec --no-startup-id i3-msg "workspace 10; exec /snap/bin/spotify"
 
