@@ -57,7 +57,7 @@ vim.opt.updatetime=300
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'
 
-Plug('psf/black', {branc='stable'})
+Plug('psf/black', {branch='stable'})
 
 -- Indented lines
 Plug 'lukas-reineke/indent-blankline.nvim'

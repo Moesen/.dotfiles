@@ -107,5 +107,11 @@ nnoremap <Tab> >>
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv
 
+" Pydocstring
+" https://github.com/yaegassy/coc-pydocstring
+nmap <silent> ga <Plug>(coc-codeaction-line)
+xmap <silent> ga <Plug>(coc-codeaction-selected)
+nmap <silent> gA <Plug>(coc-codeaction)
+
 " yank to clipboard
 xnoremap <leader>yc "+y
