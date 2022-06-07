@@ -82,6 +82,3 @@ if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/s
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Customization for zsh
-PURE_POWER_MODE=modern
