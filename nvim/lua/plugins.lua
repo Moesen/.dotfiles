@@ -24,6 +24,9 @@ Plug 'tpope/vim-repeat'
 -- Everforest colortheme
 Plug 'sainnhe/everforest'
 
+-- Lua colorscheme manager
+Plug 'themercorp/themer.lua'
+
 -- Lightline plugin
 -- Plug 'itchyny/lightline.vim'
 
@@ -58,6 +61,7 @@ Plug('neoclide/coc.nvim', {branch = 'release'})
 -- Time before generally before updated
 -- Especially nice for coc updates
 vim.opt.updatetime=300
+
 -- Don't pass messages to |ins-completion-menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'

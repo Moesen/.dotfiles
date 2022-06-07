@@ -1,18 +1,16 @@
+-- Screen specifics to make colors work
 vim.cmd [[let $NVIM_TUI_ENABLE_TRUE_COLOR=1]]
+vim.o.termguicolors = true
+vim.g.t_Co=256
+vim.o.term='screen-256color'
 
 
 -- Set colorscheme defaults (order is important)
-vim.o.term='screen-256color'
-vim.o.termguicolors = true
-vim.g.t_Co=256
 vim.g.everforest_better_perfomance = 1
-vim.g.background=dark
-vim.g.everforest_background = medium
+vim.g.background="dark"
+vim.g.everforest_background = "medium"
 vim.g.everforest_diagnostic_text_highlight = 1
-
-require("everforest").setup({
-    theme_style = "medium",
-})
+vim.g.colorscheme = "one"
 
 
 -- -- Set status bar settings
