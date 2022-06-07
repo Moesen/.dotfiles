@@ -1,3 +1,5 @@
+## **fonts.yml example**
+```
 font:
   normal:
     family: "Hasklug Nerd Font Mono"
@@ -12,3 +14,7 @@ font:
     family: "Hasklug Nerd Font Mono"
 
   size: 13.5
+```
+
+### **Reminder**
+The fonts file is not included, as it is individual between screen sizes what looks nice, and I don't know a good way to make it generic
