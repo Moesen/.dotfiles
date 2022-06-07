@@ -18,14 +18,11 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- Github colortheme
--- Plug 'projekt0n/github-nvim-theme'
-
 -- Everforest colortheme
 Plug 'sainnhe/everforest'
 
--- Lua colorscheme manager
-Plug 'themercorp/themer.lua'
+-- Vimposter - Tmux integration
+Plug 'vimpostor/vim-tpipeline'
 
 -- Lightline plugin
 -- Plug 'itchyny/lightline.vim'

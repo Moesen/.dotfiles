@@ -10,7 +10,7 @@ vim.g.everforest_better_perfomance = 1
 vim.g.background="dark"
 vim.g.everforest_background = "medium"
 vim.g.everforest_diagnostic_text_highlight = 1
-vim.g.colorscheme = "one"
+vim.cmd 'colorscheme everforest'
 
 
 -- -- Set status bar settings
