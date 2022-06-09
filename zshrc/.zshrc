@@ -74,10 +74,11 @@ alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 
 alias hpc="ssh s174169@login1.gbar.dtu.dk"
 
+alias hpctmux="~/.dotfiles/tmux/tmux_layout_scripts/tm_DLCV_temp.sh"
 # Something with colors in tmux
 # alias tmux="TERM=screen-256color tmux -2"
 
-# The next line updates PATH for the Google Cloud SDK.
+    # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.

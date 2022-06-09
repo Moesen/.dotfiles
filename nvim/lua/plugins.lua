@@ -68,4 +68,10 @@ Plug('psf/black', {branch='stable'})
 -- Indented lines
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+-- Tree file explorer
+Plug 'preservim/nerdtree'
+
+-- Python executor nvim
+Plug 'is0n/jaq-nvim'
+
 vim.call('plug#end')
