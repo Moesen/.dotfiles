@@ -8,11 +8,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 --Plug 'wellle/targets.vim'
 
 -- Comment and uncomment stuff
--- tpope/vim-commentary
 Plug 'tpope/vim-commentary'
--- https://github.com/tpope/vim-surround
+
 -- Creating characters around surrounding text
--- Check :help surround for more info
 Plug 'tpope/vim-surround'
 
 -- Implements repeat (.) for non-native calls
@@ -24,18 +22,8 @@ Plug 'sainnhe/everforest'
 -- Vimposter - Tmux integration
 Plug 'vimpostor/vim-tpipeline'
 
--- Lightline plugin
--- Plug 'itchyny/lightline.vim'
-
 -- LaTeX suite for everything
 Plug 'lervag/vimtex'
-
--- Indentation marker for each indentation
-Plug 'Yggdroot/indentLine'
--- ### This plugin introduces some weird behavior in md files###
--- ### Line below fixes this ###
-vim.g.indentLine_fileTypeExclude = {"markdown"}
-
 
 -- Switching between windows. Can distinguish between vim
 -- and tmux if tmux conf keystrokes are added as well
@@ -43,21 +31,20 @@ vim.g.indentLine_fileTypeExclude = {"markdown"}
 -- https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
--- Plugin for integrating vim into tmux
-
 -- Showing colors for hex and color valuse
 -- Use ToggleColor to turn on and off
 Plug 'chrisbra/colorizer'
 
--- Debugger for vim
--- Plug 'puremourning/vimspector'
-
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})
+
+-- Packages
+vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets"}
+
 -- Coc specific options added here for more clarity
 -- Time before generally before updated
 -- Especially nice for coc updates
-vim.opt.updatetime=300
+vim.opt.updatetime=200
 
 -- Don't pass messages to |ins-completion-menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
@@ -71,7 +58,15 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 -- Tree file explorer
 Plug 'preservim/nerdtree'
 
--- Python executor nvim
-Plug 'is0n/jaq-nvim'
+-- Terminal for nvim
+Plug 'caenrique/nvim-toggle-terminal'
+vim.g.open_in_insert_mode = 0
+
+-- For markdown writing and rendering
+Plug 'junegunn/goyo.vim'
+
+-- Extended syntax highlighting for python 
+Plug "vim-python/python-syntax"
+
 
 vim.call('plug#end')

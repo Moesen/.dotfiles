@@ -1,6 +1,6 @@
 lua require('plugins')
 lua require('vimtex')
-lua require('colors')
+lua require('colors') 
 lua require('basic')
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -27,9 +27,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
 
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -83,27 +80,14 @@ nmap <leader>c <Plug>CommentaryLine
 vmap <leader>c <Plug>Commentary
 imap <leader>c <Esc><Plug>CommentaryLineA
 
-" Vimspector
-" let g:vimspector_enable_mappings = 'HUMAN'
-
-" Maps
-nnoremap <Leader>dd :call vimspector#Launch()<CR>
-nnoremap <Leader>de :call vimspector#Reset()<CR>
-nnoremap <Leader>dc :call vimspector#Continue()<CR>
-
-nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
-
-nmap <Leader>dk <Plug>VimspectorRestart
-nmap <Leader>dh <Plug>VimspectorStepOut
-nmap <Leader>dl <Plug>VimspectorStepInto
-nmap <Leader>dj <Plug>VimspectorStepOver
-
 " Setting tabs to work as normal
 nnoremap <S-Tab> <<
 nnoremap <Tab> >>
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv
+
+" Setting <C-I> to something else
+nnoremap <C-p> <C-i>
 
 " Pydocstring
 " https://github.com/yaegassy/coc-pydocstring
@@ -128,7 +112,5 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
-" Start Jaq terminal
-nnoremap <leader>jf :Jaq<CR>
-" Start jaq float
-nnoremap <leader>jt :Jaq term<CR>
+nnoremap <M-z> :ToggleTerminal<Enter>
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"

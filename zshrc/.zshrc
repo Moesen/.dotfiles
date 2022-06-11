@@ -1,55 +1,47 @@
-#Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="zhann"
-
-# VIM Binding for zsh
-bindkey -v
-
 # Small options
 HYPHEN_INSENSITIVE="true"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
-plugins=(git, vi-mode)
+# # oh-my-zsh
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="zhann"
 
-# oh-my-zsh Plugins
 plugins=(
-	git kubectl history emoji encode64
+    sudo
 )
-
-# oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# Package manager antibody
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins.txt
+# Package manager antidote
+# clone antidote if necessary
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+# source antidote
+. ~/.antidote/antidote.zsh
+# generate and source plugins from ~/.zsh_plugins.txt
+antidote load
+
+# history-substring-search-keybinds
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+bindkey '^[\t' autosuggest-accept
 
 export EDITOR="nvim"
 
 # Ranger command to use config file instead
 RANGER_LOAD_DEFAULT_RC="false"
 
-# Conda
-__conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/$USER/anaconda3/bin:$PATH"
-    fi
-fi
-
-
-
-unset __conda_setup
-conda activate
-#Aliases
-# The fun train
-# alias sl="sl -F -l -a" 
+#######################################################
+#     __ ___  _____  __  ___    ___ ___ ____ __   __   #
+#    /_\ | |  |_ _| /_\ / __|  / __|_ _|_   _\ \ / /  #
+#   / _ \| |__ | | / _ \\__ \ | (__ | |  | |  \ V /   #
+#  /_/ \_\____|___/_/ \_\___/  \___|___| |_|   |_|    #
+#                                                     #
+#######################################################
 
 # Xcliping to clipboard
 alias xc='xclip -selection clipboard'
@@ -67,19 +59,30 @@ alias fn="firefox -n"
 # Typing test
 alias tt="/opt/typioca/execs/typioca"
 
-    # Tmux configs
+# Tmux configs
 alias tmu3="~/.dotfiles/tmux/tmux_layout_scripts/tmux3panestartup.sh"
-
-alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
-
 alias hpc="ssh s174169@login1.gbar.dtu.dk"
-
 alias hpctmux="~/.dotfiles/tmux/tmux_layout_scripts/tm_DLCV_temp.sh"
-# Something with colors in tmux
-# alias tmux="TERM=screen-256color tmux -2"
+
+# Kali
+alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 
     # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Conda
+__conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/$USER/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+conda activate

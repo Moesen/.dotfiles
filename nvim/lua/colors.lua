@@ -12,13 +12,8 @@ vim.g.everforest_background = "medium"
 vim.g.everforest_diagnostic_text_highlight = 1
 vim.cmd 'colorscheme everforest'
 
+vim.g.python_highlight_all = 1
 
--- -- Set status bar settings
--- vim.g.lightline = {
---   colorscheme = 'Tomorrow_Night_Eighties',
---   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
---   component_function = { gitbranch = 'fugitive#head' },
--- }
 
 -- Highlight on yank. Do nice highlight blink
 vim.api.nvim_exec(
