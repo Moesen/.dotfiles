@@ -9,4 +9,4 @@ end
 
 -- Y yank until the end of the line
 map('v', 'Y', '"+y')
-map('n', 'Y', 'V"+y')
+map('n', 'Y', '0v$"+y')
