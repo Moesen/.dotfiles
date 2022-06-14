@@ -29,3 +29,12 @@ vim.o.smartcase = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+
+-------------------------
+--      TPIPELINE      --
+-------------------------
+-- Use tpipeline outside of tmux as well
+vim.api.nvim_set_option("stl", "%!tpipeline#stl#line()")
+-- Update every cursor movement
+vim.g.tpipeline_cursormoved = 1
+-- vim.g.tpipeline_fillcentre = 1
