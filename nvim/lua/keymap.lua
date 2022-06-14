@@ -1,2 +1,12 @@
+-- Functional wrapper for mapping custom keybindings
+local function map(mode, lhs, rhs, opts)
+    local options = { noremap = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
 -- Y yank until the end of the line
-vim.api.nvim_set_keymap('n', 'Y', '', {noremap = true})
+map('v', 'Y', '"+y')
+map('n', 'Y', 'V"+y')

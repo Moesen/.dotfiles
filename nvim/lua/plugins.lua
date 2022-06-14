@@ -68,5 +68,8 @@ Plug 'junegunn/goyo.vim'
 -- Extended syntax highlighting for python 
 Plug "vim-python/python-syntax"
 
+-- Better syntax for lua specifically in nvim scripting
+Plug "euclidianAce/BetterLua.vim"
+Plug "svermeulen/vimpeccable"
 
 vim.call('plug#end')

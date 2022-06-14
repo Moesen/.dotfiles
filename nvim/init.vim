@@ -2,7 +2,9 @@ lua require('plugins')
 lua require('vimtex')
 lua require('colors') 
 lua require('basic')
+lua require('keymap')
 
+" Something with colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
@@ -14,6 +16,7 @@ if has('nvim') && !empty($CONDA_PREFIX)
 endif
 
 set nowrap
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -33,6 +36,9 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
+" Changing mapleader to ';'
+let mapleader = ";"
 
 " coc remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -94,9 +100,6 @@ nnoremap <C-p> <C-i>
 nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> gA <Plug>(coc-codeaction)
-
-" yank to clipboard
-xnoremap <leader>yc "+y
 
 " NERDTree keybinds
 nnoremap <leader>n :NERDTreeFocus<CR>
