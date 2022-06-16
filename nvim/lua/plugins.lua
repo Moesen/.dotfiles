@@ -64,6 +64,10 @@ vim.g.open_in_insert_mode = 0
 
 -- For markdown writing and rendering
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+-- tabular plugin is used to format tables
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 -- Extended syntax highlighting for python 
 Plug "vim-python/python-syntax"
@@ -71,5 +75,6 @@ Plug "vim-python/python-syntax"
 -- Better syntax for lua specifically in nvim scripting
 Plug "euclidianAce/BetterLua.vim"
 Plug "svermeulen/vimpeccable"
+
 
 vim.call('plug#end')

@@ -10,3 +10,6 @@ end
 -- Y yank until the end of the line
 map('v', 'Y', '"+y')
 map('n', 'Y', '0v$"+y')
+
+-- Keymap for Goyo
+map("n", "<leader>go", ":Goyo")

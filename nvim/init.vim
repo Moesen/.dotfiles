@@ -3,6 +3,7 @@ lua require('vimtex')
 lua require('colors') 
 lua require('basic')
 lua require('keymap')
+lua require('markdown')
 
 " Something with colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -117,3 +118,11 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 
 nnoremap <M-z> :ToggleTerminal<Enter>
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+
+" Distraction free writing integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" Keymaps for opening, and sourcing vimrc
+map <leader>vm :vsp $MYVIMRC<CR>
+map <leader>sv :source $MYVIMRC<CR>
