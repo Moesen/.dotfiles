@@ -22,3 +22,5 @@ map('n', "<leader>go", ":Goyo<cr>")
 map('n', '+', '<c-a>', silentnoremap)
 map('n', '-', '<c-x>', silentnoremap)
 
+-- Show colors
+map('n', "<leader>tt", ":ColorToggle<cr>", {silent = true})

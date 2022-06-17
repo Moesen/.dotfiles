@@ -64,6 +64,9 @@ alias tmu3="~/.dotfiles/tmux/tmux_layout_scripts/tmux3panestartup.sh"
 alias hpc="ssh s174169@login1.gbar.dtu.dk"
 alias hpctmux="~/.dotfiles/tmux/tmux_layout_scripts/tm_DLCV_temp.sh"
 
+# Image alias
+alias imgt="source ~/.dotfiles/zshrc/image_tools.sh"
+
 # Kali
 alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 
