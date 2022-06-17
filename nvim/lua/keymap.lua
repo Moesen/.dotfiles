@@ -1,3 +1,6 @@
+-- Changing mapleader to ';'
+vim.g.mapleader = ";"
+
 -- Functional wrapper for mapping custom keybindings
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
@@ -10,6 +13,12 @@ end
 -- Y yank until the end of the line
 map('v', 'Y', '"+y')
 map('n', 'Y', '0v$"+y')
+map('v', "D", '"+ygvd')
 
--- Keymap for Goyo
-map("n", "<leader>go", ":Goyo")
+-- Go into focus writing mode using goyo
+map('n', "<leader>go", ":Goyo<cr>")
+
+-- Intuitive increment and decrement
+map('n', '+', '<c-a>', silentnoremap)
+map('n', '-', '<c-x>', silentnoremap)
+

@@ -69,6 +69,14 @@ Plug 'junegunn/limelight.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
+-- Markdown preview
+Plug('iamcco/markdown-preview.nvim', { 
+    ['do'] = function()
+        vim.call('mkdp#util#install()')
+    end,
+    ['for'] = {'markdown', 'vim-plug'}})
+
+
 -- Extended syntax highlighting for python 
 Plug "vim-python/python-syntax"
 
@@ -78,3 +86,4 @@ Plug "svermeulen/vimpeccable"
 
 
 vim.call('plug#end')
+

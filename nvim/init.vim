@@ -1,8 +1,8 @@
 lua require('plugins')
-lua require('vimtex')
-lua require('colors') 
 lua require('basic')
 lua require('keymap')
+lua require('colors') 
+lua require('vimtex')
 lua require('markdown')
 
 " Something with colors
@@ -38,8 +38,6 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-" Changing mapleader to ';'
-let mapleader = ";"
 
 " coc remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -68,7 +66,6 @@ endfunction
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 
 " Something with scrolling
 set scrolloff=5
@@ -126,3 +123,4 @@ autocmd! User GoyoLeave Limelight!
 " Keymaps for opening, and sourcing vimrc
 map <leader>vm :vsp $MYVIMRC<CR>
 map <leader>sv :source $MYVIMRC<CR>
+
