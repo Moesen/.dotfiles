@@ -4,6 +4,11 @@ import:
 
 window:
   history: 10000
+  padding:
+    x: 2
+    y: 2
+  dynamic_padding: true
+  decorations: full
 
 cursor:
   style:

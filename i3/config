@@ -15,7 +15,7 @@ exec --no-startup-id nm-applet
 ## class                 border  backgr. text  indicator child_border  
 client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-client.focused          #4b565c #4b565c #4b565c	#4b565c	#4b565c
+client.focused          #dbbc7f #dbbc7f #dbbc7f	#dbbc7f	#dbbc7f
 # Set background
 exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/4kforest.jpg 
 # Startup spotify on startup

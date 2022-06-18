@@ -26,13 +26,16 @@ install:
 	# Installing neovim
 	sudo snap install neovim --classic
 	
-	#Installing plug 
+	#Installing plug for vim
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 	# Installing I3-gaps (might need update to also install i3
 	sudo add-apt-repository ppa:regolith-linux/release
 	sudo apt update
 	sudo apt install i3-gaps
+
+	# Installing starship
+	sudo snap install starship
 
 
 install_typetest:

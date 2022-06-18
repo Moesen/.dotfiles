@@ -6,13 +6,15 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 # # oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="zhann"
+#export ZSH="$HOME/.oh-my-zsh"
+#ZSH_THEME="zhann"
 
-plugins=(
-    sudo
-)
-source $ZSH/oh-my-zsh.sh
+# plugins=(
+#     sudo
+# )
+# source $ZSH/oh-my-zsh.sh
+#
+eval "$(starship init zsh)"
 
 # Package manager antidote
 # clone antidote if necessary
