@@ -1,3 +1,6 @@
+-------------------------
+--     TRULY BASIC     --
+-------------------------
 -- Screen specifics to make colors work
 vim.cmd [[let $NVIM_TUI_ENABLE_TRUE_COLOR=1]]
 vim.o.termguicolors = true
