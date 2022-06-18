@@ -1,3 +1,6 @@
+-------------------------
+--     TRULY BASIC     --
+-------------------------
 -- buffer-scoped
 vim.opt.autoindent = true
 
