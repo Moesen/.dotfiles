@@ -23,4 +23,4 @@ map('n', '+', '<c-a>', silentnoremap)
 map('n', '-', '<c-x>', silentnoremap)
 
 -- Show colors
-map('n', "<leader>tt", ":ColorToggle<cr>", {silent = true})
+map('n', "<leader>ct", ":ColorToggle<cr>", {silent = true})

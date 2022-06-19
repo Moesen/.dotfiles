@@ -3,7 +3,6 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
-
 # # oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #export ZSH="$HOME/.oh-my-zsh"
@@ -44,6 +43,8 @@ RANGER_LOAD_DEFAULT_RC="false"
 #  /_/ \_\____|___/_/ \_\___/  \___|___| |_|   |_|    #
 #                                                     #
 #######################################################
+
+alias ls="ls --color=auto"
 
 # Xcliping to clipboard
 alias xc='xclip -selection clipboard'

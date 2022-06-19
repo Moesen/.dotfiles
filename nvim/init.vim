@@ -80,9 +80,9 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " https://codereview.stackexchange.com/questions/217932/python-breakpoints-in-vim-vimscript
 
 " Comments binding
-nmap <leader>c <Plug>CommentaryLine
-vmap <leader>c <Plug>Commentary
-imap <leader>c <Esc><Plug>CommentaryLineA
+nmap <C-_> <Plug>CommentaryLine
+vmap <C-_> <Plug>Commentary
+imap <C-_> <Esc><Plug>CommentaryLineA
 
 " Setting tabs to work as normal
 nnoremap <S-Tab> <<
@@ -124,3 +124,12 @@ autocmd! User GoyoLeave Limelight!
 map <leader>vm :vsp $MYVIMRC<CR>
 map <leader>sv :source $MYVIMRC<CR>
 
+" Copy all matches from register
+function! CopyMatches(reg)
+  let hits = []
+  %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
+  let reg = empty(a:reg) ? '+' : a:reg
+  execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+endfunction
+command! -register CopyMatches call CopyMatches(<q-reg>)
+map <leader>cm :let @a=''<cr>:bufdo CopyMatches A<cr>

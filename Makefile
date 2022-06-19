@@ -1,5 +1,13 @@
-symlinks:
-# Symlinks
+setup:
+	if [ ! -d ~/.dotfiles ]; then mv ~/dotfiles ~/.dotfiles; fi
+
+test : 
+	
+
+symlinks: .make_config/symlink_folders.txt, .make_config/symlink_files.txt
+# Files
+
+# Folders
 ## ZSH
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
 	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc
@@ -21,6 +29,11 @@ symlinks:
 
 # Setup tmux config file path
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+
+conda_show:
+	conda config --set changeps1 false
+conda_hide:
+	conda config --set changeps1 true
 
 install:
 	# Installing neovim
