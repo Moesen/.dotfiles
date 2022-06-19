@@ -1,8 +1,10 @@
 setup:
 	if [ ! -d ~/.dotfiles ]; then mv ~/dotfiles ~/.dotfiles; fi
 
-test : 
-	
+target: target.d
+target.d: .make_config/symlink_files
+	sed 's/^/target: //' $< >$@
+include target.d
 
 symlinks: .make_config/symlink_folders.txt, .make_config/symlink_files.txt
 # Files

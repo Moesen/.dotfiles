@@ -1,0 +1,27 @@
+# ~/.config/starship.toml
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Remove blank line between shell prompts
+add_newline = false
+
+# Use custom format
+format = """
+$directory$conda
+$character(red)"""
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[conda]
+symbol = " "
+format = "[$symbol$environment](green) "
+
+[directory]
+truncation_length = 3
+truncation_symbol = ""
+repo_root_style = "bold #7fbbb3"
+
+
