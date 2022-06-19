@@ -49,6 +49,7 @@ modified = "M"
 staged = '[\($count\)](bold #a7c080)'
 renamed = "👅"
 deleted = "🗑"
+style = "bold #7fbbb3"
 
 [username]
 show_always = true
