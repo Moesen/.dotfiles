@@ -8,20 +8,31 @@ add_newline = false
 
 # Format for showed
 format = """
-$directory$conda$git_commit$git_branch
+$directory$conda$git_branch$git_state$git_status$git_metrics
 $character(red)"""
 
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
+success_symbol = "[](bold #a7c080)"
+error_symbol = "[](bold #e67e80)"
 
 [conda]
 symbol = " "
-format = "[$symbol$environment](green) "
+format = "[$symbol$environment](bold #a7c080) "
 
 [directory]
 truncation_length = 3
 truncation_symbol = ""
+style = "#a7c080"
 repo_root_style = "bold #7fbbb3"
 
+[git_commit]
+only_detached = false
 
+[git_branch]
+style = "bold #7fbbb3"
+
+[git_metrics]
+disabled = false
+added_style = "italic fg:#a7c080"
+deleted_style = "italic fg:#e67e80"
+format = '([+$added]($added_style)/([-$deleted]($deleted_style)))'
