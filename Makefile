@@ -1,13 +1,7 @@
 setup:
 	if [ ! -d ~/.dotfiles ]; then mv ~/dotfiles ~/.dotfiles; fi
 
-target: target.d
-target.d: .make_config/symlink_files
-	sed 's/^/target: //' $< >$@
-include target.d
-
-symlinks: .make_config/symlink_folders.txt, .make_config/symlink_files.txt
-# Files
+symlinks: 
 
 # Folders
 ## ZSH
@@ -31,6 +25,9 @@ symlinks: .make_config/symlink_folders.txt, .make_config/symlink_files.txt
 
 # Setup tmux config file path
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+
+# Setup starship
+	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 
 conda_show:
 	conda config --set changeps1 false

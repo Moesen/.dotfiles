@@ -6,9 +6,9 @@
 # Remove blank line between shell prompts
 add_newline = false
 
-# Use custom format
+# Format for showed
 format = """
-$directory$conda
+$directory$conda$git_commit$git_branch
 $character(red)"""
 
 [character]
