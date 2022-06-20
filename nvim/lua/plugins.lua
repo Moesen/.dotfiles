@@ -84,6 +84,8 @@ Plug "vim-python/python-syntax"
 Plug "euclidianAce/BetterLua.vim"
 Plug "svermeulen/vimpeccable"
 
+-- Vim diff tool
+Plug "tpope/vim-fugitive"
 
 vim.call('plug#end')
 
