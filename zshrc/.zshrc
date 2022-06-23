@@ -5,8 +5,8 @@ COMPLETION_WAITING_DOTS="true"
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 # # oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="zhann"
+# export ZSH="$HOME/.oh-my-zsh"
+# ZSH_THEME="zhann"
 
 # plugins=(
 #  sudo

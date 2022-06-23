@@ -17,8 +17,7 @@ error_symbol = "[](bold #e67e80)"
 
 [conda]
 symbol = " "
-format = "[$symbol$environment](bold #a7c080) "
-
+format = "\\([$symbol$environment](bold #a7c080)\\) "
 [directory]
 truncation_length = 3
 truncation_symbol = ""

@@ -29,10 +29,8 @@ symlinks:
 # Setup starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 
-conda_show:
+toggle_conda_show:
 	conda config --set changeps1 false
-conda_hide:
-	conda config --set changeps1 true
 
 install:
 	# Installing neovim
