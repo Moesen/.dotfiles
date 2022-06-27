@@ -73,6 +73,9 @@ alias imgt="source ~/.dotfiles/zshrc/image_tools.sh"
 # Kali
 alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 
+# Docker
+alias docker="sudo docker"
+
     # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 

@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Making windows transparent
-exec picom --config ~/.config/picom/picon.conf
+exec picom 
 
 font pango:SF Pro Display 12
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -15,14 +15,14 @@ exec --no-startup-id nm-applet
 ## class                 border  backgr. text  indicator child_border  
 client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-client.focused          #dbbc7f #dbbc7f #dbbc7f	#dbbc7f	#dbbc7f
+client.focused          #a7c080 #a7c080 #a7c080	#a7c080	#a7c080
 # Set background
 exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/4kforest.jpg 
 # Startup spotify on startup
 exec --no-startup-id i3-msg "workspace 10; exec /snap/bin/spotify"
 
 # Leave only a small border of pixels
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 # I3 gaps
 gaps inner 5
