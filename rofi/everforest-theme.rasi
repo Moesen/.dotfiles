@@ -1,0 +1,97 @@
+* {
+      black:   #4b565c;
+      red:     #e67e80;
+      green:   #a6c080;
+      yellow:  #dbbc7f;
+      blue:    #7fbbb3;
+      magenta: #d699b6;
+      cyan:    #83c092;
+      white:   #d3c6aa;
+
+      background: #2f383e;
+      foreground: #d3c6aa;
+
+      highlight:    underline bold #a6c080;
+  }
+
+window {
+    location: center;
+    anchor: center;
+    padding: 10px;
+    border: 0px;
+    border-radius: 20px;
+    spacing: 0;
+    children: [mainbox];
+    orientatioin: vertical;
+    background-color: @background;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+    background-color: @background;
+}
+
+message {
+    color: @green;
+    padding: 5;
+    border-color: @foreground;
+    background-color: @background;
+}
+
+inputbar {
+    color: @green;
+    background-color: @background;
+    padding: 10px;
+    margin: 5px;
+    border-color: @green;
+    border: 2px 2px 2px 2px;
+    border-radius: 20px;
+}
+
+prompt {
+    text-font: inherit;
+    text-color: @green;
+    background-color: inherit;
+}
+
+entry {
+    text-color: @green;
+    background-color: inherit;
+}
+
+prompt {
+    margin: 0px 0.3em 0em 0em;
+}
+
+listview {
+    padding: 8px;
+    border-radius: 20px;
+    border-color: @green;
+    border: 1px 1px 1px 1px;
+    background-color: @background;
+}
+
+element {
+    background-color: @background;
+    padding: 3px;
+    vertical-align: 0.5;
+    border-radius: 20px;
+    color: @foreground;
+}
+
+element selected.normal {
+    background-color: @green;
+    text-color: @black;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+button {
+    padding: 6px;
+    color: @foreground;
+    horizontal-align: 0.5;
+}
