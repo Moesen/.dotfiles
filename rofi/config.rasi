@@ -5,6 +5,7 @@ configuration {
     cycle: true;
     hide-scrollbar: true;
     disable-history: false;
+    modi: "window,run,file-browser";
 }
 
-@theme "everforest-theme"
+@import "everforest-theme"

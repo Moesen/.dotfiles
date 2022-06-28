@@ -1,18 +1,34 @@
 * {
-      black:   #4b565c;
-      red:     #e67e80;
-      green:   #a6c080;
-      yellow:  #dbbc7f;
-      blue:    #7fbbb3;
-      magenta: #d699b6;
-      cyan:    #83c092;
-      white:   #d3c6aa;
+      highlight        : underline bold;
+      scrollbar        : false;
+      transparent      : #EE000000;
 
-      background: #2f383e;
-      foreground: #d3c6aa;
 
-      highlight:    underline bold #a6c080;
-  }
+      black            : #4b565c;
+      red              : #e67e80;
+      green            : #a6c080;
+      yellow           : #dbbc7f;
+      blue             : #7fbbb3;
+      magenta          : #d699b6;
+      cyan             : #83c092;
+      white            : #d3c6aa;
+
+      background       : #2f383e;
+      background-color : @background;
+      foreground       : #d3c6aa;
+      border-color     : @green;
+      separatorcolor   : @border-color;
+
+      normal-background: @background;
+      normal-foreground: @foreground;
+      alternate-normal-background: @black;
+      alternate-normal-foreground: @foreground;
+      selected-normal-background: @cyan;
+      selected-normal-foreground: @foreground;
+
+      active-background: @green;
+      active-foreground: @black;
+}
 
 window {
     location: center;
@@ -23,17 +39,18 @@ window {
     spacing: 0;
     children: [mainbox];
     orientatioin: vertical;
-    background-color: @background;
+    background-color: @transparent;
 }
 
 mainbox {
     spacing: 0;
     children: [ inputbar, message, listview ];
-    background-color: @background;
+    background-color: @transparent;
 }
 
 message {
     color: @green;
+    text-color: @foreground;
     padding: 5;
     border-color: @foreground;
     background-color: @background;
@@ -43,16 +60,24 @@ inputbar {
     color: @green;
     background-color: @background;
     padding: 10px;
-    margin: 5px;
+    margin: 4px;
     border-color: @green;
-    border: 2px 2px 2px 2px;
+    border: 4px;
     border-radius: 20px;
+    children: [ prompt, textbox-prompt-sep, entry, case-indicator ];
 }
 
 prompt {
     text-font: inherit;
-    text-color: @green;
+    text-color: @foreground;
     background-color: inherit;
+}
+
+textbox-prompt-sep {
+    expand: false;
+    str: "->";
+    text-color: @normal-foreground;
+    margin: 0 0.3em 0 0;
 }
 
 entry {
