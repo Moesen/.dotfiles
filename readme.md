@@ -7,3 +7,5 @@ Repo for my personal dotfiles. To setup clone the repo, and run the `setup.bat` 
 
 # Nice links
 - `https://gist.github.com/todgru/6224848`
+- `https://github.com/ph04/dotfiles/blob/main/.config/picom/picom.conf`
+- `https://github.com/jonaburg/picom`
