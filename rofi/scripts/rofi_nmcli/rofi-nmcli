@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Constants
+divider="------"
+goback="Back"
+
+power_on() {
+    if nmcli -g WIFI general status | grep -q "enabled"; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+# Toggles power state
+toggle_power() {
+    if power_on; then
+        nmcli radio wifi off
+        show_menu
+    else
+        nmcli radio wifi on
+        show_menu
+    fi
+}
+
+rescan() {
+    nmcli device wifi rescan &
+    echo "Rescanning..."
+    sleep 5
+    show_menu
+}
+
