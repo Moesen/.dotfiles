@@ -58,9 +58,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run
 bindsym $mod+w exec rofi -show window
 bindsym $mod+e exec rofi -show file-browser
-
-
-
+bindsym $mod+b exec --no-startup-id ~/.dotfiles/rofi/scripts/rofi-bluetooth/rofi-bluetooth
 
 # change focus
 bindsym $mod+h focus left
