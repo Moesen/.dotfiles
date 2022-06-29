@@ -97,8 +97,8 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+space exec ~/.config/i3/scripts/i3-keybourd-layout.sh cycle us dk
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-# bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
