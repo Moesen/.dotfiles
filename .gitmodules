@@ -1,0 +1,6 @@
+[submodule "rofi/scripts/rofi-bluetooth"]
+	path = rofi/scripts/rofi-bluetooth
+	url = git@github.com:nickclyde/rofi-bluetooth.git
+[submodule "rofi/scripts/nmcli_rofi"]
+	path = rofi/scripts/nmcli_rofi
+	url = git@github.com:drPytho/nmcli_rofi.git
