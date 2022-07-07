@@ -28,13 +28,33 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^[\t' autosuggest-accept
 
 export EDITOR="nvim"
 
 # Ranger command to use config file instead
 RANGER_LOAD_DEFAULT_RC="false"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Conda
+__conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/$USER/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+conda activate
 
 #######################################################
 #     __ ___  _____  __  ___    ___ ___ ____ __   __   #
@@ -53,6 +73,8 @@ alias xc='xclip -selection clipboard'
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+
+# Hygge
 alias bis="echo 'jeg elsker bis'"
 
 # Firefox
@@ -75,23 +97,3 @@ alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 
 # Docker
 alias docker="sudo docker"
-
-    # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Conda
-__conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/$USER/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-conda activate
