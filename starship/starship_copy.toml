@@ -1,3 +1,5 @@
+# ~/.config/starship.toml
+
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -6,20 +8,17 @@ add_newline = false
 
 # Format for showed
 # $git_status
-# format = """
-# $directory$conda$git_branch$git_state$git_metrics
-# $username: """
-format = """$character"""
-
-right_format = """$directory$conda$git_branch$git_metrics"""
+format = """
+$directory$conda$git_branch$git_state$git_metrics
+$username: """
 
 [character]
-success_symbol = "[▶](bold #a7c080)"
-error_symbol = "[▶](bold #e67e80)"
+success_symbol = "[](bold #a7c080)"
+error_symbol = "[](bold #e67e80)"
 
 [conda]
-symbol = ""
-format = "[$symbol$environment](bold #a7c080) "
+symbol = " "
+format = "\\([$symbol$environment](bold #a7c080)\\) "
 [directory]
 truncation_length = 3
 truncation_symbol = ""
@@ -37,7 +36,7 @@ disabled = false
 only_nonzero_diffs = false
 added_style = "#a7c080"
 deleted_style = "#e67e80"
-format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
+format = '<([+$added]($added_style);([-$deleted]($deleted_style)))>'
 
 [git_status]
 conflicted = "🏳"
