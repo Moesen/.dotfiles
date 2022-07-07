@@ -97,3 +97,12 @@ alias docker="sudo docker"
 
 # Source .zshrc
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
+export PATH=$PATH:/home/snoooze/.spicetify
+
+## PATHS
+if [[ -d ~/.spicetify ]]
+then
+    export PATH="~/.spicetify/spicetify:$PATH"
+else
+    echo "Spicetify not installed"
+fi

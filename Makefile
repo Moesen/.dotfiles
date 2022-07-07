@@ -61,6 +61,9 @@ install_zscroll:
 	sudo python3 setup.py install
 	cd ~/.dotfiles
 
-install_seamless_tv:
+install_seamless_tmuxvim:
 	curl -fsSL https://raw.github.com/mislav/dotfiles/1500cd2/bin/tmux-vim-select-pane -o /usr/local/bin/tmux-vim-select-pane
 	chmod +x /usr/local/bin/tmux-vim-select-pane
+
+install_spicetify:
+	curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
