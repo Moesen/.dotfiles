@@ -1,5 +1,4 @@
 symlinks: 
-
 # Folders
 ## ZSH
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
