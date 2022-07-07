@@ -26,7 +26,11 @@ sudo chmod a+wr /usr/share/spotify
 sudo chmod a+wr /usr/share/spotify/Apps -R
 ```
 
+## Moving to eww for widgets and bar
+[link to guide](https://elkowar.github.io/eww/)
+
 ## Nice links
 - `https://gist.github.com/todgru/6224848`
 - `https://github.com/ph04/dotfiles/blob/main/.config/picom/picom.conf`
 - `https://github.com/jonaburg/picom`
+
