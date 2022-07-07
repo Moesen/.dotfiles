@@ -1,22 +1,17 @@
-# Small options
+# env options
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
-# # oh-my-zsh
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# export ZSH="$HOME/.oh-my-zsh"
-# ZSH_THEME="zhann"
 
-# plugins=(
-#  sudo
-# )
-# source $ZSH/oh-my-zsh.sh
-
+# Starship used for custom prompt
 eval "$(starship init zsh)"
 
+# zsh completions using zstyle and zshcompsys
+source ~/.dotfiles/zshrc/completion.zsh
+
 # Package manager antidote
-# clone antidote if necessary
+# Git clone antidote if necessary
 [[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
 # source antidote
 . ~/.antidote/antidote.zsh
@@ -34,7 +29,6 @@ export EDITOR="nvim"
 
 # Ranger command to use config file instead
 RANGER_LOAD_DEFAULT_RC="false"
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -74,6 +68,9 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+# Tmux
+alias t="tmux"
+
 # Hygge
 alias bis="echo 'jeg elsker bis'"
 
@@ -97,3 +94,6 @@ alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 
 # Docker
 alias docker="sudo docker"
+
+# Source .zshrc
+alias sz="source ~/.dotfiles/zshrc/.zshrc"
