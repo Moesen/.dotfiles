@@ -1,6 +1,3 @@
-setup:
-	if [ ! -d ~/.dotfiles ]; then mv ~/dotfiles ~/.dotfiles; fi
-
 symlinks: 
 
 # Folders
