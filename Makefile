@@ -25,6 +25,9 @@ symlinks:
 # Setup starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 
+# Adding local themes folder
+	ln -sfn ~/.dotfiles/spicetify/Themes ~/.spicetif
+
 conda_show:
 	conda config --set changeps1 true
 
