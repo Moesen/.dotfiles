@@ -1,7 +1,7 @@
 # Loading colors exec xrdb -merge ~/.dotfiles/ColorThemes/.GithubDimmed
 set $mod Mod4
 
-# Making windows transparent
+# Making windows transparent and round
 exec picom 
 
 font pango:SF Pro Display 12
@@ -13,17 +13,15 @@ exec --no-startup-id nm-applet
 ##############################
 # color defines for zenburn styled i3
 ## class                 border  backgr. text  indicator child_border  
-# client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-# client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-# client.focused          #a7c080 #a7c080 #a7c080	#a7c080	#a7c080
+client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
+client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
+client.focused          #a7c080 #a7c080 #a7c080	#a7c080	#a7c080
 # Set background
 exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/4kforest.jpg 
-# Startup spotify on startup
-exec --no-startup-id i3-msg "workspace 10; exec /snap/bin/spotify"
 
 # Leave only a small border of pixels
-default_border pixel 0
-for_window [class="^.*"] border pixel 0
+default_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # I3 gaps
 gaps inner 5
