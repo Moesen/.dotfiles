@@ -103,6 +103,4 @@ export PATH=$PATH:/home/snoooze/.spicetify
 if [[ -d ~/.spicetify ]]
 then
     export PATH="~/.spicetify/spicetify:$PATH"
-else
-    echo "Spicetify not installed"
 fi
