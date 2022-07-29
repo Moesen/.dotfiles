@@ -4,7 +4,7 @@ set $mod Mod4
 # Making windows transparent and round
 exec picom 
 
-font pango:SF Pro Display 12
+font Pango:Fira Mono 12
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
@@ -17,11 +17,11 @@ client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.focused          #a7c080 #a7c080 #a7c080	#a7c080	#a7c080
 # Set background
-exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/4kforest.jpg 
+exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/orange_arch.jpeg 
 
 # Leave only a small border of pixels
-default_border pixel 1
-for_window [class="^.*"] border pixel 1
+default_border pixel 0
+for_window [class="^.*"] border pixel 0
 
 # I3 gaps
 gaps inner 5
@@ -181,8 +181,8 @@ mode "resize" {
 }
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 bindsym $mod+r mode "resize"
 
@@ -191,7 +191,7 @@ focus_follows_mouse no
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#}
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# bar {
+#         status_command i3status
+# }
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
