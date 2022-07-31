@@ -16,8 +16,8 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- Everforest colortheme
-Plug 'sainnhe/everforest'
+-- Wal colorscheme
+Plug 'dylanaraps/wal.vim'
 
 -- Vimposter - Tmux integration
 Plug 'vimpostor/vim-tpipeline'
@@ -33,6 +33,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 -- Showing colors for hex and color valuse
 -- Use ToggleColor to turn on and off
+-- Keybinding is ';ct'
 Plug 'chrisbra/colorizer'
 
 -- Coc - Language Server
@@ -68,14 +69,6 @@ Plug 'junegunn/limelight.vim'
 -- tabular plugin is used to format tables
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
--- Markdown preview
-Plug('iamcco/markdown-preview.nvim', { 
-    ['do'] = function()
-        vim.call('mkdp#util#install()')
-    end,
-    ['for'] = {'markdown', 'vim-plug'}})
-
 
 -- Extended syntax highlighting for python 
 Plug "vim-python/python-syntax"

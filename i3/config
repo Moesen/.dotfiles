@@ -4,7 +4,7 @@ set $mod Mod4
 # Making windows transparent and round
 exec picom 
 
-font Pango:Fira Mono 12
+font Fira Mono 12
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
@@ -17,7 +17,9 @@ client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
 client.focused          #a7c080 #a7c080 #a7c080	#a7c080	#a7c080
 # Set background
-exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/orange_arch.jpeg 
+exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/archcolor.jpg
+
+
 
 # Leave only a small border of pixels
 default_border pixel 0
@@ -31,8 +33,10 @@ gaps bottom 5
 # smart_borders on
 # smart_gaps on
 
-# border_radius 10
-##############################
+# Corners
+##########################
+border_radius 0
+
 # Boring stuff
 ##############################
 

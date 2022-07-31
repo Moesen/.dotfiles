@@ -13,7 +13,7 @@ vim.g.everforest_better_perfomance = 1
 vim.g.background="dark"
 vim.g.everforest_background = "medium"
 vim.g.everforest_diagnostic_text_highlight = 1
-vim.cmd 'colorscheme everforest'
+vim.cmd 'colorscheme wal'
 
 vim.g.python_highlight_all = 1
 
