@@ -16,14 +16,17 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- Wal colorscheme
--- Plug 'dylanaraps/wal.vim'
-
 -- Neonight Colorscheme
 Plug('folke/tokyonight.nvim', { branch = 'main' })
 
--- Vimposter - Tmux integration
-Plug 'vimpostor/vim-tpipeline'
+-- Statusline
+Plug 'feline-nvim/feline.nvim'
+
+-- Icons
+Plug 'kyazdani42/nvim-web-devicons'
+
+-- Gitsigns
+Plug 'lewis6991/gitsigns.nvim'
 
 -- LaTeX suite for everything
 Plug 'lervag/vimtex'
@@ -34,6 +37,9 @@ Plug 'lervag/vimtex'
 -- https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
+-- Vimposter - Tmux integration
+-- Plug 'vimpostor/vim-tpipeline'
+
 -- Showing colors for hex and color valuse
 -- Use ToggleColor to turn on and off
 -- Keybinding is ';ct'
@@ -42,17 +48,6 @@ Plug 'chrisbra/colorizer'
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})
 
--- Packages
-vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets"}
-
--- Coc specific options added here for more clarity
--- Time before generally before updated
--- Especially nice for coc updates
-vim.opt.updatetime=200
-
--- Don't pass messages to |ins-completion-menu|
-vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.signcolumn='number'
 
 Plug('psf/black', {branch='stable'})
 
@@ -64,7 +59,6 @@ Plug 'preservim/nerdtree'
 
 -- Terminal for nvim
 Plug 'caenrique/nvim-toggle-terminal'
-vim.g.open_in_insert_mode = 0
 
 -- For markdown writing and rendering
 Plug 'junegunn/goyo.vim'

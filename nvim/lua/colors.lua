@@ -15,6 +15,8 @@ vim.cmd 'colorscheme tokyonight'
 -- Something with python
 vim.g.python_highlight_all = 1
 
+-- Statusbar, kind of a colorthing
+require('feline').setup()
 
 -- Highlight on yank. Do nice highlight blink
 vim.api.nvim_exec(

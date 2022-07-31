@@ -33,11 +33,27 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
+-- Misc
+-- Coc specific options added here for more clarity
+-- Time before generally before updated
+-- Especially nice for coc updates
+vim.opt.updatetime=200
+
+-- Don't pass messages to |ins-completion-menu|
+vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.signcolumn='number'
+
+-- Packages
+vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets"}
+
+-- Vim Terminal
+vim.g.open_in_insert_mode = 0
+
 -------------------------
 --      TPIPELINE      --
 -------------------------
 -- Use tpipeline outside of tmux as well
-vim.api.nvim_set_option("stl", "%!tpipeline#stl#line()")
+-- vim.api.nvim_set_option("stl", "%!tpipeline#stl#line()")
 -- Update every cursor movement
-vim.g.tpipeline_cursormoved = 1
+-- vim.g.tpipeline_cursormoved = 1
 -- vim.g.tpipeline_fillcentre = 1
