@@ -17,7 +17,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 -- Wal colorscheme
-Plug 'dylanaraps/wal.vim'
+-- Plug 'dylanaraps/wal.vim'
+
+-- Neonight Colorscheme
+Plug('folke/tokyonight.nvim', { branch = 'main' })
 
 -- Vimposter - Tmux integration
 Plug 'vimpostor/vim-tpipeline'

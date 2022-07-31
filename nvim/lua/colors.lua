@@ -9,12 +9,10 @@ vim.o.term='screen-256color'
 
 
 -- Set colorscheme defaults (order is important)
-vim.g.everforest_better_perfomance = 1
-vim.g.background="dark"
-vim.g.everforest_background = "medium"
-vim.g.everforest_diagnostic_text_highlight = 1
-vim.cmd 'colorscheme wal'
+vim.g.tokyonight_style = "storm"
+vim.cmd 'colorscheme tokyonight'
 
+-- Something with python
 vim.g.python_highlight_all = 1
 
 

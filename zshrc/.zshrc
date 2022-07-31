@@ -1,3 +1,5 @@
+autoload -U compinit; compinit
+
 # env options
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
@@ -5,7 +7,7 @@ COMPLETION_WAITING_DOTS="true"
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 # Import colorsceheme from 'wal' asyncronously
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Starship used for custom prompt
 eval "$(starship init zsh)"
