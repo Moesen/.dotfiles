@@ -59,7 +59,7 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run
 bindsym $mod+w exec rofi -show window
-bindsym $mod+e exec rofi -show file-browser
+bindsym $mod+e exec rofi -show filebrowser
 bindsym $mod+b exec --no-startup-id ~/.dotfiles/rofi/scripts/rofi-bluetooth/rofi-bluetooth
 
 # change focus
@@ -96,7 +96,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Change keyboard layout
-# bindsym $mod+space exec ~/.config/i3/scripts/i3-keybourd-layout.sh cycle us dk
+bindsym $mod+space exec ~/.config/i3/scripts/i3-keyboard-layout.sh cycle us dk
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -157,7 +157,7 @@ bindsym $mod+Shift+c reload
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # Lock i3
-bindsym $mod+Shift+w exec "i3lock -n -f -e"
+bindsym $mod+Shift+w exec "~/.dotfiles/i3/scripts/lock.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
