@@ -22,7 +22,6 @@ exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/archcolor.jpg
 
 
 # Leave only a small border of pixels
-default_border pixel 0
 for_window [class="^.*"] border pixel 0
 
 # I3 gaps

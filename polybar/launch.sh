@@ -9,4 +9,4 @@ polybar left &
 polybar mid &
 polybar right &
 # polybar title
-echo "Bars launched..."
+# echo "Bars launched..."

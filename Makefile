@@ -1,32 +1,24 @@
 symlinks: 
-# Folders
-## ZSH
+## Zsh
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
-	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc
-	
-## NVIM
+	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc	
+## Nvim
 	ln -sfn ~/.dotfiles/nvim ~/.config/nvim
 	ln -sfn ~/.dotfiles/ranger ~/.config/ranger
 	ln -sfn ~/.dotfiles/i3 ~/.config 
 	ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
-
-# Adding profile f
+# Profile
 	ln -sfn ~/.dotfiles/.profile ~/
-
-# Adding alacrity settings
+# Alacrity 
 	ln -sfn ~/.dotfiles/alacritty ~/.config/
-
-# Setup picom path
+# Picom 
 	ln -sf ~/.dotfiles/picom ~/.config
-
-# Setup tmux config file path
+# Tmux 
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
-
-# Setup starship
+# Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
-
-# Adding local themes folder
-	ln -sfn ~/.dotfiles/spicetify/Themes ~/.spicetif
+# Dunst
+	ln -sf ~/.config/dunst/dunstrc
 
 conda_show:
 	conda config --set changeps1 true
