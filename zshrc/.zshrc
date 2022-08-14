@@ -100,6 +100,9 @@ alias kali="sudo docker start e62d62a79d89 && sudo docker attach e62d62a79d89"
 # Docker
 alias docker="sudo docker"
 
+# See log from xsession
+alias clog="tail ~/.local/share/sddm/xorg-session.log"
+
 # Source .zshrc
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
 export PATH=$PATH:/home/snoooze/.spicetify

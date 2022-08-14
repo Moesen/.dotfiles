@@ -13,16 +13,17 @@ exec --no-startup-id nm-applet
 ##############################
 # color defines for zenburn styled i3
 ## class                 border  backgr. text  indicator child_border  
-client.focused_inactive #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-client.unfocused        #2b3339 #2b3339 #2b3339 #2b3339 #2b3339
-client.focused          #a7c080 #a7c080 #a7c080	#a7c080	#a7c080
+client.focused_inactive #24283b #24283b #24283b #24283b #24283b
+client.unfocused        #24283b #24283b #24283b #24283b #24283b
+client.focused          #7da6ff #7da6ff #7da6ff	#7da6ff	#7da6ff
 # Set background
 exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/archcolor.jpg
 
 
 
 # Leave only a small border of pixels
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
+default_border pixel 2
 
 # I3 gaps
 gaps inner 5
@@ -34,7 +35,6 @@ gaps bottom 5
 
 # Corners
 ##########################
-border_radius 0
 
 # Boring stuff
 ##############################
