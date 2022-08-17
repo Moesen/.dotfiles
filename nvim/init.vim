@@ -3,7 +3,6 @@ lua require('basic')
 lua require('keymap')
 lua require('colors') 
 lua require('vimtex')
-lua require('markdown')
 
 " Something with colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

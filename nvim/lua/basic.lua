@@ -43,7 +43,7 @@ vim.opt.updatetime=200
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'
 
--- Packages
+-- COC-packages
 vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets"}
 
 -- Vim Terminal

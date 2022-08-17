@@ -10,6 +10,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- Comment and uncomment stuff
 Plug 'tpope/vim-commentary'
 
+-- Mark shown
+Plug 'chentoast/marks.nvim'
+
 -- Creating characters around surrounding text
 Plug 'tpope/vim-surround'
 
@@ -63,6 +66,7 @@ Plug 'caenrique/nvim-toggle-terminal'
 -- For markdown writing and rendering
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
 -- tabular plugin is used to format tables
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
