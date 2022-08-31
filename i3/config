@@ -30,7 +30,7 @@ gaps inner 5
 gaps outer 5
 gaps top 30
 gaps bottom 5
-# smart_borders on
+smart_borders on
 # smart_gaps on
 
 # Corners

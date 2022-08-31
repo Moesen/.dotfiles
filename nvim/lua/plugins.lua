@@ -61,7 +61,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'preservim/nerdtree'
 
 -- Terminal for nvim
-Plug 'caenrique/nvim-toggle-terminal'
+-- Plug 'caenrique/nvim-toggle-terminal'
 
 -- For markdown writing and rendering
 Plug 'junegunn/goyo.vim'
@@ -77,6 +77,9 @@ Plug "vim-python/python-syntax"
 -- Better syntax for lua specifically in nvim scripting
 Plug "euclidianAce/BetterLua.vim"
 Plug "svermeulen/vimpeccable"
+
+-- HTML emmet plugin
+Plug 'mattn/emmet-vim'
 
 -- Vim diff tool
 Plug "tpope/vim-fugitive"

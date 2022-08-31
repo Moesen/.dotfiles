@@ -105,10 +105,11 @@ alias clog="tail ~/.local/share/sddm/xorg-session.log"
 
 # Source .zshrc
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
-export PATH=$PATH:/home/snoooze/.spicetify
 
-## PATHS
-if [[ -d ~/.spicetify ]]
+if [[ -d "${HOME}/.local/bin" && -f "${HOME}/.local/bin/Obsidian-*.AppImage" ]]
 then
-    export PATH="~/.spicetify/spicetify:$PATH"
+    echo "YES" 
 fi
+
+# dotfiles dir
+alias dot="~/.dotfiles"

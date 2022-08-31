@@ -47,7 +47,7 @@ vim.o.signcolumn='number'
 vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets"}
 
 -- Vim Terminal
-vim.g.open_in_insert_mode = 0
+-- vim.g.open_in_insert_mode = 0
 
 -------------------------
 --      TPIPELINE      --

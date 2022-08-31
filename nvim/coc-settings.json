@@ -20,6 +20,9 @@
         }
       }
     }
-  }
+  },
+    "html.enable": true,
+    "html.format.enable": true,
+    "html.autoClosingTags": true
 }
 

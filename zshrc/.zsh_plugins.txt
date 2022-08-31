@@ -5,3 +5,4 @@ zsh-users/zsh-syntax-highlighting
 djui/alias-tips
 caarlos0/zsh-mkc
 zsh-users/zsh-history-substring-search
+agkozak/zsh-z
