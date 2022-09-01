@@ -17,7 +17,7 @@ client.focused_inactive #24283b #24283b #24283b #24283b #24283b
 client.unfocused        #24283b #24283b #24283b #24283b #24283b
 client.focused          #7da6ff #7da6ff #7da6ff	#7da6ff	#7da6ff
 # Set background
-exec feh --no-xinerama --bg-fill ~/.dotfiles/wallpapers/archcolor.jpg
+exec feh --bg-fill ~/.dotfiles/wallpapers/archcolor.jpg
 
 
 

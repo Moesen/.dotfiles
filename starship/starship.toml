@@ -9,28 +9,33 @@ add_newline = false
 # format = """
 # $directory$conda$git_branch$git_state$git_metrics
 # $username: """
-format = """$character"""
+format = """($git_branch$git_metrics
+)$directory$character"""
 
-right_format = """$directory$conda$git_branch$git_metrics"""
+right_format = """
+($git_state$git_commit$git_status)
+$conda"""
 
 [character]
-success_symbol = "[▶](bold #a7c080)"
-error_symbol = "[▶](bold #e67e80)"
+success_symbol = "[:](bold #a7c080)"
+error_symbol = "[:](bold #e67e80)"
 
 [conda]
 symbol = ""
-format = "[$symbol$environment](bold #a7c080) "
+format = " [$symbol $environment](bold #a7c080) "
+
 [directory]
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = ""
 style = "#a7c080"
 repo_root_style = "bold #7fbbb3"
 
-[git_commit]
-only_detached = false
-
 [git_branch]
 style = "bold #7fbbb3"
+format = "[$symbol$branch]($style) "
+
+[git_commit]
+only_detached = true
 
 [git_metrics]
 disabled = false
@@ -38,19 +43,6 @@ only_nonzero_diffs = false
 added_style = "#a7c080"
 deleted_style = "#e67e80"
 format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
-
-[git_status]
-conflicted = "🏳"
-ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}"
-up_to_date = "✓"
-stashed = "📦"
-modified = "M"
-staged = '[\($count\)](bold #a7c080)'
-renamed = "👅"
-deleted = "🗑"
-style = "bold #7fbbb3"
 
 [username]
 show_always = true
