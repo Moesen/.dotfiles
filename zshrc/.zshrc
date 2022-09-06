@@ -4,9 +4,7 @@ autoload -U compinit; compinit
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
-HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
-
-# Import colorsceheme from 'wal' asyncronously
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true # Import colorsceheme from 'wal' asyncronously
 # (cat ~/.cache/wal/sequences &)
 
 # Starship used for custom prompt
@@ -54,6 +52,7 @@ else
 fi
 unset __conda_setup
 conda activate
+
 
 #######################################################
 #     __ ___  _____  __  ___    ___ ___ ____ __   __   #
@@ -105,11 +104,6 @@ alias clog="tail ~/.local/share/sddm/xorg-session.log"
 
 # Source .zshrc
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
-
-if [[ -d "${HOME}/.local/bin" && -f "${HOME}/.local/bin/Obsidian-*.AppImage" ]]
-then
-    echo "YES" 
-fi
 
 # dotfiles dir
 alias dot="~/.dotfiles"

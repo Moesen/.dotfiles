@@ -10,6 +10,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- Comment and uncomment stuff
 Plug 'tpope/vim-commentary'
 
+-- Rust something
+Plug 'rust-lang/rust.vim'
+
 -- Mark shown
 Plug 'chentoast/marks.nvim'
 
@@ -21,6 +24,9 @@ Plug 'tpope/vim-repeat'
 
 -- Neonight Colorscheme
 Plug('folke/tokyonight.nvim', { branch = 'main' })
+
+-- R support
+-- Plug('jalvesaq/Nvim-R', {branch = 'stable'})
 
 -- Statusline
 Plug 'feline-nvim/feline.nvim'

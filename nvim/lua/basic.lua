@@ -44,7 +44,7 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.signcolumn='number'
 
 -- COC-packages
-vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets"}
+vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets", "coc-rust-analyzer"}
 
 -- Vim Terminal
 -- vim.g.open_in_insert_mode = 0
@@ -57,3 +57,5 @@ vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc
 -- Update every cursor movement
 -- vim.g.tpipeline_cursormoved = 1
 -- vim.g.tpipeline_fillcentre = 1
+
+-- Rust-Analyser
