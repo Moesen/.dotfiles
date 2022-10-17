@@ -62,7 +62,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run
-bindsym $mod+w exec rofi -show window
+bindsym $mod+w exec --no-startup-id ~/.dotfiles/rofi/scripts/rofi_nmcli/rofi-nmcli
 bindsym $mod+e exec rofi -show filebrowser
 bindsym $mod+b exec --no-startup-id ~/.dotfiles/rofi/scripts/rofi-bluetooth/rofi-bluetooth
 
