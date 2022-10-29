@@ -4,7 +4,7 @@ set $mod Mod4
 # Making windows transparent and round
 exec picom 
 
-font Fira Mono 12
+font FiraMono 12
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
