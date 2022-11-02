@@ -24,6 +24,7 @@ Plug 'tpope/vim-repeat'
 
 -- Neonight Colorscheme
 Plug('folke/tokyonight.nvim', { branch = 'main' })
+Plug 'ajmwagar/vim-deus'
 
 -- R support
 -- Plug('jalvesaq/Nvim-R', {branch = 'stable'})
