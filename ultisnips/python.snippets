@@ -41,18 +41,15 @@ snippet section "Quick title"
 #====================${0}====================#
 endsnippet
 
-snippet implt "Import matplotlib fast" b
-import matplotlib.pyplot as plt
-endsnippet
-
-snippet impnp "Import numpy fast" b
-import numpy as np
-endsnippet
-
 snippet plt.figsize "Quick way to make figsize figure"
 fig = plt.figure(figsize=(${1:}, ${2:}))
 endsnippet
 
 snippet bp "Insert breakpoint" b
 breakpoint()
+endsnippet
+
+snippet def "Quick way to define a function" 
+def ${1:FunctionName}(${2:Arguments}) -> ${3:ReturnType}:
+	raise NotImplemtented
 endsnippet

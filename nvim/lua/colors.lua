@@ -10,7 +10,7 @@ vim.o.term='xterm-256color'
 -- Set colorscheme defaults (order is important)
 vim.cmd 'colorscheme deus'
 vim.cmd 'set background=dark'
-vim.cmd 'g:deus_termcolors=256'
+vim.cmd 'let g:deus_termcolors=256'
 
 -- Something with python
 vim.g.python_highlight_all = 1
