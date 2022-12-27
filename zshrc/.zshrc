@@ -105,5 +105,21 @@ alias clog="tail ~/.local/share/sddm/xorg-session.log"
 # Source .zshrc
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
 
+# Alias for ls -a
+alias lsa="ls -a"
+
 # dotfiles dir
 alias dot="~/.dotfiles"
+
+
+#### Functions #####
+gcom() {
+    if [ $# -ne 1 ]
+    then
+        echo "Usage: $funcstack[1] <commit-message>"
+        return
+    fi
+
+    echo "git commit -m '$1'"
+    git commit -m $1
+}

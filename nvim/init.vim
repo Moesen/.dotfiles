@@ -115,7 +115,7 @@ nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> gA <Plug>(coc-codeaction)
 
-" NERDTree keybinds
+" NERDTree keybindis.
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -140,6 +140,14 @@ autocmd! User GoyoLeave Limelight!
 map <leader>vm :vsp $MYVIMRC<CR>
 map <leader>sv :source $MYVIMRC<CR>
 
+" Move latex build files to build folder in vimtex
+let g:vimtex_compiler_latexmk = {
+            \ 'build_dir' : 'build',
+            \}
+
+" Spellchecking
+" setlocal spell spelllang=en_us
+
 " Copy all matches from register
 function! CopyMatches(reg)
   let hits = []
@@ -149,3 +157,5 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 map <leader>cm :let @a=''<cr>:bufdo CopyMatches A<cr>
+
+map <leader>rr :CocCommand rust-analyzer.reload<cr>

@@ -51,5 +51,15 @@ endsnippet
 
 snippet def "Quick way to define a function" 
 def ${1:FunctionName}(${2:Arguments}) -> ${3:ReturnType}:
-	raise NotImplemtented
+	raise NotImplementedError
+endsnippet
+
+snippet import "Quicker way to import packages" 
+import ${1:PackageName}
+endsnippet
+snippet importas "Quicker way to import packages" 
+import ${1:PackageName} as ${2:Shortening}
+endsnippet
+snippet fromimport "Quicker way to import packages" 
+from ${1:PackageName} import ${2:Package}
 endsnippet
