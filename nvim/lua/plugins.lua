@@ -7,6 +7,28 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- https://github.com/wellle/targets.vim
 --Plug 'wellle/targets.vim'
 
+
+-- Obsidian stuff
+-- (required)
+Plug 'nvim-lua/plenary.nvim'
+
+-- (optional) for completion:
+Plug 'hrsh7th/nvim-cmp'
+
+-- (optional) another alternative for the :ObsidianSearch and :ObsidianQuickSwitch commands:
+Plug 'ibhagwan/fzf-lua'
+
+-- (optional) for :ObsidianSearch and :ObsidianQuickSwitch commands if you prefer this over fzf.vim:
+Plug 'nvim-telescope/telescope.nvim'
+
+-- (optional) recommended for syntax highlighting, folding, etc if you're not using nvim-treesitter:
+Plug 'preservim/vim-markdown'
+-- needed by 'preservim/vim-markdown'
+Plug 'godlygeek/tabular'
+
+-- (required)
+Plug 'epwalsh/obsidian.nvim'
+
 -- Comment and uncomment stuff
 Plug 'tpope/vim-commentary'
 

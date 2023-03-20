@@ -59,3 +59,11 @@ vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc
 -- vim.g.tpipeline_fillcentre = 1
 
 -- Rust-Analyser
+
+-- Obsidian
+require("obsidian").setup({
+  dir = "~/Git/SDR/thesis/notes/",
+ completion = {
+    nvim_cmp = false,
+      }
+})

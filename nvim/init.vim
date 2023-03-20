@@ -159,3 +159,5 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 map <leader>cm :let @a=''<cr>:bufdo CopyMatches A<cr>
 
 map <leader>rr :CocCommand rust-analyzer.reload<cr>
+
+map <leader>pr :term python3 % <CR>
