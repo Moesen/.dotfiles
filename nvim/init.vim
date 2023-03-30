@@ -164,3 +164,6 @@ map <leader>pr :term python3 % <CR>
 
 " Obsidian
 map <leader>ot :ObsidianToday <CR>
+
+" Snippets
+map <leader>as :CocCommand snippets.editSnippets <CR>

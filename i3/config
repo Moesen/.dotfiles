@@ -1,4 +1,3 @@
-# Loading colors exec xrdb -merge ~/.dotfiles/ColorThemes/.GithubDimmed
 set $mod Mod4
 
 # Making windows transparent and round

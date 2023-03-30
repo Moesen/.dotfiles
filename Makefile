@@ -4,17 +4,18 @@ symlinks:
 	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc	
 ## Nvim
 	ln -sfn ~/.dotfiles/nvim ~/.config/nvim
-	ln -sfn ~/.dotfiles/ranger ~/.config/ranger
-	ln -sfn ~/.dotfiles/i3 ~/.config 
-	ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
+## Others
+	#ln -sfn ~/.dotfiles/ranger ~/.config/ranger
+	#ln -sfn ~/.dotfiles/i3 ~/.config 
+	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
 # Profile
 	ln -sfn ~/.dotfiles/.profile ~/
 # Alacrity 
 	ln -sfn ~/.dotfiles/alacritty ~/.config/
 # Picom 
-	ln -sf ~/.dotfiles/picom ~/.config
+	#ln -sf ~/.dotfiles/picom ~/.config
 # Tmux 
-	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+	#ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 # Dunst
