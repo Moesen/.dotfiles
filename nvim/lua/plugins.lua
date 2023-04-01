@@ -77,6 +77,7 @@ Plug 'chrisbra/colorizer'
 
 -- Coc - Language Server
 Plug('neoclide/coc.nvim', {branch = 'release'})
+Plug 'honza/vim-snippets'
 
 
 Plug('psf/black', {branch='stable'})

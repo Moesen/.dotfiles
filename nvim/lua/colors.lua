@@ -1,10 +1,10 @@
--------------------------
+----------------------
 --     TRULY BASIC     --
 -------------------------
 -- Screen specifics to make colors work
 -- vim.cmd [[let $NVIM_TUI_ENABLE_TRUE_COLOR=1]]
 -- vim.g.t_Co=256
--- vim.o.term='xterm-256color'
+vim.o.term='xterm-256color'
 
 
 -- Set colorscheme defaults (order is important)
