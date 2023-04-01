@@ -2,18 +2,22 @@
 ```
 font:
   normal:
-    family: "Hasklug Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
 
   bold:
-    family: "Hasklug Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
+    style: "Bold"
 
   italic: 
-    family: "Hasklug Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
+    style: "Italic"
+    
 
   bold_italic:
-    family: "Hasklug Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
+    style: "Bold Italic"
 
-  size: 13.5
+  size: 14.5
 ```
 
 ### **Reminder**

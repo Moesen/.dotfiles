@@ -21,8 +21,6 @@ Plug 'ibhagwan/fzf-lua'
 -- (optional) for :ObsidianSearch and :ObsidianQuickSwitch commands if you prefer this over fzf.vim:
 Plug 'nvim-telescope/telescope.nvim'
 
--- (optional) recommended for syntax highlighting, folding, etc if you're not using nvim-treesitter:
-Plug 'preservim/vim-markdown'
 -- needed by 'preservim/vim-markdown'
 Plug 'godlygeek/tabular'
 
