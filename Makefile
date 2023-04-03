@@ -15,7 +15,7 @@ symlinks:
 # Picom 
 	#ln -sf ~/.dotfiles/picom ~/.config
 # Tmux 
-	#ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 # Dunst

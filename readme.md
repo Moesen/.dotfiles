@@ -33,3 +33,5 @@ sudo chmod a+wr /usr/share/spotify/Apps -R
 - `https://github.com/ph04/dotfiles/blob/main/.config/picom/picom.conf`
 - `https://github.com/jonaburg/picom`
 
+*test*
+

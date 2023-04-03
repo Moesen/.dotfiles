@@ -9,12 +9,16 @@ add_newline = false
 # format = """
 # $directory$conda$git_branch$git_state$git_metrics
 # $username: """
-format = """($git_branch$git_metrics
+format = """($python$git_branch$git_metrics
 )$directory$character"""
 
 right_format = """
-($git_state$git_commit$git_status)
-$conda"""
+($git_state$git_commit$git_status)"""
+
+[python]
+format = 'via [${version}](bold green) (\(${virtualenv}\)) '
+symbol = '󱔎 '
+version_format = '${major}.${minor}.${patch}'
 
 [character]
 success_symbol = "[:](bold #a7c080)"
