@@ -5,6 +5,10 @@ lua require('colors')
 lua require('vimtex')
 lua require('formatting/markdown')
 
+
+" spellchecking
+setlocal spell spelllang=en_us
+
 " Something with colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -169,18 +173,3 @@ map <leader>ot :ObsidianToday <CR>
 
 " Snippets
 map <leader>as :CocCommand snippets.editSnippets <CR>
-
-" disable header folding
-let g:vim_markdown_folding_disabled = 1
-
-" do not use conceal feature, the implementation is not so good
-let g:vim_markdown_conceal = 1
-
-" " disable math tex conceal feature
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-
-" " support front matter of various format
-let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
