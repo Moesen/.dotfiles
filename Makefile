@@ -6,7 +6,7 @@ symlinks:
 	ln -sfn ~/.dotfiles/nvim ~/.config/nvim
 ## Others
 	#ln -sfn ~/.dotfiles/ranger ~/.config/ranger
-	#ln -sfn ~/.dotfiles/i3 ~/.config 
+	ln -sfn ~/.dotfiles/i3 ~/.config/
 	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
 # Profile
 	ln -sfn ~/.dotfiles/.profile ~/
