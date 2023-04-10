@@ -17,7 +17,7 @@ focus_follows_mouse no
 exec --no-startup-id nm-applet
 
 # Setting to change between dk and us
-# bindsym $mod+space exec ~/.config/i3/scripts/i3-keyboard-layout.sh cycle us dk
+bindsym $mod+space exec ~/.config/i3/scripts/i3-keyboard-layout.sh cycle us dk && pkill -RTMIN+7 i3blocks
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -204,7 +204,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3status
+	status_command i3blocks
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
