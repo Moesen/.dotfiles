@@ -1,0 +1,9 @@
+[epoch]
+command=date +%H:%M
+interval=30
+
+[language]
+#label=LNG
+command=./lang_print/script
+interval=once
+signal=7

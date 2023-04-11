@@ -7,9 +7,12 @@ symlinks:
 ## Others
 	#ln -sfn ~/.dotfiles/ranger ~/.config/ranger
 	ln -sfn ~/.dotfiles/i3 ~/.config/
+	ln -sfn ~/.dotfiles/i3blocks/ ~/.config/
 	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
 # Profile
 	ln -sfn ~/.dotfiles/.profile ~/
+# Xrecourses
+	ln -sf ~/.dotfiles/xresources/.Xresources ~/
 # Alacrity 
 	ln -sfn ~/.dotfiles/alacritty ~/.config/
 # Picom 
@@ -19,7 +22,7 @@ symlinks:
 # Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 # Dunst
-	ln -sf ~/.config/dunst/dunstrc
+	# ln -sf ~/.config/dunst/dunstrc
 
 conda_show:
 	conda config --set changeps1 true

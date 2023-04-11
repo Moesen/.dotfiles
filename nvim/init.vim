@@ -7,7 +7,7 @@ lua require('formatting/markdown')
 
 
 " spellchecking
-setlocal spell spelllang=en_us
+
 
 " Something with colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -134,6 +134,9 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
 "     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+autocmd FileType markdown setlocal spell spelllang=en_us 
+autocmd FileType gitcommit setlocal spell spelllang=en_us 
 
 nnoremap <M-z> :ToggleTerminal<Enter>
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"

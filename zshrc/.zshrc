@@ -40,18 +40,18 @@ if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/s
 if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Conda
-__conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/$USER/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-conda activate
+# __conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/$USER/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/$USER/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/$USER/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# conda activate
 
 
 #######################################################
@@ -110,6 +110,12 @@ alias lsa="ls -a"
 
 # dotfiles dir
 alias dot="~/.dotfiles"
+
+# source venv, when in folder for with venv in it
+# deactivate also here
+alias sv="source venv/bin/activate"
+alias da="deactivate"
+
 
 
 #### Functions #####
