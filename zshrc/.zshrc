@@ -116,6 +116,7 @@ alias dot="~/.dotfiles"
 alias sv="source venv/bin/activate"
 alias da="deactivate"
 
+alias cb="~/.dotfiles/zshrc/.cbuild.sh"
 
 
 #### Functions #####
