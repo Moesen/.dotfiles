@@ -142,8 +142,8 @@ nnoremap <M-z> :ToggleTerminal<Enter>
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " Distraction free writing integration
-autocmd! User GoyoEnter Limelight | set wrap
-autocmd! User GoyoLeave Limelight! | set nowrap
+autocmd! User GoyoEnter Limelight | set wrap | set linebreak
+autocmd! User GoyoLeave Limelight! | set nowrap | set nolinebreak
 
 " Keymaps for opening, and sourcing vimrc
 map <leader>vm :vsp $MYVIMRC<CR>
