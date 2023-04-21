@@ -176,3 +176,6 @@ map <leader>ot :ObsidianToday <CR>
 
 " Snippets
 map <leader>as :CocCommand snippets.editSnippets <CR>
+
+" Write and close with ctrl+q
+map <c-q> :wq <CR>
