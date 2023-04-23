@@ -113,7 +113,7 @@ alias dot="~/.dotfiles"
 
 # source venv, when in folder for with venv in it
 # deactivate also here
-alias sv="source venv/bin/activate"
+alias sv="source ./venv/bin/activate"
 alias da="deactivate"
 
 alias cb="~/.dotfiles/zshrc/.cbuild.sh"
@@ -129,4 +129,8 @@ gcom() {
 
     echo "git commit -m '$1'"
     git commit -m $1
+}
+ 
+fnd() {
+    find . -name "$1"
 }
