@@ -8,6 +8,7 @@ font pango:JetBrainsMonoNL Nerd Font Semi-Bold 12
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id volumeicon
+# exec --no-startup-id ../polybar/launch.sh
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 focus_follows_mouse no
@@ -207,9 +208,6 @@ bar {
 	status_command i3blocks
 	position bottom
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-	# tray_output eDP1
 
     font xft:URWGothic-Book 11
 	strip_workspace_numbers yes
@@ -276,3 +274,5 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Todoist"] fullscreen enable
+
+
