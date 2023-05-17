@@ -134,3 +134,17 @@ gcom() {
 fnd() {
     find . -name "$1"
 }
+
+alias to="touch"
+
+push_dot_changes() {
+    if [ $# -ne 1 ]
+    then
+        echo "Usage $funcstac[1] <commit-message>" 
+        return
+    fi
+
+    git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME/.dotfiles add .
+    git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME/.dotfiles commit -m $1
+    git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME/.dotfiles push
+}

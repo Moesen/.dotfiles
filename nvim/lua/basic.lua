@@ -37,14 +37,15 @@ vim.o.expandtab = true
 -- Coc specific options added here for more clarity
 -- Time before generally before updated
 -- Especially nice for coc updates
-vim.opt.updatetime=200
+vim.opt.updatetime = 200
 
 -- Don't pass messages to |ins-completion-menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.signcolumn='number'
+vim.o.signcolumn = 'number'
 
 -- COC-packages
-vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc-pydocstring","coc-snippets", "coc-rust-analyzer"}
+vim.g.coc_global_extensions = { 'coc-json', 'coc-pyright', 'coc-css', 'coc-lua', "coc-pydocstring", "coc-snippets",
+    "coc-rust-analyzer" }
 
 -- Vim Terminal
 -- vim.g.open_in_insert_mode = 0
@@ -60,6 +61,6 @@ vim.g.coc_global_extensions = {'coc-json','coc-pyright','coc-css','coc-lua',"coc
 
 -- Rust-Analyser
 require("obsidian").setup({
-  dir = "~/Git/SDR/thesis/obsidian",
-  notes_subdir = "notes",
+    dir = "~/Git/SDR/obsidian",
+    notes_subdir = "notes",
 })

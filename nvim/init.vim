@@ -55,6 +55,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+autocmd FileType c,cpp nmap <silent> gi :CocCommand clangd.switchSourceHeader<CR>
+
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -138,7 +140,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd FileType markdown setlocal spell spelllang=en_us 
 autocmd FileType gitcommit setlocal spell spelllang=en_us 
 
-nnoremap <M-z> :ToggleTerminal<Enter>
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " Distraction free writing integration
