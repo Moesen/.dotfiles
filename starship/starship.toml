@@ -2,15 +2,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Remove blank line between shell prompts
-add_newline = false
+add_newline = true
 
 # Format for showed
 # $git_status
 # format = """
 # $directory$conda$git_branch$git_state$git_metrics
 # $username: """
-format = """($python$git_branch$git_metrics
-)$username$directory$character"""
+format = """($username$python$git_branch$git_metrics
+)$directory$character"""
 
 right_format = """
 ($git_state$git_commit$git_status)"""
@@ -21,8 +21,8 @@ symbol = '󱔎 '
 version_format = '${major}.${minor}.${patch}'
 
 [character]
-success_symbol = "[:](bold green)"
-error_symbol = "[:](bold red)"
+success_symbol = "[:](bold white)"
+error_symbol = "[:](bold white)"
 
 [conda]
 symbol = ""
@@ -30,12 +30,14 @@ format = " [$symbol $environment](bold green) "
 
 [directory]
 truncation_length = 3
-truncation_symbol = ""
-style = "bright-yellow"
-repo_root_style = "bold yellow"
+truncation_symbol = ".../"
+style = "yellow"
+repo_root_style = "bold blue"
+repo_root_format = '[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
-style = "bold italic blue"
+style = "bold blue"
 format = "[$symbol$branch]($style) "
 
 [git_commit]
@@ -50,5 +52,5 @@ format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
 
 [username]
 show_always = true
-format = '\[[$user]($style)\]'
+format = '@[$user]($style) '
 style_user = "bold fg"
