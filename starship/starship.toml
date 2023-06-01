@@ -10,7 +10,7 @@ add_newline = false
 # $directory$conda$git_branch$git_state$git_metrics
 # $username: """
 format = """($python$git_branch$git_metrics
-)$directory$character"""
+)$username$directory$character"""
 
 right_format = """
 ($git_state$git_commit$git_status)"""
@@ -21,21 +21,21 @@ symbol = '󱔎 '
 version_format = '${major}.${minor}.${patch}'
 
 [character]
-success_symbol = "[:](bold #a7c080)"
-error_symbol = "[:](bold #e67e80)"
+success_symbol = "[:](bold green)"
+error_symbol = "[:](bold red)"
 
 [conda]
 symbol = ""
-format = " [$symbol $environment](bold #a7c080) "
+format = " [$symbol $environment](bold green) "
 
 [directory]
-truncation_length = 2
+truncation_length = 3
 truncation_symbol = ""
-style = "#a7c080"
-repo_root_style = "bold #7fbbb3"
+style = "bright-yellow"
+repo_root_style = "bold yellow"
 
 [git_branch]
-style = "bold #7fbbb3"
+style = "bold italic blue"
 format = "[$symbol$branch]($style) "
 
 [git_commit]
@@ -44,11 +44,11 @@ only_detached = true
 [git_metrics]
 disabled = false
 only_nonzero_diffs = false
-added_style = "#a7c080"
-deleted_style = "#e67e80"
+added_style = "green"
+deleted_style = "red"
 format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
 
 [username]
 show_always = true
-format = "[$user]($style)"
-style_user = "bold #a7c080"
+format = '\[[$user]($style)\]'
+style_user = "bold fg"

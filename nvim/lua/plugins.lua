@@ -76,11 +76,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'chrisbra/colorizer'
 
 -- Coc - Language Server
-Plug('neoclide/coc.nvim', {branch = 'release'})
+Plug('neoclide/coc.nvim', { branch = 'release' })
 Plug 'honza/vim-snippets'
 
 
-Plug('psf/black', {branch='stable'})
+Plug('psf/black', { branch = 'stable' })
 
 -- Indented lines
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -99,7 +99,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
--- Extended syntax highlighting for python 
+-- Extended syntax highlighting for python
 Plug "vim-python/python-syntax"
 
 -- Better syntax for lua specifically in nvim scripting
@@ -112,5 +112,7 @@ Plug 'mattn/emmet-vim'
 -- Vim diff tool
 Plug "tpope/vim-fugitive"
 
-vim.call('plug#end')
+-- Color theme
+Plug 'KabbAmine/yowish.vim'
 
+vim.call('plug#end')

@@ -248,6 +248,30 @@ schemes:
       magenta: '#c858e9'
       cyan:    '#2bcec2'
       white:   '#ffffff'
+  yowish: &yowish
+    primary:
+      background: '#222222'
+      foreground: '#cbcbcb'
+    # Normal colors
+    normal:
+      black:   '#0e0e0e'
+      red:     '#f01d22'
+      green:   '#2acf2a'
+      yellow:  '#ffbe3c'
+      blue:    '#6699cc'
+      magenta: '#d09cea'
+      cyan:    '#70c0ba'
+      white:   '#ebebeb'
+    # Bright colors
+    bright:
+      black:   '#6e6e6e'
+      red:     '#f2777a'
+      green:   '#99cc99'
+      yellow:  '#edbf69'
+      blue:    '#6699cc'
+      magenta: '#d09cea'
+      cyan:    '#2bcec2'
+      white:   '#ffffff'
 
 # Apply
-colors: *deus
+colors: *yowish
