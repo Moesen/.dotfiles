@@ -14,8 +14,8 @@ XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
-*background:                      #222D31
-*foreground:                      #d8d8d8
+*background:                      #222222
+*foreground:                      #cbcbcb
 *fading:                          8
 *fadeColor:                       black
 *cursorColor:                     #1ABB9B
@@ -23,36 +23,36 @@ XTerm*selectToClipboard: true
 *pointerColorForeground:          #16A085
 
 !! black dark/light
-*color0:                          #222D31
-*color8:                          #585858
+*color0:                          #0e0e0e
+*color8:                          #6e6e6e
 
 !! red dark/light
-*color1:                          #ab4642
-*color9:                          #ab4642
+*color1:                          #f01d22
+*color9:                          #f2777a
 
 !! green dark/light
-*color2:                          #7E807E
-*color10:                         #8D8F8D
+*color2:                          #2acf2a
+*color10:                         #99cc99
 
 !! yellow dark/light
-*color3:                          #f7ca88
-*color11:                         #f7ca88
+*color3:                          #ffbe3c
+*color11:                         #edbf69
 
 !! blue dark/light
-*color4:                          #7cafc2
-*color12:                         #7cafc2
+*color4:                          #6699cc
+*color12:                         #6699cc
 
 !! magenta dark/light
-*color5:                          #ba8baf
-*color13:                         #ba8baf
+*color5:                          #d09cea
+*color13:                         #d09cea
 
 !! cyan dark/light
-*color6:                          #1ABB9B
-*color14:                         #1ABB9B
+*color6:                          #70c0ba
+*color14:                         #2bcec2
 
 !! white dark/light
-*color7:                          #d8d8d8
-*color15:                         #f8f8f8
+*color7:                          #ebebeb
+*color15:                         #ffffff
 
 Xcursor.theme: xcursor-breeze
 Xcursor.size:                     0

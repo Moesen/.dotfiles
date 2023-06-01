@@ -183,24 +183,32 @@ exec_always --no-startup-id fix_xcursor
 # to:
 # background $term_background
 # Same logic applied to everything else.
-set_from_resource $term_background background
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
+set_from_resource   $bg                background
+set_from_resource   $fg                foreground
+
+set_from_resource   $dark-black        color0
+set_from_resource   $light-black       color8
+
+set_from_resource   $dark-red          color1
+set_from_resource   $light-red         color9
+
+set_from_resource   $dark-green        color2
+set_from_resource   $light-green       color10
+
+set_from_resource   $dark-yellow       color3
+set_from_resource   $light-yellow      color11
+
+set_from_resource   $dark-blue         color4
+set_from_resource   $light-blue        color12
+
+set_from_resource   $dark-magenta      color5
+set_from_resource   $light-magenta     color13
+
+set_from_resource   $dark-cyan         color6
+set_from_resource   $light-cyan        color14
+
+set_from_resource   $dark-white        color7
+set_from_resource   $light-white       color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
@@ -214,12 +222,12 @@ bar {
     strip_workspace_name no
 
     colors {
-        background #2c323b
-        statusline #eaeaea
-        separator  #eaeaea
+        background $bg
+        statusline $fg
+        separator  $dark-green
 
 #                      border    backgr.    text
-    focused_workspace  #eaeaea   #7aba9f    #2c323b
+    focused_workspace  #eaeaea   #16a085    #2c323b
     active_workspace   #eaeaea   #ffffff    #FDF6E3
     inactive_workspace #595B5B   #222D31    #EEE8D5
     binding_mode       #16a085   #2C2C2C    #F9FAF9
@@ -238,7 +246,7 @@ client.unfocused          #2c323a #2c323a #a0a0a0 #454948
 client.urgent             #CB4B16 #FDF6E3 #d54e53 #268BD2
 client.placeholder        #000000 #0c0c0c #a0a0a0 #000000 
 
-client.background       #term
+client.background       $bg
 
 gaps inner 14
 gaps outer -2
