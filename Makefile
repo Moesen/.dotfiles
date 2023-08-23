@@ -21,6 +21,8 @@ symlinks:
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
+# Kitty
+	ln -sfn ~/.dotfiles/kitty ~/.config/
 # Dunst
 	# ln -sf ~/.config/dunst/dunstrc
 
