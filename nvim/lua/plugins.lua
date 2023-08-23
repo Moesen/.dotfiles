@@ -115,4 +115,7 @@ Plug "tpope/vim-fugitive"
 -- Color theme
 Plug 'KabbAmine/yowish.vim'
 
+-- grpc / protobuf syntax highlighting
+Plug 'wfxr/protobuf.vim'
+
 vim.call('plug#end')

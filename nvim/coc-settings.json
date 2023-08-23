@@ -3,7 +3,7 @@
     "html.format.enable": true,
     "html.autoClosingTags": true,
     "coc.preferences.formatOnSave": true,
-    "snippets.ultisnips.pythonPrompt": true,
+    "snippets.ultisnips.pythonPrompt": false,
     "python.analysis.typeCheckingMode": "basic",
     "python.formatting.provider": "black",
     "python.linting.pytypeEnabled": true,

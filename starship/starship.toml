@@ -48,7 +48,7 @@ disabled = false
 only_nonzero_diffs = false
 added_style = "green"
 deleted_style = "red"
-format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
+format = '\(( [+$added]($added_style) |( [-$deleted]($deleted_style) ))\)'
 
 [username]
 show_always = true

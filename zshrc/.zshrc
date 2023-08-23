@@ -33,12 +33,6 @@ export EDITOR="nvim"
 # Ranger command to use config file instead
 RANGER_LOAD_DEFAULT_RC="false"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/$USER/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/$USER/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snoooze/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Conda
 # __conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
@@ -118,7 +112,6 @@ alias da="deactivate"
 
 alias cb="~/.dotfiles/zshrc/.cbuild.sh"
 
-
 #### Functions #####
 gcom() {
     if [ $# -ne 1 ]
@@ -132,7 +125,7 @@ gcom() {
 }
  
 fnd() {
-    find . -name "$1"
+    find . -wholename "$1"
 }
 
 alias to="touch"
@@ -147,4 +140,30 @@ push_dot_changes() {
     git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME/.dotfiles add .
     git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME/.dotfiles commit -m $1
     git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME/.dotfiles push
+}
+
+push_notes() {
+    cur=$(pwd)
+    cd ~/Vaults/vault-alvenir
+    git add .
+    git commit -m "auto: add notes for the day"
+    git push
+    cd $cur
+}
+
+alias activate_az="source ~/azure-cli-env/bin/activate"
+alias activate_alvenir="source ~/alvenir/ameya/alvenir_venv/bin/activate"
+alias pwdxc="pwd | xc"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/snooze/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snooze/tmp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/snooze/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snooze/tmp/google-cloud-sdk/completion.zsh.inc'; fi
+
+sc() {
+    cur=$(pwd)
+}
+gb() {
+    cd $cur
 }
