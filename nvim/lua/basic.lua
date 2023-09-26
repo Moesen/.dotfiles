@@ -61,6 +61,6 @@ vim.g.coc_global_extensions = { 'coc-json', 'coc-pyright', 'coc-css', 'coc-lua',
 
 -- Rust-Analyser
 require("obsidian").setup({
-    dir = "~/Git/SDR/obsidian",
-    notes_subdir = "notes",
+    dir = "~/Vaults/vault-alvenir",
+    notes_subdir = "Daily Notes",
 })

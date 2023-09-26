@@ -143,16 +143,26 @@ push_dot_changes() {
 }
 
 push_notes() {
-    cur=$(pwd)
+    tmp=$(pwd)
     cd ~/Vaults/vault-alvenir
     git add .
     git commit -m "auto: add notes for the day"
     git push
-    cd $cur
+    cd $tmp
+    unset tmp
 }
 
-alias activate_az="source ~/azure-cli-env/bin/activate"
-alias activate_alvenir="source ~/alvenir/ameya/alvenir_venv/bin/activate"
+# Activate Azure Python Venv
+alias activate-az="source ~/azure-cli-env/bin/activate"
+alias azz="source ~/azure-cli-env/bin/activate"
+# Activate Alvenir Python Venv
+alias activate-alvenir="source ~/alvenir/ameya/alvenir_venv/bin/activate"
+alias al="source ~/alvenir/ameya/alvenir_venv/bin/activate"
+
+# Shortcut for kubectl port forward
+alias kpf="kubectl port-forward"
+
+# Copy cur path and save to clipboard
 alias pwdxc="pwd | xc"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -166,4 +176,53 @@ sc() {
 }
 gb() {
     cd $cur
+}
+
+function make_deploy_all() {
+    make -C ~/alvenir/ameya/infrastructure deploy-all
+}
+
+function make_destroy_all() {
+    make -C ~/alvenir/ameya/infrastructure destroy-all
+}
+
+function podlog {
+    readonly namespace=${1:?"Namespace must be specified"}
+    readonly podname=${2:?"Podname must be specified"}
+    kubectl logs -n $namespace $podname
+}
+
+function grep_podlog {
+    readonly namespace=${1:?"Namespace must be specified"}
+    readonly grepname=${2:?"Must specify grep filter see podlog if grep not required"}
+    readonly podname=${3:?"Podname must be specified"}
+    kubectl logs -n $namespace $podname | grep $grepname
+}
+
+function grep_all_pod_logs {
+    readonly namespace=${1:?"Namespace must be specified"}
+    readonly grepname=${2:?"Must specify grep filter see podlog if grep not required"}
+    readonly podname=${3:?"Podname must be specified"}
+
+
+    for pod in $(echo "$(kubectl get pods -n $namespace -o name | grep $podname)")
+    do
+        echo $pod
+        echo "$(kubectl logs -n $namespace $pod | grep $grepname)"
+    done
+}
+
+function watch_pods() {
+    readonly namespace=${1:?"Namespace must be specified"}
+    watch kubectl get pods -n $namespace
+}
+
+alias plog="podlog"
+alias glog="grep_podlog"
+alias mdp="make_deploy_all"
+alias mds="make_destroy_all"
+alias wpods="watch_pods"
+
+docker_status() {
+    docker ps --format 'table {{.ID}} \t {{.Names}} \t {{.Status}}'
 }

@@ -142,6 +142,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd FileType markdown setlocal spell spelllang=en_us 
 autocmd FileType gitcommit setlocal spell spelllang=en_us 
 
+autocmd FileType python set foldmethod=indent
+
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " Distraction free writing integration
@@ -171,6 +173,7 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 map <leader>cm :let @a=''<cr>:bufdo CopyMatches A<cr>
 
 map <leader>rr :CocCommand rust-analyzer.reload<cr>
+map <leader>rg :RustRun<cr>
 
 map <leader>pr :term python3 % <CR>
 
