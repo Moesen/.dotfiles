@@ -25,6 +25,8 @@ symlinks:
 	ln -sfn ~/.dotfiles/kitty ~/.config/
 # Dunst
 	# ln -sf ~/.config/dunst/dunstrc
+# Rofi
+	ln -sfn ~/.dotfiles/rofi ~/.config/
 
 conda_show:
 	conda config --set changeps1 true
