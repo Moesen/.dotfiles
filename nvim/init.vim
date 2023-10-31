@@ -6,14 +6,17 @@ lua require('vimtex')
 lua require('formatting/markdown')
 
 
-" spellchecking
-
-
 " Something with colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set signcolumn=yes
+
+" REGEX
+" Inverses how regex characters are typed
+" From \(\) -> ()
+" default: set magic
+
 
 set termguicolors
 syntax enable
@@ -139,6 +142,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
 "     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
+" Spell checking
 autocmd FileType markdown setlocal spell spelllang=en_us 
 autocmd FileType gitcommit setlocal spell spelllang=en_us 
 
@@ -185,3 +189,8 @@ map <leader>as :CocCommand snippets.editSnippets <CR>
 
 " Write and close with ctrl+q
 map <c-q> :wq <CR>
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

@@ -9,7 +9,7 @@ vim.o.term = 'xterm-256color'
 
 -- Set colorscheme defaults (order is important)
 vim.cmd 'set background=dark'
-vim.cmd 'colorscheme yowish'
+vim.cmd 'colorscheme gruvbox'
 vim.cmd 'let g:deus_termcolors=256'
 
 -- Something with python

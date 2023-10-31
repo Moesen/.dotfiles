@@ -42,12 +42,11 @@ Plug 'tpope/vim-surround'
 -- Implements repeat (.) for non-native calls
 Plug 'tpope/vim-repeat'
 
--- Neonight Colorscheme
+-- ----Colorschemes / Themes----
+--
 Plug('folke/tokyonight.nvim', { branch = 'main' })
 Plug 'ajmwagar/vim-deus'
-
--- R support
--- Plug('jalvesaq/Nvim-R', {branch = 'stable'})
+Plug 'ellisonleao/gruvbox.nvim'
 
 -- Statusline
 Plug 'feline-nvim/feline.nvim'
