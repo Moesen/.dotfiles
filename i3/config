@@ -7,15 +7,11 @@ font pango:JetBrainsMonoNL Nerd Font Semi-Bold 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 # exec --no-startup-id ../polybar/launch.sh
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 focus_follows_mouse no
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
 
 # Setting to change between dk and us
 bindsym $mod+space exec ~/.config/i3/scripts/i3-keyboard-layout.sh cycle us dk && pkill -RTMIN+7 i3blocks
@@ -158,11 +154,11 @@ bindsym $mod+b exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec --no-startup-id blueman-applet
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id clipit
+# exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -177,8 +173,30 @@ client.placeholder        #000000 #0c0c0c #a0a0a0 #000000
 
 client.background       #282828
 
-gaps inner 20
+gaps inner 5
 gaps outer 0
 
 smart_gaps on
 smart_borders on
+
+bar {
+    status_command i3status
+    status_command exec ~/.dotfiles/i3/scripts/i3-keyboard-layout.sh i3status
+    i3bar_command i3bar --transparency
+    position bottom
+    colors {
+        background #282828
+        statusline #ebdbb2AA
+        focused_workspace #ebdbb2 #ebdbb2 #282828
+        active_workspace #d3869b #d3869b #282828
+        urgent_workspace #d3869b #d3869b #282828
+    }
+    strip_workspace_numbers yes
+    strip_workspace_name no
+    padding -1px 0 -1px 0
+}
+
+# hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
+
+for_window [class="^.*"] border pixel 0
