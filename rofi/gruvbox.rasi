@@ -14,7 +14,6 @@
 * {
     /* Theme settings */
     highlight: bold italic;
-    scrollbar: true;
 
     /* Gruvbox dark colors */
     gruvbox-dark-bg0:          #282828;
@@ -31,16 +30,19 @@
     /* Theme colors */
     background:                  @gruvbox-dark-bg0;
     background-color:            @background;
+    background-alt:              @gruvbox-dark-bg0;
     foreground:                  @gruvbox-dark-fg1;
-    border-color:                @gruvbox-dark-gray;
+    border-color:                transparent;
     separatorcolor:              @border-color;
     scrollbar-handle:            @border-color;
+    active:                      @active-background;
 
     normal-background:           @background;
     normal-foreground:           @foreground;
     alternate-normal-background: @gruvbox-dark-bg0-soft;
     alternate-normal-foreground: @foreground;
     selected-normal-background:  @gruvbox-dark-bg3;
+    selected: @selected-normal-background;
     selected-normal-foreground:  @gruvbox-dark-fg0;
 
     active-background:           @gruvbox-dark-yellow-dark;
@@ -51,6 +53,7 @@
     selected-active-foreground:  @active-foreground;
 
     urgent-background:           @gruvbox-dark-red-dark;
+    urgent:                      @urgent-background;
     urgent-foreground:           @background;
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @urgent-foreground;
