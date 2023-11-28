@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
-    icon-theme: "Papirus-Dark";
+    icon-theme: "Oxygen_Yellow";
     terminal: "kitty";
     cycle: true;
     hide-scrollbar: true;
