@@ -25,13 +25,16 @@ cycle() {
   source ~/.profile
 }
 
-i3status() {
-  while :
-  do
-    read line
-    block="{\"full_text\":\"$(get_kbdlayout)\"}"
-    echo "${line/\[\{/\[$block,\{}"|| exit 1
-  done
+passkb() {
+i3status | (read line && echo $line && while :
+    do
+        read line
+        # block="{\"full_text\":\"$(get_kbdlayout)\"}"
+        # echo $block
+        block="$(get_kbdlayout)"
+        # echo "${line/\[\{/\[$block,\{}"|| exit 1
+        echo "$line | $block" || exit 1
+done)
 }
 
 subcommand="$1"
@@ -48,7 +51,7 @@ case $subcommand in
     cycle "$@"
     ;;
   "i3status")
-    i3status
+    passkb
     ;;
 esac
 

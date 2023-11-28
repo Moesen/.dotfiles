@@ -4,11 +4,11 @@ symlinks:
 	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc	
 ## Nvim
 	ln -sfn ~/.dotfiles/nvim ~/.config/nvim
-## Others
-	#ln -sfn ~/.dotfiles/ranger ~/.config/ranger
+## i3wm
 	ln -sfn ~/.dotfiles/i3 ~/.config/
-	ln -sfn ~/.dotfiles/i3blocks/ ~/.config/
-	ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
+	ln -sfn ~/.dotfiles/i3status ~/.config/
+	#ln -sfn ~/.dotfiles/i3blocks/ ~/.config/
+	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
 # Profile
 	ln -sfn ~/.dotfiles/.profile ~/
 # Xrecourses

@@ -1,13 +1,12 @@
-# Terminate already running bar instances
-# If all your bars have ipc enabled, you can use 
-# polybar-msg cmd quit
-# Otherwise you can use the nuclear option:
 killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-polybar left &
-polybar okkertime &
-polybar mid &
-polybar right &
-# polybar title
-# echo "Bars launched..."
+bars=(left okkertime mid right)
+for bar in "${bars[@]}"; do 
+    polybar $bar 2>&1 | tee -a /tmp/polybar-$bar.log & disown
+done
+
+# polybar left &
+# polybar okkertime &
+# polybar mid &
+# polybar right &
