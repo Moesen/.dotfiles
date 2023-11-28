@@ -117,4 +117,7 @@ Plug 'KabbAmine/yowish.vim'
 -- grpc / protobuf syntax highlighting
 Plug 'wfxr/protobuf.vim'
 
+-- Git Diff tool
+Plug 'sindrets/diffview.nvim'
+
 vim.call('plug#end')

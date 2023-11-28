@@ -158,116 +158,27 @@ bindsym $mod+b exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-# exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# Color palette used for the terminal ( ~/.Xresources file )
-set_from_resource   $bg                background
-set_from_resource   $fg                foreground
-
-set_from_resource   $dark-black        color0
-set_from_resource   $light-black       color8
-
-set_from_resource   $dark-red          color1
-set_from_resource   $light-red         color9
-
-set_from_resource   $dark-green        color2
-set_from_resource   $light-green       color10
-
-set_from_resource   $dark-yellow       color3
-set_from_resource   $light-yellow      color11
-
-set_from_resource   $dark-blue         color4
-set_from_resource   $light-blue        color12
-
-set_from_resource   $dark-magenta      color5
-set_from_resource   $light-magenta     color13
-
-set_from_resource   $dark-cyan         color6
-set_from_resource   $light-cyan        color14
-
-set_from_resource   $dark-white        color7
-set_from_resource   $light-white       color15
-
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	i3bar_command i3bar
-	status_command i3blocks
-	position bottom
-
-
-    font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-    strip_workspace_name no
-
-    colors {
-        background $bg
-        statusline $fg
-        separator  $dark-green
-
-#                      border    backgr.    text
-    focused_workspace  #eaeaea   #16a085    #2c323b
-    active_workspace   #eaeaea   #ffffff    #FDF6E3
-    inactive_workspace #595B5B   #222D31    #EEE8D5
-    binding_mode       #16a085   #2C2C2C    #F9FAF9
-    urgent_workspace   #16a085   #FDF6E3    #E5201D
-    }
-}
-
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
-
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused            #2c323a #2c323a #eaeaea #eaeaea
+client.focused            #2c323a #665c54 #eaeaea #eaeaea
 client.focused_inactive   #2c323a #2c323a #1ABC9C #454948
-client.unfocused          #2c323a #2c323a #a0a0a0 #454948
+client.unfocused          #2c323a #3c3836 #a0a0a0 #454948
 client.urgent             #CB4B16 #FDF6E3 #d54e53 #268BD2
 client.placeholder        #000000 #0c0c0c #a0a0a0 #000000 
 
-client.background       $bg
+client.background       #282828
 
 gaps inner 20
 gaps outer 0
 
 smart_gaps on
 smart_borders on
-
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
-for_window [class="Todoist"] fullscreen enable
-
-

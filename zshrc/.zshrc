@@ -45,6 +45,10 @@ if ! type "$kubectl" > /dev/null; then;
     source <(kubectl completion zsh)
 fi
 
+if ! type "minikube" > /dev/null; then;
+    source <(minikube completion zsh)
+fi
+
 # Ranger command to use config file instead
 RANGER_LOAD_DEFAULT_RC="false"
 
@@ -61,7 +65,6 @@ RANGER_LOAD_DEFAULT_RC="false"
 # fi
 # unset __conda_setup
 # conda activate
-
 
 #######################################################
 #     __ ___  _____  __  ___    ___ ___ ____ __   __   #
@@ -140,24 +143,14 @@ push_notes() {
     unset tmp
 }
 
-# Activate Azure Python Venv
-alias activate-az="source ~/azure-cli-env/bin/activate"
-alias azz="source ~/azure-cli-env/bin/activate"
 # Activate Alvenir Python Venv
-alias activate-alvenir="source ~/alvenir/ameya/alvenir_venv/bin/activate"
-alias al="source ~/alvenir/ameya/alvenir_venv/bin/activate"
+alias al="source ~/alvenir/envs/alvenir_venv/bin/activate"
 
 # Shortcut for kubectl port forward
 alias kpf="kubectl port-forward"
 
 # Copy cur path and save to clipboard
 alias pwdxc="pwd | xc"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/snooze/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snooze/tmp/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/snooze/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snooze/tmp/google-cloud-sdk/completion.zsh.inc'; fi
 
 sc() {
     cur=$(pwd)
@@ -214,13 +207,34 @@ function force_delete_pods() {
     done
 }
 
-function rename() {
-    readonly filepath=${1:?"Filepath must be specified"}
-    readonly newname=${2:?"New name for file must be specified"}
-    fp=${filepath%/*}
-    fn=${filepath##*/} 
-    mv fp/fn fp/newname
+function setup_tmux_cluster_test() {
+    local window_name="cluster test"
+    # Check if inside a tmux session
+    if [ -z "$TMUX" ]; then
+        # Not in tmux, start a new session
+        tmux new-session -d -s dev -n "$window_name"
+    else
+        # In tmux, create a new window
+        tmux new-window -n "$window_name"
+    fi
+
+    # Split window into panes
+    tmux split-window -h
+    tmux select-pane -t 0
+    tmux split-window -v
+
+    # Run make commands in the left panes
+    tmux send-keys -t 0 'make -C ~/alvenir/ameya/infrastructure ingress-port-forward' C-m
+    tmux send-keys -t 1 'make -C ~/alvenir/ameya/infrastructure egress-port-forward' C-m
+
+    # Change directory in the right pane
+    tmux select-pane -t 2
+    tmux send-keys 'cd ~/alvenir/ameya/dev-tools/grpc-tools' C-m
+
+    # Attach to tmux session or window
+    tmux attach-session -t dev
 }
+
 
 alias plog="podlog"
 alias glog="grep_podlog"
@@ -228,10 +242,37 @@ alias dp="make_deploy_all"
 alias ds="make_destroy_all"
 alias wpods="watch_pods"
 alias k="kubectl"
+alias clear_vim_swaps="rm ~/.local/state/nvim/swap/*"
+alias ez="nvim ~/.zshrc"
+alias i="cd ~/alvenir/ameya/infrastructure"
+alias st="setup_tmux_cluster_test"
 
 docker_status() {
     docker ps --format 'table {{.ID}} \t {{.Names}} \t {{.Status}}'
 }
 
+grafana() {
+    o=$(k get svc -n monitoring --field-selector metadata.name=grafana -o custom-columns=external:.status.loadBalancer.ingress)
+    regex='\[map\[ip:(([0-9]{1,3}\.?){4})'
+    if [[ $o =~ $regex ]]; then
+        ip=${match[1]}
+        firefox --new-tab "http://$ip"
+    else
+        echo "Grafana external ip not found"
+    fi
+}
+alias g="grafana"
+
 alias oh="nvim ~/alvenir/ameya/infrastructure/helmfile.yaml"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/snooze/pkg/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snooze/pkg/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/snooze/pkg/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snooze/pkg/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Open windows to alvenir-stuff
+tab_alvenir() {
+    local jira="https://danspeech.atlassian.net/jira/software/projects/APR/boards/14?assignee=712020%3A4c0fbb31-8e09-4638-8f9a-d3a24b9ef3c6"
+    firefox --new-tab "$jira"
+} 
