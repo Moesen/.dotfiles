@@ -1,14 +1,6 @@
 set $mod Mod4
-# Font for window titles. Will also be ed by the bar unless a different font
-# is used in the bar {} block below.
-font pango:JetBrainsMonoNL Nerd Font Semi-Bold 12
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+font pango:JetBrainsMono Nerd Font Semi-Bold 15
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# exec --no-startup-id volumeicon
-# exec --no-startup-id ../polybar/launch.sh
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 focus_follows_mouse no
@@ -147,13 +139,9 @@ bindsym $mod+b exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-# exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
-# exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
+# exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # Theme colors
@@ -166,30 +154,31 @@ client.placeholder        #000000 #0c0c0c #a0a0a0 #000000
 
 client.background       #282828
 
-gaps inner 5
+gaps inner 0
 gaps outer 0
 
-smart_gaps on
+# smart_gaps on
 smart_borders on
 
 bar {
     status_command i3status
     status_command exec ~/.dotfiles/i3/scripts/i3-keyboard-layout.sh i3status
     i3bar_command i3bar --transparency
-    position bottom
+    output eDP
+    position top
     colors {
-        background #282828
+        background #282828DD
         statusline #ebdbb2AA
-        focused_workspace #ebdbb2 #ebdbb2 #282828
-        active_workspace #d3869b #d3869b #282828
-        urgent_workspace #d3869b #d3869b #282828
+        focused_workspace #ebdbb2AA #ebdbb2AA #28282800
+        active_workspace #d3869bAA #d3869bAA #28282800
+        urgent_workspace #d3869bAA #d3869bAA #28282800
     }
     strip_workspace_numbers yes
     strip_workspace_name no
-    padding -1px 0 -1px 0
+    padding 0px 10px 0px 10px
 }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1

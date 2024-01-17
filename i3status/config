@@ -54,3 +54,4 @@ volume master {
         format_muted = " ♪ no "
         device = "pulse:0"
 }
+# vim: ft=cfg

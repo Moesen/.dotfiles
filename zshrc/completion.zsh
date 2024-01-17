@@ -34,3 +34,20 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
+
+# Load autocompletion for helmfile
+if ! type "$helmfile" > /dev/null; then;
+    source <(helmfile completion zsh)
+fi
+
+if ! type "$helm" > /dev/null; then;
+    source <(helm completion zsh)
+fi
+
+if ! type "$kubectl" > /dev/null; then;
+    source <(kubectl completion zsh)
+fi
+
+if ! type "$minikube" > /dev/null; then;
+    source <(minikube completion zsh)
+fi

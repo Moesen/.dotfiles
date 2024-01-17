@@ -4,21 +4,16 @@
 # Remove blank line between shell prompts
 add_newline = true
 
-# Format for showed
-# $git_status
-# format = """
-# $directory$conda$git_branch$git_state$git_metrics
-# $username: """
-format = """($username$python$git_branch$git_metrics
+format = """($python$git_branch$git_metrics
 )$directory$character"""
 
 right_format = """
 ($git_state$git_commit$git_status)"""
 
 [python]
-format = 'via [${version}](bold green) (\(${virtualenv}\)) '
+format = '[$symbol${version}](bold #8ec07c) (\(${virtualenv}\)) '
 symbol = '󱔎 '
-version_format = '${major}.${minor}.${patch}'
+version_format = '${major}.${minor}'
 
 [character]
 success_symbol = "[:](bold white)"
@@ -26,19 +21,21 @@ error_symbol = "[:](bold white)"
 
 [conda]
 symbol = ""
-format = " [$symbol $environment](bold green) "
+format = " [$symbol $environment](bold #8ec07c) "
 
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
-style = "yellow"
-repo_root_style = "bold blue"
+style = "bold #8ec07c"
+repo_root_style = "bold #83a598"
 repo_root_format = '[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 format = '[$path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
-style = "bold green"
+style = "bold #8ec07c"
 format = "[$symbol$branch]($style) "
+truncation_length = 10
+truncation_symbol = "-"
 
 [git_commit]
 only_detached = true
@@ -46,8 +43,8 @@ only_detached = true
 [git_metrics]
 disabled = false
 only_nonzero_diffs = false
-added_style = "green"
-deleted_style = "red"
+added_style = "#8ec07c"
+deleted_style = "#fb4934"
 format = '\(( [+$added]($added_style) |( [-$deleted]($deleted_style) ))\)'
 
 [username]
