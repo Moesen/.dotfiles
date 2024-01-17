@@ -178,6 +178,7 @@ map <leader>cm :let @a=''<cr>:bufdo CopyMatches A<cr>
 
 map <leader>rr :CocCommand rust-analyzer.reload<cr>
 map <leader>rg :RustRun<cr>
+map <leader>cg :term cargo run %<cr>
 
 map <leader>pr :term python3 % <CR>
 

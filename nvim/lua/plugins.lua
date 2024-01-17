@@ -120,4 +120,6 @@ Plug 'wfxr/protobuf.vim'
 -- Git Diff tool
 Plug 'sindrets/diffview.nvim'
 
+Plug 'pixelneo/vim-python-docstring'
+
 vim.call('plug#end')

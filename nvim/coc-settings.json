@@ -1,33 +1,12 @@
 {
-    "html.enable": true,
     "html.format.enable": true,
     "html.autoClosingTags": true,
     "coc.preferences.formatOnSave": true,
     "snippets.ultisnips.pythonPrompt": false,
     "python.analysis.typeCheckingMode": "basic",
     "python.formatting.provider": "black",
-    "python.linting.pytypeEnabled": true,
+    "python.linting.pylintCategorySeverity.convention": "Hint",
+    "python.linting.pytypeEnabled": false,
     "python.linting.lintOnSave": true,
-    "ccls": {
-        "command": "ccls",
-        "filetypes": [
-            "c",
-            "cc",
-            "cpp",
-            "c++",
-            "objc",
-            "objcpp"
-        ],
-        "rootPatterns": [
-            ".ccls",
-            "compile_commands.json",
-            ".git/",
-            ".hg/"
-        ],
-        "initializationOptions": {
-            "cache": {
-                "directory": "/tmp/ccls"
-            }
-        }
-    }
+    "svelte.enable-ts-plugin": true
 }
