@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
   use("towolf/vim-helm")
+  use("christoomey/vim-tmux-navigator")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
