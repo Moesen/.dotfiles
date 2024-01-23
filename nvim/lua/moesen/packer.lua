@@ -6,16 +6,15 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use({
-	  'catppuccin/nvim',
-	  as = 'catppuccin',
+	  'AlexvZyl/nordic.nvim',
+	  as = 'nordic',
 	  config = function()
-		  vim.cmd('colorscheme catppuccin')
+		  vim.cmd('colorscheme nordic')
 	  end
   })
 
@@ -32,13 +31,14 @@ return require('packer').startup(function(use)
   })
 
 
-  use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+  use("nvim-treesitter/nvim-treesitter")
   use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
   use("theprimeagen/refactoring.nvim")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
+  use("towolf/vim-helm")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
