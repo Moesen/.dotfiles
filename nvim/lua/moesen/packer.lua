@@ -34,12 +34,12 @@ return require('packer').startup(function(use)
   use("nvim-treesitter/nvim-treesitter")
   use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
-  use("theprimeagen/refactoring.nvim")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
   use("towolf/vim-helm")
   use("christoomey/vim-tmux-navigator")
+  use("chrisbra/colorizer")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',

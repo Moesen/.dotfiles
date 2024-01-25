@@ -20,10 +20,13 @@ source ~/.dotfiles/zshrc/alia.zsh
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
-HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true # Import colorsceheme from 'wal' asyncronously
-# (cat ~/.cache/wal/sequences &)
+
+# hist stuff
 HISTSIZE=10000
 SAVEHIST=10000
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true # Import colorsceheme from 'wal' asyncronously
+HISTFILE=${HOME}/.zsh_history
+HISTORY_IGNORE="(l[alsh]#( *)#)"
 
 # Package manager antidote
 # Git clone antidote if necessary
