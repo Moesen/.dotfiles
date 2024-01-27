@@ -1,5 +1,3 @@
-alias ls="ls --color=auto"
-
 # Xcliping to clipboard
 alias xc='xclip -selection clipboard'
 
@@ -16,9 +14,6 @@ alias clog="tail ~/.local/share/sddm/xorg-session.log"
 
 # Source .zshrc
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
-
-# Alias for ls -a
-alias lsa="ls -a"
 
 # dotfiles dir
 alias dot="cd ~/.dotfiles"

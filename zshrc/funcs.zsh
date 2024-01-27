@@ -18,7 +18,7 @@ crunchy_pf() {
 tab_alvenir() {
     local jira="https://danspeech.atlassian.net/jira/software/projects/APR/boards/14?assignee=712020%3A4c0fbb31-8e09-4638-8f9a-d3a24b9ef3c6"
     firefox --new-tab "$jira"
-} 
+}
 
 grafana() {
     o=$(kubectl get svc -n monitoring --field-selector metadata.name=grafana -o custom-columns=external:.status.loadBalancer.ingress)
@@ -111,7 +111,7 @@ function force_delete_pods() {
     readonly namespace=${1:?"Namespace must be specified"}
     readonly podpattern=${2:?"Pod Pattern must be specified"}
     for pod in $(echo "$(kubectl get pods -n $namespace -o name | grep $podpattern)")
-    do 
+    do
         podname=${pod##*/}
         echo "kubectl delete pod -n $namespace $podname --force"
         echo "$(kubectl delete pod -n $namespace $podname --force)"
@@ -129,7 +129,7 @@ push_notes() {
 push_dot_changes() {
     if [ $# -ne 1 ]
     then
-        echo "Usage $funcstac[1] <commit-message>" 
+        echo "Usage $funcstac[1] <commit-message>"
         return
     fi
 
@@ -140,4 +140,10 @@ push_dot_changes() {
 
 fnd() {
     find . -wholename "$1"
+}
+
+decode_secret() {
+    readonly secret_name=${1:?"Secretname needs to be provided"}
+    readonly namespace=${2:?"Namespace needs to be provided"}
+    kubectl get secret $secret_name -n $namespace -o json | jq '.data | map_values(@base64d)'
 }

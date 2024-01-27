@@ -53,7 +53,7 @@ export PATH="/home/snooze/.cargo/bin:$PATH"
 
 # FuzzyFinder
 export FZF_DEFAULT_OPTS='
-    --color=bg:#282828,fg:#ebdbb2,hl:#98971a
+    --color=bg:#222630,fg:#FFFFFF,hl:#A3BE8C
 '
 nvimfzf() {
     local file
