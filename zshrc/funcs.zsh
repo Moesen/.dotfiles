@@ -21,7 +21,7 @@ tab_alvenir() {
 }
 
 grafana() {
-    o=$(kubectl get svc -n monitoring --field-selector metadata.name=grafana -o custom-columns=external:.status.loadBalancer.ingress)
+    o=$(kubectl get svc -n ameya --field-selector metadata.name=grafana -o custom-columns=external:.status.loadBalancer.ingress)
     regex='\[map\[ip:(([0-9]{1,3}\.?){4})'
     if [[ $o =~ $regex ]]; then
         ip=${match[1]}
@@ -102,11 +102,6 @@ function grep_all_pod_logs {
     done
 }
 
-function watch_pods() {
-    readonly namespace=${1:?"Namespace must be specified"}
-    watch kubectl get pods -n $namespace
-}
-
 function force_delete_pods() {
     readonly namespace=${1:?"Namespace must be specified"}
     readonly podpattern=${2:?"Pod Pattern must be specified"}
@@ -146,4 +141,9 @@ decode_secret() {
     readonly secret_name=${1:?"Secretname needs to be provided"}
     readonly namespace=${2:?"Namespace needs to be provided"}
     kubectl get secret $secret_name -n $namespace -o json | jq '.data | map_values(@base64d)'
+}
+
+gni () {
+    readonly pattern=${1:?"Text pattern needs to be provided"}
+    grep -rni $1 *
 }

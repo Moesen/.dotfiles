@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
       end
   })
 
+  use 'puremourning/vimspector'
 
   use("nvim-treesitter/nvim-treesitter")
   use("nvim-treesitter/playground")
@@ -37,6 +38,14 @@ return require('packer').startup(function(use)
   use("towolf/vim-helm")
   use("christoomey/vim-tmux-navigator")
   use("chrisbra/colorizer")
+  use "lukas-reineke/indent-blankline.nvim"
+
+  use({
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup()
+    end,
+  })
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
