@@ -57,6 +57,8 @@ return require("packer").startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 	use("chrisbra/colorizer")
 	use("lukas-reineke/indent-blankline.nvim")
+        use("lewis6991/gitsigns.nvim")
+
 
 	use({
 		"stevearc/conform.nvim",
