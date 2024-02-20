@@ -6,6 +6,8 @@ lsp.ensure_installed({
 	"rust_analyzer",
 	"pyright",
 	"helm_ls",
+	"tsserver",
+  "gopls"
 })
 
 -- Fix Undefined global 'vim'
@@ -19,25 +21,10 @@ lsp.configure("lua-language-server", {
 	},
 })
 
-require("lspconfig").pyright.setup({})
-
-local cmp = require("cmp")
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-	["<C-y>"] = cmp.mapping.confirm({ select = true }),
-	["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings["<Tab>"] = nil
-cmp_mappings["<S-Tab>"] = nil
-
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings,
-})
-
 local lspconfig = require("lspconfig")
+lspconfig.pyright.setup({})
+lspconfig.bufls.setup({})
+lspconfig.gopls.setup({})
 lspconfig.helm_ls.setup({
 	settings = {
 		["helm-ls"] = {
@@ -48,8 +35,25 @@ lspconfig.helm_ls.setup({
 	},
 })
 
+local cmp = require("cmp")
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_mappings = lsp.defaults.cmp_mappings({
+	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+	["<C-y>"] = cmp.mapping.confirm({ select = true }),
+	["<C-Space>"] = cmp.mapping.complete(),
+})
 local rust = require("lspconfig").rust_analyzer
 rust.setup({})
+
+cmp_mappings["<Tab>"] = nil
+cmp_mappings["<S-Tab>"] = nil
+
+lsp.setup_nvim_cmp({
+	mapping = cmp_mappings,
+})
+
+
 
 lsp.set_preferences({
 	suggest_lsp_servers = false,
@@ -94,10 +98,12 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts)
-	-- vim.keymap.set("n", "<leader>f", function()
-	-- 	vim.lsp.buf.format({ async = true })
-	-- end)
+	vim.keymap.set("n", "<leader>e", function()
+		vim.diagnostic.show_line_diagnostics()
+	end, opts)
 end)
+
+require("lspconfig").svelte.setup({})
 
 lsp.setup()
 

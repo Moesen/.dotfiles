@@ -51,3 +51,12 @@ fi
 if ! type "$minikube" > /dev/null; then;
     source <(minikube completion zsh)
 fi
+
+if ! type "$buf" > /dev/null; then;
+    source <(buf completion zsh)
+fi
+
+
+if ! type "$pip" > /dev/null; then;
+    source <(pip completion --zsh)
+fi

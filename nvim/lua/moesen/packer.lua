@@ -5,6 +5,8 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+    use("ron-rs/ron.vim")
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -58,6 +60,8 @@ return require("packer").startup(function(use)
 	use("chrisbra/colorizer")
 	use("lukas-reineke/indent-blankline.nvim")
         use("lewis6991/gitsigns.nvim")
+
+        use("github/copilot.vim")
 
 
 	use({
