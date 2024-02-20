@@ -41,4 +41,4 @@ alias tree="exa --tree"
 alias cat="bat"
 
 # git
-alias gs="git status"
+alias gs="nvim -c Git"

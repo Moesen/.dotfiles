@@ -5,12 +5,20 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-    use("ron-rs/ron.vim")
-
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
 		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
 	})
 
 	use({
@@ -59,10 +67,9 @@ return require("packer").startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 	use("chrisbra/colorizer")
 	use("lukas-reineke/indent-blankline.nvim")
-        use("lewis6991/gitsigns.nvim")
+	use("lewis6991/gitsigns.nvim")
 
-        use("github/copilot.vim")
-
+	use("github/copilot.vim")
 
 	use({
 		"stevearc/conform.nvim",
