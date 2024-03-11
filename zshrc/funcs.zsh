@@ -78,3 +78,12 @@ gni () {
     readonly pattern=${1:?"Text pattern needs to be provided"}
     grep -rni $1 *
 }
+
+gotodot() {
+  if [[ -n "$TMUX" ]]; then
+    tmux new-window -n ".dotfiles"
+    tmux send-keys -t 0 "cd ~/.dotfiles" C-m
+  else
+    cd ~/.dotfiles
+  fi
+}

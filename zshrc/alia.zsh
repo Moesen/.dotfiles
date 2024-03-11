@@ -16,7 +16,7 @@ alias da="deactivate"
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
 
 # Dots
-alias dot="cd ~/.dotfiles"
+alias dot="gotodot"
 alias ez="nvim ~/.zshrc"
 alias clear_vim_swaps="rm ~/.local/state/nvim/swap/*"
 
