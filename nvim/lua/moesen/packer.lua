@@ -22,10 +22,10 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"AlexvZyl/nordic.nvim",
-		as = "nordic",
+		"savq/melange-nvim",
+		rtp = "packages/neovim",
 		config = function()
-			vim.cmd("colorscheme nordic")
+			vim.cmd("colorscheme melange")
 		end,
 	})
 
@@ -58,7 +58,7 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use("nvim-treesitter/nvim-treesitter")
+	use{"nvim-treesitter/nvim-treesitter", run = ':TSUPdate'}
 	use("theprimeagen/harpoon")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")

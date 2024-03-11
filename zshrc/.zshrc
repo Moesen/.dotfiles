@@ -53,7 +53,7 @@ export PATH="/home/snooze/.cargo/bin:$PATH"
 
 # FuzzyFinder
 export FZF_DEFAULT_OPTS='
-    --color=bg:#222630,fg:#FFFFFF,hl:#A3BE8C
+    --color=bg:#292522,fg:#ECE1D7,hl:#E49B5D
 '
 nvimfzf() {
     local file
@@ -75,5 +75,4 @@ if [ -f '/home/snooze/pkg/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/
 export BUN_INSTALL="$HOME/.local/share/reflex/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
-
 eval "$(zoxide init zsh)"

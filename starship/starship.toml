@@ -11,30 +11,30 @@ right_format = """
 ($git_state$git_commit$git_status)"""
 
 [python]
-format = '[$symbol${version}](bold #8ec07c) (\(${virtualenv}\)) '
+format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '
 symbol = '󱔎 '
 version_format = '${major}.${minor}'
 
 [character]
-success_symbol = "[:](bold white)"
-error_symbol = "[:](bold white)"
+success_symbol = "[:](bold #ECE1D7)"
+error_symbol = "[:](bold #ECE1D7)"
 
 [conda]
 symbol = ""
-format = " [$symbol $environment](bold #8ec07c) "
+format = " [$symbol $environment](bold #85B695) "
 
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
-style = "bold #8ec07c"
-repo_root_style = "bold #83a598"
+style = "bold #85B695"
+repo_root_style = "bold #C1A78E"
 repo_root_format = '[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 format = '[$path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
-style = "bold #8ec07c"
+style = "bold #7F91B2"
 format = "[$symbol$branch]($style) "
-truncation_length = 10
+truncation_length = 3
 truncation_symbol = "-"
 
 [git_commit]
@@ -43,8 +43,8 @@ only_detached = true
 [git_metrics]
 disabled = false
 only_nonzero_diffs = false
-added_style = "#8ec07c"
-deleted_style = "#fb4934"
+added_style = "#78997A"
+deleted_style = "#D47766"
 format = '\(( [+$added]($added_style) |( [-$deleted]($deleted_style) ))\)'
 
 [username]
