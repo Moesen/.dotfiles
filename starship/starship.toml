@@ -35,7 +35,8 @@ format = '[$path]($style)[$read_only]($read_only_style)'
 style = "bold #7F91B2"
 format = "[$symbol$branch]($style) "
 truncation_length = 3
-truncation_symbol = "-"
+# truncation_symbol = "-"
+truncation_symbol = ""
 
 [git_commit]
 only_detached = true

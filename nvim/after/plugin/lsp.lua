@@ -7,7 +7,7 @@ lsp.ensure_installed({
 	"pyright",
 	"helm_ls",
 	"tsserver",
-  "gopls",
+	"gopls",
 })
 
 -- Fix Undefined global 'vim'
@@ -37,7 +37,7 @@ lspconfig.helm_ls.setup({
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-  ensure_installed = {"make"}
+	ensure_installed = { "make" },
 })
 
 local cmp = require("cmp")
@@ -57,8 +57,6 @@ cmp_mappings["<S-Tab>"] = nil
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })
-
-
 
 lsp.set_preferences({
 	suggest_lsp_servers = false,
