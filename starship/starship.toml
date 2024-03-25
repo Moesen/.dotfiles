@@ -4,11 +4,11 @@
 # Remove blank line between shell prompts
 add_newline = true
 
-format = """($python$git_branch$git_metrics
+format = """($python
 )$directory$character"""
 
 right_format = """
-($git_state$git_commit$git_status)"""
+($git_branch$git_metrics$git_state$git_commit$git_status)"""
 
 [python]
 format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '
@@ -34,9 +34,9 @@ format = '[$path]($style)[$read_only]($read_only_style)'
 [git_branch]
 style = "bold #7F91B2"
 format = "[$symbol$branch]($style) "
-truncation_length = 3
+# truncation_length = 3
 # truncation_symbol = "-"
-truncation_symbol = ""
+# truncation_symbol = ""
 
 [git_commit]
 only_detached = true
@@ -46,7 +46,7 @@ disabled = false
 only_nonzero_diffs = false
 added_style = "#78997A"
 deleted_style = "#D47766"
-format = '\(( [+$added]($added_style) |( [-$deleted]($deleted_style) ))\)'
+format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
 
 [username]
 show_always = true

@@ -8,6 +8,7 @@ lsp.ensure_installed({
 	"helm_ls",
 	"tsserver",
 	"gopls",
+	"dockerls",
 })
 
 -- Fix Undefined global 'vim'
@@ -25,6 +26,7 @@ local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
 lspconfig.bufls.setup({})
 lspconfig.gopls.setup({})
+lspconfig.dockerls.setup({})
 lspconfig.helm_ls.setup({
 	settings = {
 		["helm-ls"] = {
@@ -41,13 +43,17 @@ require("mason-lspconfig").setup({
 })
 
 local cmp = require("cmp")
+local cmp_action = lsp.cmp_action()
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 	["<C-y>"] = cmp.mapping.confirm({ select = true }),
 	["<C-Space>"] = cmp.mapping.complete(),
+	["<C-f>"] = cmp_action.luasnip_jump_forward(),
+	["<C-b>"] = cmp_action.luasnip_jump_backward(),
 })
+
 local rust = require("lspconfig").rust_analyzer
 rust.setup({})
 
@@ -113,3 +119,4 @@ lsp.setup()
 vim.diagnostic.config({
 	virtual_text = true,
 })
+

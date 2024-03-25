@@ -1,6 +1,7 @@
 require("moesen.set")
 require("moesen.remap")
 require("moesen.packer")
+local helm = require("moesen.helm")
 
 local augroup = vim.api.nvim_create_augroup
 local MoesenGroup = augroup("Moesen", {})
@@ -32,3 +33,17 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- Overwrite filetypes for yaml and helm
+vim.filetype.add({
+  extensions = {
+    yaml = helm.yaml_filetype,
+    yml = helm.yaml_filetype,
+    tmpl = helm.tmpl_filetype,
+    tpl = helm.tpl_filetype
+  },
+  filename = {
+    ["Chart.yaml"] = "yaml",
+    ["Chart.lock"] = "yaml",
+  }
+})

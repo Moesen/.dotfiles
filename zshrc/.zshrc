@@ -16,6 +16,9 @@ source ~/.dotfiles/zshrc/funcs.zsh
 # Aliases
 source ~/.dotfiles/zshrc/alia.zsh
 
+# azure-cli autocomplete
+source ~/.dotfiles/zshrc/az.completion
+
 # env options
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"

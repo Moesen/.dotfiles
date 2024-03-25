@@ -64,16 +64,16 @@ bindsym $mod+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1:"
+set $ws2 "2:"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9:󰭻"
+set $ws10 "10:󰎚"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -146,16 +146,16 @@ exec_always --no-startup-id fix_xcursor
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused            #2c323a #665c54 #eaeaea #eaeaea
-client.focused_inactive   #2c323a #2c323a #1ABC9C #454948
-client.unfocused          #2c323a #3c3836 #a0a0a0 #454948
-client.urgent             #CB4B16 #FDF6E3 #d54e53 #268BD2
-client.placeholder        #000000 #0c0c0c #a0a0a0 #000000 
+client.focused            #292522 #665c54 #ECE1D7 #eaeaea
+client.focused_inactive   #292522 #292522 #78997A #454948
+client.unfocused          #292522 #292522 #403A36 #454948
+client.urgent             #D47766 #ECE1D7 #D47766 #268BD2
+client.placeholder        #000000 #0c0c0c #a0a0a0 #000000
 
-client.background       #282828
+client.background       #292522
 
-gaps inner 0
-gaps outer 0
+gaps inner 2
+gaps outer 2
 
 # smart_gaps on
 smart_borders on
@@ -167,18 +167,24 @@ bar {
     output eDP
     position top
     colors {
-        background #282828DD
-        statusline #ebdbb2AA
-        focused_workspace #ebdbb2AA #ebdbb2AA #28282800
-        active_workspace #d3869bAA #d3869bAA #28282800
-        urgent_workspace #d3869bAA #d3869bAA #28282800
+        background #292522FF
+        statusline #ECE1D7AA
+        focused_workspace #ECE1D7AA #ECE1D7AA #28282800
+        active_workspace #D47766AA #D47766AA #28282800
+        urgent_workspace #D47766AA #D47766AA #28282800
     }
+    workspace_min_width 35
     strip_workspace_numbers yes
     strip_workspace_name no
-    padding 0px 10px 0px 10px
+    padding 0px 10px 0px 0px
 }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
 for_window [class="^.*"] border pixel 1
+
+# Assignments
+assign [class="TelegramDesktop"] $ws9
+assign [class="Signal"] $ws9
+assign [class="obsidian"] $ws10
