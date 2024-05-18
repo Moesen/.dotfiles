@@ -33,3 +33,6 @@ vim.opt.colorcolumn = "80"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.smartindent = true
+
+-- Disable Mouse
+-- vim.opt.mouse = ""

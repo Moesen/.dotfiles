@@ -58,6 +58,20 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	use({
+		"pwntester/octo.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			-- OR 'ibhagwan/fzf-lua',
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	})
+
+	use("ray-x/go.nvim")
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use("theprimeagen/harpoon")
 	use("mbbill/undotree")

@@ -19,6 +19,10 @@ source ~/.dotfiles/zshrc/alia.zsh
 # azure-cli autocomplete
 source ~/.dotfiles/zshrc/az.completion
 
+# docker-cli autocomplete
+source ~/.dotfiles/zshrc/docker-compose-completion.sh
+
+
 # env options
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
@@ -79,3 +83,6 @@ export BUN_INSTALL="$HOME/.local/share/reflex/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
 eval "$(zoxide init zsh)"
+
+# Don't show files in .gitignore with fzf
+export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"

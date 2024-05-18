@@ -29,8 +29,10 @@ alias st="setup_tmux_cluster_test"
 alias kpf="kubectl port-forward"
 alias wp="watch kubectl get pods -n"
 alias k="kubectl"
+alias mk="minikube"
 ## helm
 alias i="cd ~/alvenir/ameya/infrastructure"
+alias gd="cd ~/alvenir/ameya-demo/"
 
 # ls -> exa
 alias ls="exa --icons"
@@ -42,3 +44,4 @@ alias cat="bat"
 
 # git
 alias gs="nvim -c Git"
+alias whatisfood="wget -qO- https://meyers.dk/erhverv/frokostordning/ugens-menuer/ | grep "Dagens Varme ret" -A 3 | head -n 4 | sed 's/<[^>]*>//g' | perl -MHTML::Entities -Mopen=':std,:encoding(UTF-8)' -pe 'decode_entities($_);'"
