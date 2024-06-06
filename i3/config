@@ -1,5 +1,7 @@
+exec setxkbmap -option caps:escape
+
 set $mod Mod4
-font pango:JetBrainsMono Nerd Font Semi-Bold 15
+font pango:SpaceMono Nerd Font Semi-Bold 12
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
@@ -26,7 +28,8 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec xfce4-terminal
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -134,11 +137,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock screen
-bindsym $mod+b exec --no-startup-id blurlock
+bindsym $mod+b exec --no-startup-id i3lock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b --config ~/.config/picom.conf
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xautolock -time 10 -locker blurlock
 # exec_always --no-startup-id ff-theme-util
@@ -188,16 +191,17 @@ for_window [class="^.*"] border pixel 1
 # Assignments
 assign [class="TelegramDesktop"] $ws9
 assign [class="Signal"] $ws9
+assign [class="Slack"] $ws9
 assign [class="obsidian"] $ws10
 
 # Workspace to screen assignment
-workspace $ws10 output eDP
-workspace $ws1 output eDP
-workspace $ws2 output eDP
+workspace $ws1 output DVI-I-1-1 eDP
+workspace $ws2 output DVI-I-2-2 eDP
 workspace $ws3 output DVI-I-1-1 eDP
-workspace $ws4 output DVI-I-2-2  eDP
-workspace $ws5 output eDP
-workspace $ws6 output eDP
+workspace $ws4 output DVI-I-2-2 eDP
+workspace $ws5 output DVI-I-1-1 eDP
+workspace $ws6 output DVI-I-1-1 eDP
 workspace $ws7 output eDP
 workspace $ws8 output eDP
 workspace $ws9 output eDP
+workspace $ws10 output DVI-I-2-2 eDP

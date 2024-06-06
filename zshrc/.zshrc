@@ -1,11 +1,19 @@
 autoload -U compinit; compinit
 
+#############
+#  STATICS  #
+#############
+user=$(whoami)
+
 ###########
 #  LOADS  #
 ###########
 
 # Starship used for custom prompt
 eval "$(starship init zsh)"
+
+# Setting python default path to pyenv
+export PATH="/home/${user}/.pyenv/versions/3.11.9/bin:$PATH"
 
 # zsh completions using zstyle and zshcompsys
 source ~/.dotfiles/zshrc/completion.zsh
@@ -56,7 +64,7 @@ export EDITOR="nvim"
 # Ranger command to use config file instead
 RANGER_LOAD_DEFAULT_RC="false"
 
-export PATH="/home/snooze/.cargo/bin:$PATH"
+export PATH="/home/${user}/.cargo/bin:$PATH"
 
 # FuzzyFinder
 export FZF_DEFAULT_OPTS='
@@ -70,13 +78,13 @@ nvimfzf() {
 alias f="nvimfzf"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/snooze/pkg/google-cloud-sdk/path.zsh.inc' ]; then . '/home/snooze/pkg/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "/home/${user}/pkg/google-cloud-sdk/path.zsh.inc" ]; then . "/home/${user}/pkg/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/snooze/pkg/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/snooze/pkg/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "/home/${user}/pkg/google-cloud-sdk/completion.zsh.inc" ]; then . "/home/${user}/pkg/google-cloud-sdk/completion.zsh.inc"; fi
 
 # bun completions
-[ -s "/home/snooze/.local/share/reflex/bun/_bun" ] && source "/home/snooze/.local/share/reflex/bun/_bun"
+[ -s "/home/${user}/.local/share/reflex/bun/_bun" ] && source "/home/${user}/.local/share/reflex/bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.local/share/reflex/bun"

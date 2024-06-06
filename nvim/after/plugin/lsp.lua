@@ -29,6 +29,13 @@ lspconfig.gopls.setup({})
 lspconfig.dockerls.setup({})
 lspconfig.tsserver.setup({})
 lspconfig.svelte.setup({})
+lspconfig.ruff_lsp.setup {
+  init_options = {
+    settings = {
+      args = {},
+    }
+  }
+}
 lspconfig.helm_ls.setup({
 	settings = {
 		["helm-ls"] = {

@@ -1,28 +1,27 @@
-symlinks: 
+symlinks:
 ## Zsh
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
-	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc	
+	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc
 ## Nvim
 	ln -sfn ~/.dotfiles/nvim ~/.config/nvim
 ## i3wm
 	ln -sfn ~/.dotfiles/i3 ~/.config/
 	ln -sfn ~/.dotfiles/i3status ~/.config/
 	#ln -sfn ~/.dotfiles/i3blocks/ ~/.config/
-	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar 
+	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar
 # Profile
 	ln -sfn ~/.dotfiles/.profile ~/
 # Xrecourses
 	ln -sf ~/.dotfiles/xresources/.Xresources ~/
-# Alacrity 
+# Alacrity
 	ln -sfn ~/.dotfiles/alacritty ~/.config/
-# Picom 
+# Picom
 	#ln -sf ~/.dotfiles/picom ~/.config
-# Tmux 
+# Tmux
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
-# Kitty
-	ln -sfn ~/.dotfiles/kitty ~/.config/
+
 # Dunst
 	# ln -sf ~/.config/dunst/dunstrc
 # Rofi
