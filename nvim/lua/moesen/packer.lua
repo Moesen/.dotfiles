@@ -22,10 +22,8 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"savq/melange-nvim",
-		rtp = "packages/neovim",
+		"morhetz/gruvbox",
 		config = function()
-			vim.cmd("colorscheme melange")
 		end,
 	})
 

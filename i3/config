@@ -171,11 +171,11 @@ bar {
     # output eDP
     position top
     colors {
-        background #292522FF
-        statusline #ECE1D7AA
-        focused_workspace #ECE1D7AA #ECE1D7AA #28282800
-        active_workspace #D47766AA #D47766AA #28282800
-        urgent_workspace #D47766AA #D47766AA #28282800
+        background #282828
+        statusline #ebdbb2
+        focused_workspace #282828 #8ec07c #303030
+        active_workspace #282828 #303030 #8ec07c
+        urgent_workspace #282828 #fabd2f #282828
     }
     workspace_min_width 35
     strip_workspace_numbers yes
