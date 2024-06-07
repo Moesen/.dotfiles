@@ -150,7 +150,7 @@ exec_always --no-startup-id fix_xcursor
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused            #292522 #665c54 #ECE1D7 #eaeaea
+client.focused            #292522 #282828 #ECE1D7 #00000000
 client.focused_inactive   #292522 #292522 #78997A #454948
 client.unfocused          #292522 #292522 #403A36 #454948
 client.urgent             #D47766 #ECE1D7 #D47766 #268BD2
@@ -162,7 +162,7 @@ gaps inner 2
 gaps outer 2
 
 # smart_gaps on
-smart_borders on
+# smart_borders off
 
 bar {
     status_command i3status

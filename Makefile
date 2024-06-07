@@ -13,10 +13,8 @@ symlinks:
 	ln -sfn ~/.dotfiles/.profile ~/
 # Xrecourses
 	ln -sf ~/.dotfiles/xresources/.Xresources ~/
-# Alacrity
-	ln -sfn ~/.dotfiles/alacritty ~/.config/
 # Picom
-	#ln -sf ~/.dotfiles/picom ~/.config
+	ln -sf ~/.dotfiles/picom.conf ~/.config
 # Tmux
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Starship
