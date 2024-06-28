@@ -1,14 +1,14 @@
 symlinks:
-## Zsh
+# Zsh
 	ln -sf ~/.dotfiles/zshrc/.zsh_plugins.txt ~/.zsh_plugins.txt
 	ln -sf ~/.dotfiles/zshrc/.zshrc ~/.zshrc
-## Nvim
+# Nvim
 	ln -sfn ~/.dotfiles/nvim ~/.config/nvim
-## i3wm
+# i3wm
 	ln -sfn ~/.dotfiles/i3 ~/.config/
-	ln -sfn ~/.dotfiles/i3status ~/.config/
+	# ln -sfn ~/.dotfiles/i3status ~/.config/
 	#ln -sfn ~/.dotfiles/i3blocks/ ~/.config/
-	#ln -sfn ~/.dotfiles/polybar ~/.config/polybar
+	ln -sfn ~/.dotfiles/polybar ~/.config/polybar
 # Profile
 	ln -sfn ~/.dotfiles/.profile ~/
 # Xrecourses
@@ -19,9 +19,6 @@ symlinks:
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Starship
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
-
-# Dunst
-	# ln -sf ~/.config/dunst/dunstrc
 # Rofi
 	ln -sfn ~/.dotfiles/rofi ~/.config/
 

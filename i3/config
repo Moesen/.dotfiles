@@ -74,7 +74,7 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8:"
 set $ws9 "9:󰭻"
 set $ws10 "10:󰎚"
 
@@ -164,6 +164,9 @@ gaps outer 2
 # smart_gaps on
 # smart_borders off
 
+# Use polybar instead
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 bar {
     status_command i3status
     status_command exec ~/.dotfiles/i3/scripts/i3-keyboard-layout.sh i3status
@@ -189,10 +192,13 @@ bindsym $mod+m bar mode toggle
 for_window [class="^.*"] border pixel 1
 
 # Assignments
+# Get name of window: `xprop|grep WM_CLASS`
+assign [class="spotify"] $ws8
 assign [class="TelegramDesktop"] $ws9
 assign [class="Signal"] $ws9
 assign [class="Slack"] $ws9
 assign [class="obsidian"] $ws10
+
 
 # Workspace to screen assignment
 workspace $ws1 output DVI-I-1-1 eDP

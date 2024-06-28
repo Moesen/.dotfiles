@@ -33,11 +33,17 @@ alias mk="minikube"
 ## helm
 alias i="cd ~/alvenir/ameya/infrastructure"
 alias gd="cd ~/alvenir/ameya-demo/"
+alias hs="helmfile sync"
+alias hd="helmfile destroy"
+alias fl="kubectl logs -f -n"
 
 # ls -> exa
 alias ls="exa --icons"
 alias ll="exa -alh --git"
 alias tree="exa --tree"
+
+# cd -> zoxide
+alias cd="z"
 
 # cat -> bat
 alias cat="bat"

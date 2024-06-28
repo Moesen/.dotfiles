@@ -4,13 +4,14 @@ conform.setup({
 		lua = { "stylua" },
 		python = function(bufnr)
 			if require("conform").get_formatter_info("ruff_format", bufnr).available then
-				return { "ruff_format" }
+				return { "ruff_format", "isort" }
 			else
 				return { "isort", "black" }
 			end
 		end,
 		javascript = { { "prettierd", "prettier" } },
 		json = { "jq" },
+		jsonl = { "jq" },
 		["_"] = { "trim_whitespace" },
 	},
 	format_on_save = {
