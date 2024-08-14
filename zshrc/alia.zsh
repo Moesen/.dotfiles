@@ -8,6 +8,7 @@ alias vim="nvim"
 
 # Tmux
 alias t="tmux"
+alias tk="kill_tmux_server"
 
 # util
 alias to="touch"

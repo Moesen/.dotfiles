@@ -8,7 +8,9 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-setxkbmap -option caps:escape
+# Moved to i3/scripts/i3-keyboard-layout.sh in ~/.dotfiles
+# setxkbmap -option caps:escape
+setxkbmap us
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

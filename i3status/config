@@ -52,6 +52,6 @@ tztime local {
 volume master {
         format = " ♪ %volume "
         format_muted = " ♪ no "
-        device = "pulse:0"
+        device = "default"
 }
 # vim: ft=cfg

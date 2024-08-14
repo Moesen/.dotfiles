@@ -22,7 +22,8 @@ cycle() {
   next_index=$[index +1]
   next_layout=${layouts[$next_index]}
   set_kbdlayout "$next_layout"
-  source ~/.profile
+  # source ~/.profile
+  setxkbmap -option caps:escape
 }
 
 passkb() {

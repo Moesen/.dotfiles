@@ -41,6 +41,32 @@ function setup_tmux_cluster_test() {
     tmux attach-session -t dev
 }
 
+function start_local_demo() {
+  local window_name="demo_setup"
+  if [ -z "$TMUX" ]; then
+    tmux new-session -d -s dev -n "$window_name"
+  else
+    tmux new-window -n "$window_name"
+  fi
+
+  tmux split-window -h
+  tmux select-pane -t 0
+  tmux split-window -v
+  tmux split-window -v
+
+  tmux select-pane -t 3
+  tmux split-window -v
+
+  tmux send-keys -t 0 "kubectl port-forward -n ameya svc/ingress-interface-grpc 50051" C-m
+  tmux send-keys -t 1 "kubectl port-forward -n ameya svc/egress-interface-grpc 50054" C-m
+  tmux send-keys -t 2 "kubectl port-forward -n data-processing svc/bitnami-redis-master 6379" C-m
+
+  tmux send-keys -t 3 "make -C ~/alvenir/ameya-demo run-server" C-m
+  tmux send-keys -t 4 "make -C ~/alvenir/ameya-demo run-client" C-m
+
+  tmux attach-session -t dev
+}
+
 sc() {
     cur=$(pwd)
 }
@@ -85,5 +111,19 @@ gotodot() {
     tmux send-keys -t 0 "cd ~/.dotfiles" C-m
   else
     cd ~/.dotfiles
+  fi
+}
+
+create_new_venv (){
+  python3 -m venv venv
+  source ./venv/bin/activate
+  pip install ruff pynvim neovim pyright
+}
+
+kill_tmux_server (){
+  read -p "Kill tmux-server? (y/n): " answer
+  if [ "$answer" = "y" ]; then
+    echo "Killing server!";
+    tmux kill-server
   fi
 }
