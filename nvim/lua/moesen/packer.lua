@@ -88,6 +88,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+  -- Dotnet
+  use("jmederosalvarado/roslyn.nvim")
+
+  -- Copilot
+  use("github/copilot.vim")
+
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
