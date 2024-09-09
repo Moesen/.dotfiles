@@ -31,6 +31,7 @@ alias kpf="kubectl port-forward"
 alias wp="watch kubectl get pods -n"
 alias k="kubectl"
 alias mk="minikube"
+alias cur_cluster="kubectl config current-context"
 ## helm
 alias i="cd ~/alvenir/ameya/infrastructure"
 alias gd="cd ~/alvenir/ameya-demo/"
@@ -51,4 +52,11 @@ alias cat="bat"
 
 # git
 alias gs="nvim -c Git"
+alias gc="git checkout"
+
+# soren
 alias whatisfood="wget -qO- https://meyers.dk/erhverv/frokostordning/ugens-menuer/ | grep "Dagens Varme ret" -A 3 | head -n 4 | sed 's/<[^>]*>//g' | perl -MHTML::Entities -Mopen=':std,:encoding(UTF-8)' -pe 'decode_entities($_);'"
+
+# docker
+alias start_docker_service="systemctl start docker.service docker.socket"
+alias stop_docker_service="systemctl stop docker.service docker.socket"

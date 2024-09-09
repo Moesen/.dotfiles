@@ -27,13 +27,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+  -- Comment highlighter
+  use({
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  })
+
 	use({
 		"folke/trouble.nvim",
-		config = function()
-			require("trouble").setup({
-				icons = true,
-			})
-		end,
 	})
 
 	use("puremourning/vimspector")
@@ -80,6 +81,7 @@ return require("packer").startup(function(use)
 	use("chrisbra/colorizer")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("lewis6991/gitsigns.nvim")
+
 
 	use({
 		"stevearc/conform.nvim",

@@ -97,7 +97,12 @@ push_notes() {
 decode_secret() {
     readonly secret_name=${1:?"Secretname needs to be provided"}
     readonly namespace=${2:?"Namespace needs to be provided"}
-    kubectl get secret $secret_name -n $namespace -o json | jq '.data | map_values(@base64d)'
+
+    echo "ca.crt: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.ca\.crt}' | base64 --decode)
+    echo "tls.crt: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.crt}' | base64 --decode)
+    echo "tls.key: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.key}' | base64 --decode)
+
+
 }
 
 gni () {

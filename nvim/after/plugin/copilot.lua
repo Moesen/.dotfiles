@@ -12,3 +12,5 @@ vim.keymap.set("n", "<leader>ct", "<cmd>lua ToggleCopilot()<cr>", { silent = tru
 
 -- Keymap for showing copilot panel <leader>cp
 vim.keymap.set("n", "<leader>cp", "<cmd>Copilot panel<cr>", { silent = true })
+
+vim.g.copilot_enabled = 0

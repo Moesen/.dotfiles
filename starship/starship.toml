@@ -8,7 +8,21 @@ format = """($python
 )$directory$character"""
 
 right_format = """
-($git_branch$git_metrics$git_state$git_commit$git_status)"""
+$kubernetes($git_branch$git_metrics$git_state$git_commit$git_status)"""
+
+[kubernetes]
+disabled = false
+format = '[\[${symbol}${context} \]]($style) '
+
+[[kubernetes.contexts]]
+context_pattern = "testing"
+style = "bold yellow"
+context_alias = "󱌢"
+
+[[kubernetes.contexts]]
+context_pattern = "demo"
+style = "bold red"
+context_alias = "󰈏"
 
 [python]
 format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '
