@@ -40,13 +40,6 @@ return require("packer").startup(function(use)
 	use("puremourning/vimspector")
 
 	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
-
-	use({
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		requires = {
