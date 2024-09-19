@@ -35,6 +35,7 @@ alias cur_cluster="kubectl config current-context"
 ## helm
 alias i="cd ~/alvenir/ameya/infrastructure"
 alias gd="cd ~/alvenir/ameya-demo/"
+alias ga="cd ~/alvenir/ameya/"
 alias hs="helmfile sync"
 alias hd="helmfile destroy"
 alias fl="kubectl logs -f -n"
@@ -53,6 +54,7 @@ alias cat="bat"
 # git
 alias gs="nvim -c Git"
 alias gc="git checkout"
+alias gcm="git checkout -"
 
 # soren
 alias whatisfood="wget -qO- https://meyers.dk/erhverv/frokostordning/ugens-menuer/ | grep "Dagens Varme ret" -A 3 | head -n 4 | sed 's/<[^>]*>//g' | perl -MHTML::Entities -Mopen=':std,:encoding(UTF-8)' -pe 'decode_entities($_);'"

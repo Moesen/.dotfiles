@@ -4,11 +4,15 @@
 # Remove blank line between shell prompts
 add_newline = true
 
-format = """($python
+format = """($python$time$kubernetes
 )$directory$character"""
 
 right_format = """
-$kubernetes($git_branch$git_metrics$git_state$git_commit$git_status)"""
+($git_branch$git_metrics$git_state$git_commit$git_status)"""
+
+[time]
+disabled = false
+style = "bold green"
 
 [kubernetes]
 disabled = false
@@ -17,12 +21,12 @@ format = '[\[${symbol}${context} \]]($style) '
 [[kubernetes.contexts]]
 context_pattern = "testing"
 style = "bold yellow"
-context_alias = "󱌢"
+context_alias = "󱌢 test"
 
 [[kubernetes.contexts]]
 context_pattern = "demo"
 style = "bold red"
-context_alias = "󰈏"
+context_alias = "󰈏 demo"
 
 [python]
 format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '
