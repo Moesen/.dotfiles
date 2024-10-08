@@ -69,7 +69,7 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("nvim-treesitter/nvim-treesitter-context")
-	use({ "towolf/vim-helm", ft = { "helm" } })
+	use("towolf/vim-helm")
 	use("christoomey/vim-tmux-navigator")
 	use("chrisbra/colorizer")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -82,9 +82,6 @@ return require("packer").startup(function(use)
 			require("conform").setup()
 		end,
 	})
-
-  -- Dotnet
-  use("jmederosalvarado/roslyn.nvim")
 
   -- Copilot
   use("github/copilot.vim")
