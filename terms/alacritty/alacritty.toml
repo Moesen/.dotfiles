@@ -1,0 +1,20 @@
+import = [
+  "~/.config/alacritty/kanagawa-wave.toml",
+]
+
+live_config_reload = true
+[window]
+padding = { x = 1, y = 2 }
+
+
+[font]
+normal = { family="IosevkaTerm Nerd Font Propo", style="Medium" }
+bold = { family="IosevkaTerm Nerd Font Propo", style="Heavy" }
+italic = { family="IosevkaTerm Nerd Font Propo", style="Italic" }
+bold_italic = { family="IosevkaTerm Nerd Font Propo", style="Bold Italic" }
+size = 16
+
+[cursor]
+style = {shape="Block", blinking="On"}
+vi_mode_style = {shape="Beam", blinking="On"}
+

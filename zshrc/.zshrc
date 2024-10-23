@@ -1,3 +1,4 @@
+autoload bashcompinit && bashcompinit
 autoload -U compinit; compinit
 
 #############
@@ -14,6 +15,7 @@ eval "$(starship init zsh)"
 
 # Setting python default path to pyenv
 export PATH="/home/${user}/.pyenv/versions/3.11.9/bin:$PATH"
+
 
 # zsh completions using zstyle and zshcompsys
 source ~/.dotfiles/zshrc/completion.zsh
@@ -77,14 +79,13 @@ nvimfzf() {
 }
 alias f="nvimfzf"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "/home/${user}/pkg/google-cloud-sdk/path.zsh.inc" ]; then . "/home/${user}/pkg/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "/home/${user}/pkg/google-cloud-sdk/completion.zsh.inc" ]; then . "/home/${user}/pkg/google-cloud-sdk/completion.zsh.inc"; fi
-
 # bun completions
 [ -s "/home/${user}/.local/share/reflex/bun/_bun" ] && source "/home/${user}/.local/share/reflex/bun/_bun"
+
+# AWS Cli completion
+[ -s "/usr/local/bin/aws_completer" ] && [ -s "/usr/local/bin/aws" ] && complete -C /usr/local/bin/aws_completer aws
+
+
 
 # bun
 export BUN_INSTALL="$HOME/.local/share/reflex/bun"
@@ -94,3 +95,9 @@ eval "$(zoxide init zsh)"
 
 # Don't show files in .gitignore with fzf
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/moesen/tmp/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/home/moesen/tmp/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/moesen/tmp/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/moesen/tmp/gcloud/google-cloud-sdk/completion.zsh.inc'; fi

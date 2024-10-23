@@ -21,6 +21,8 @@ symlinks:
 	ln -sf ~/.dotfiles/starship/starship.toml ~/.config/
 # Rofi
 	ln -sfn ~/.dotfiles/rofi ~/.config/
+# Alacritty
+	ln -sfn ~/.dotfiles/terms/alacritty ~/.config/
 
 conda_show:
 	conda config --set changeps1 true

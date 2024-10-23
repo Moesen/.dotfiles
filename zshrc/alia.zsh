@@ -62,3 +62,5 @@ alias whatisfood="wget -qO- https://meyers.dk/erhverv/frokostordning/ugens-menue
 # docker
 alias start_docker_service="systemctl start docker.service docker.socket"
 alias stop_docker_service="systemctl stop docker.service docker.socket"
+
+alias get_external_ip='kubectl get svc -n ameya -o jsonpath="{.status.loadBalancer.ingress[0].hostname}"'

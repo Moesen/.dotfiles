@@ -28,6 +28,7 @@ lspconfig.gopls.setup({})
 lspconfig.dockerls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.lua_ls.setup {}
+lspconfig.bashls.setup {}
 lspconfig.ruff_lsp.setup {
   init_options = {
     settings = {

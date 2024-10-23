@@ -4,7 +4,7 @@
 # Remove blank line between shell prompts
 add_newline = true
 
-format = """($python$time$kubernetes
+format = """($python$time$kubernetes$aws $azure
 )$directory$character"""
 
 right_format = """
@@ -14,19 +14,48 @@ right_format = """
 disabled = false
 style = "bold green"
 
+[azure]
+disabled = false
+format = "[$symbol($subscription AS $username)]($style)"
+style = "blue bold"
+
+[azure.subscription_aliases]
+"Microsoft Azure Sponsorship" = "Alvenir"
+
+[aws]
+format = 'on [$symbol($profile)(\($region\))]($style)'
+style = 'bold yellow'
+symbol="  "
+
+[aws.profile_aliases]
+Sandbox-Administrator-841162689808 = "velliv-admin"
+
 [kubernetes]
 disabled = false
-format = '[\[${symbol}${context} \]]($style) '
+format = '[\[${symbol}${context}\]]($style) '
 
 [[kubernetes.contexts]]
 context_pattern = "testing"
 style = "bold yellow"
-context_alias = "󱌢 test"
+context_alias = "test"
+symbol="󱌢 "
 
 [[kubernetes.contexts]]
 context_pattern = "demo"
+style = "bold orange"
+context_alias = "demo"
+symbol="󰈏 "
+
+[[kubernetes.contexts]]
+context_pattern = "arn:aws:eks:eu-central-1:841162689808:cluster/ameya"
 style = "bold red"
-context_alias = "󰈏 demo"
+context_alias = "velliv-ameya-cluster"
+symbol=" "
+
+[[kubernetes.contexts]]
+context_pattern = "production"
+style = "bold purple"
+context_alias = "prod"
 
 [python]
 format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '

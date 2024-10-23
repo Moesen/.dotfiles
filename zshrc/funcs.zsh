@@ -132,3 +132,11 @@ kill_tmux_server (){
     tmux kill-server
   fi
 }
+
+enable_velliv_profile (){
+  export AWS_PROFILE="Sandbox-Administrator-841162689808"
+}
+
+disable_aws_profile (){
+  unset AWS_PROFILE
+}
