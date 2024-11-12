@@ -23,24 +23,63 @@ lsp.configure("lua-language-server", {
 
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
-lspconfig.bufls.setup({})
+lspconfig.buf_ls.setup({})
 lspconfig.gopls.setup({})
 lspconfig.dockerls.setup({})
 lspconfig.svelte.setup({})
-lspconfig.lua_ls.setup {}
-lspconfig.bashls.setup {}
-lspconfig.ruff_lsp.setup {
-  init_options = {
-    settings = {
-      args = {},
-    }
+lspconfig.lua_ls.setup {
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc') then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+        }
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
   }
 }
+lspconfig.bashls.setup {}
+lspconfig.ruff.setup {}
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client == nil then
+      return
+    end
+    if client.name == 'ruff' then
+      -- Disable hover in favor of Pyright
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+  desc = 'LSP: Disable hover capability from Ruff',
+})
+
 lspconfig.helm_ls.setup({
   settings = {
     ["helm-ls"] = {
       yamlls = {
+        enabled = true,
         path = "yaml-language-server",
+        config = {
+          schemas = true,
+        }
       },
     },
   },
@@ -124,7 +163,7 @@ end)
 require("lspconfig").svelte.setup({})
 lsp.setup()
 
-vim.keymap.set("n", "<leader>rlsp", ":LspRestart<cr>")
+vim.keymap.set("n", "<leader>lsp", ":LspRestart<cr>")
 
 vim.diagnostic.config({
   virtual_text = true,

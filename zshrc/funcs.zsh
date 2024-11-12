@@ -97,12 +97,9 @@ push_notes() {
 decode_secret() {
     readonly secret_name=${1:?"Secretname needs to be provided"}
     readonly namespace=${2:?"Namespace needs to be provided"}
-
     echo "ca.crt: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.ca\.crt}' | base64 --decode)
     echo "tls.crt: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.crt}' | base64 --decode)
     echo "tls.key: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.key}' | base64 --decode)
-
-
 }
 
 gni () {
@@ -140,3 +137,20 @@ enable_velliv_profile (){
 disable_aws_profile (){
   unset AWS_PROFILE
 }
+
+
+change_screen_normal () {
+    xrandr --output eDP --primary --mode 1920x1200 --pos 3840x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off --output DVI-I-2-2 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-1-1 --mode 1920x1080 --pos 1920x0 --rotate normal
+    sed -i 's/screen.primary:.*$/screen.primary: DVI-I-1-1/' ~/.Xresources
+    sed -i 's/screen.secondary:.*$/screen.secondary: DVI-I-2-2/' ~/.Xresources
+    xrdb -merge ~/.Xresources
+}
+
+# Function to move workspaces to the opposite screen
+change_screen_mirrored () {
+    xrandr --output eDP --primary --mode 1920x1200 --pos 3840x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off --output DVI-I-2-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-1-1 --mode 1920x1080 --pos 0x0 --rotate normal
+    sed -i 's/screen.primary:.*$/screen.primary: DVI-I-2-2/' ~/.Xresources
+    sed -i 's/screen.secondary:.*$/screen.secondary: DVI-I-1-1/' ~/.Xresources
+    xrdb -merge ~/.Xresources
+}
+

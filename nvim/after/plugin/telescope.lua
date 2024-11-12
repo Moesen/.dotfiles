@@ -2,8 +2,11 @@ local builtin = require("telescope.builtin")
 require("telescope").setup {
   pickers = {
     find_files = {
-      theme = "dropdown",
+    },
+    spell_suggest = {
+      theme = "cursor",
     }
+
   }
 }
 
@@ -13,6 +16,7 @@ vim.keymap.set("n", "<leader>pb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>ps", function()
   builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+vim.keymap.set("n", "<leader>pc", builtin.spell_suggest, {})
 vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 vim.keymap.set("n", "<C-g>", builtin.git_files, {})
 

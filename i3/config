@@ -201,15 +201,17 @@ assign [class="Signal"] $ws9
 assign [class="Slack"] $ws9
 assign [class="obsidian"] $ws10
 
+set_from_resource $primary_screen screen.primary eDP
+set_from_resource $secondary_screen screen.secondary eDP
 
 # Workspace to screen assignment
-workspace $ws1 output DVI-I-1-1 eDP
-workspace $ws2 output DVI-I-2-2 eDP
-workspace $ws3 output DVI-I-1-1 eDP
-workspace $ws4 output DVI-I-2-2 eDP
-workspace $ws5 output DVI-I-1-1 eDP
-workspace $ws6 output DVI-I-2-2 eDP
+workspace $ws1 output $primary_screen eDP
+workspace $ws2 output $secondary_screen eDP
+workspace $ws3 output $primary_screen eDP
+workspace $ws4 output $secondary_screen eDP
+workspace $ws5 output $primary_screen eDP
+workspace $ws6 output $secondary_screen eDP
 workspace $ws7 output eDP
 workspace $ws8 output eDP
 workspace $ws9 output eDP
-workspace $ws10 output DVI-I-2-2 eDP
+workspace $ws10 output $secondary_screen eDP

@@ -70,7 +70,7 @@ export PATH="/home/${user}/.cargo/bin:$PATH"
 
 # FuzzyFinder
 export FZF_DEFAULT_OPTS='
-    --color=bg:#282828,fg:#ebdbb2,hl:#928374
+    --color=bg:#1f1f28,fg:#dcd7ba,hl:#c8c093
 '
 nvimfzf() {
     local file

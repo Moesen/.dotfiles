@@ -40,6 +40,9 @@ alias hs="helmfile sync"
 alias hd="helmfile destroy"
 alias fl="kubectl logs -f -n"
 
+# Make -C
+alias mc="make -C"
+
 # ls -> exa
 alias ls="exa --icons"
 alias ll="exa -alh --git"
