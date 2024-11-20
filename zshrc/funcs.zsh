@@ -94,12 +94,27 @@ push_notes() {
     unset tmp
 }
 
-decode_secret() {
-    readonly secret_name=${1:?"Secretname needs to be provided"}
-    readonly namespace=${2:?"Namespace needs to be provided"}
-    echo "ca.crt: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.ca\.crt}' | base64 --decode)
-    echo "tls.crt: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.crt}' | base64 --decode)
-    echo "tls.key: " $(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.key}' | base64 --decode)
+mbmin() {
+  readonly mbsize=${1:?"mbsize needs to be provided"}
+  result=$(echo "($mbsize * 1000)/ 64 / 60" | bc)
+  echo $result
+}
+
+fetch_user_secret() {
+    readonly namespace=${1:?"Namespace needs to be provided"}
+    readonly secret_name=${2:?"Secretname needs to be provided"}
+    echo -e "UserCerts\n" > user.txt
+    echo "$(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.user}' | base64 --decode)"  >> user.txt
+    echo -e "\n" >> user.txt
+    echo "$(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.password}' | base64 --decode)" >> user.txt
+}
+
+fetch_tls_secret() {
+    readonly namespace=${1:?"Namespace needs to be provided"}
+    readonly secret_name=${2:?"Secretname needs to be provided"}
+    echo "$(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.ca\.crt}' | base64 --decode)"  > ca.crt
+    echo "$(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.crt}' | base64 --decode)" > tls.crt
+    echo "$(kubectl get secret -n ${namespace} ${secret_name} -o jsonpath='{.data.tls\.key}' | base64 --decode)" > tls.key
 }
 
 gni () {
@@ -131,7 +146,7 @@ kill_tmux_server (){
 }
 
 enable_velliv_profile (){
-  export AWS_PROFILE="Sandbox-Administrator-841162689808"
+  export AWS_PROFILE="AlvenirDeveloper"
 }
 
 disable_aws_profile (){

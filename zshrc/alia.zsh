@@ -55,7 +55,7 @@ alias cd="z"
 alias cat="bat"
 
 # git
-alias gs="nvim -c Git"
+alias gs='nvim -c "Git | only"'
 alias gc="git checkout"
 alias gcm="git checkout -"
 
@@ -67,3 +67,8 @@ alias start_docker_service="systemctl start docker.service docker.socket"
 alias stop_docker_service="systemctl stop docker.service docker.socket"
 
 alias get_external_ip='kubectl get svc -n ameya -o jsonpath="{.status.loadBalancer.ingress[0].hostname}"'
+
+# media alias
+alias xo="xdg-open"
+alias pp="paplay"
+alias fp="ffplay -nodisp -stats"

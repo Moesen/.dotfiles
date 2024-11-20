@@ -148,6 +148,7 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id fix_xcursor
 
+
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
 client.focused            #292522 #282828 #ECE1D7 #00000000
@@ -161,35 +162,6 @@ client.background       #292522
 gaps inner 2
 gaps outer 2
 
-# smart_gaps on
-# smart_borders off
-
-# Use polybar instead
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# bar {
-#     status_command i3status
-#     status_command exec ~/.dotfiles/i3/scripts/i3-keyboard-layout.sh i3status
-#     i3bar_command i3bar --transparency
-#     output eDP
-#     position top
-#     colors {
-#         background #282828
-#         statusline #ebdbb2
-#         focused_workspace #282828 #8ec07c #303030
-#         active_workspace #282828 #303030 #8ec07c
-#         urgent_workspace #282828 #fabd2f #282828
-#     }
-#     workspace_min_width 35
-#     strip_workspace_numbers yes
-#     strip_workspace_name no
-#     padding 0px 10px 0px 0px
-# }
-
-# hide/unhide i3status bar
-# bindsym $mod+m bar mode toggle
-
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 for_window [class="^.*"] border pixel 1
 
@@ -215,3 +187,6 @@ workspace $ws7 output eDP
 workspace $ws8 output eDP
 workspace $ws9 output eDP
 workspace $ws10 output $secondary_screen eDP
+
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
