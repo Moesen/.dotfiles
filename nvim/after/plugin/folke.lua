@@ -6,8 +6,8 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = 
 
 vim.keymap.set("n", "<leader>pt", "<cmd>TodoTelescope<cr>", { silent = true, noremap = true })
 vim.keymap.set("n", "]t", function()
-  require("todo-comments").jump_next()
+	require("todo-comments").jump_next()
 end)
 vim.keymap.set("n", "[t", function()
-  require("todo-comments").jump_prev()
+	require("todo-comments").jump_prev()
 end)

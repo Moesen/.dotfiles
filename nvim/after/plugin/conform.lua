@@ -1,4 +1,7 @@
 local conform = require("conform")
+
+local format_on_save = true
+
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
