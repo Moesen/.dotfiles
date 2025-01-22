@@ -27,10 +27,13 @@ alias oh="nvim ~/alvenir/ameya/infrastructure/helmfile.yaml"
 alias g="grafana"
 alias st="setup_tmux_cluster_test"
 ## k8s
+alias k="kubectl"
+alias kg="kubectl get"
+alias kgn="kubectl get -n"
+alias kd="kubectl describe"
+alias kdn="kubectl describe -n"
 alias kpf="kubectl port-forward"
 alias wp="watch kubectl get pods -n"
-alias k="kubectl"
-alias mk="minikube"
 alias cur_cluster="kubectl config current-context"
 ## helm
 alias i="cd ~/alvenir/ameya/infrastructure"
@@ -50,6 +53,7 @@ alias tree="exa --tree"
 
 # cd -> zoxide
 alias cd="z"
+alias cdm="z -"
 
 # cat -> bat
 alias cat="bat"
@@ -58,6 +62,7 @@ alias cat="bat"
 alias gs='nvim -c "Git | only"'
 alias gc="git checkout"
 alias gcm="git checkout -"
+alias gcp="git cherry-pick"
 
 # soren
 alias whatisfood="wget -qO- https://meyers.dk/erhverv/frokostordning/ugens-menuer/ | grep "Dagens Varme ret" -A 3 | head -n 4 | sed 's/<[^>]*>//g' | perl -MHTML::Entities -Mopen=':std,:encoding(UTF-8)' -pe 'decode_entities($_);'"
@@ -72,3 +77,6 @@ alias get_external_ip='kubectl get svc -n ameya -o jsonpath="{.status.loadBalanc
 alias xo="xdg-open"
 alias pp="paplay"
 alias fp="ffplay -nodisp -stats"
+
+# python alias
+alias pir="pip install -r requirements.txt"

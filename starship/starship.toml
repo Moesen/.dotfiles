@@ -42,7 +42,7 @@ symbol="󱌢 "
 
 [[kubernetes.contexts]]
 context_pattern = "demo"
-style = "bold orange"
+style = "bold cyan"
 context_alias = "demo"
 symbol="󰈏 "
 
@@ -54,8 +54,9 @@ symbol=" "
 
 [[kubernetes.contexts]]
 context_pattern = "production"
-style = "bold purple"
+style = "bold red"
 context_alias = "prod"
+symbol=" "
 
 [python]
 format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '

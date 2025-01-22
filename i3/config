@@ -183,9 +183,9 @@ workspace $ws3 output $primary_screen eDP
 workspace $ws4 output $secondary_screen eDP
 workspace $ws5 output $primary_screen eDP
 workspace $ws6 output $secondary_screen eDP
-workspace $ws7 output eDP
-workspace $ws8 output eDP
-workspace $ws9 output eDP
+workspace $ws7 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws9 output eDP-1
 workspace $ws10 output $secondary_screen eDP
 
 # Start polybar
