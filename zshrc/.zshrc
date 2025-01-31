@@ -39,8 +39,8 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
 # hist stuff
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true # Import colorsceheme from 'wal' asyncronously
 HISTFILE=${HOME}/.zsh_history
 HISTORY_IGNORE="(l[alsh]#( *)#)"

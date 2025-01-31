@@ -67,13 +67,6 @@ function start_local_demo() {
   tmux attach-session -t dev
 }
 
-sc() {
-    cur=$(pwd)
-}
-gb() {
-    cd $cur
-}
-
 function force_delete_pods() {
     readonly namespace=${1:?"Namespace must be specified"}
     readonly podpattern=${2:?"Pod Pattern must be specified"}

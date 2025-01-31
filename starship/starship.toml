@@ -12,7 +12,7 @@ right_format = """
 
 [time]
 disabled = false
-style = "bold green"
+style = "bold fg"
 
 [azure]
 disabled = false
@@ -36,13 +36,13 @@ format = '[\[${symbol}${context}\]]($style) '
 
 [[kubernetes.contexts]]
 context_pattern = "testing"
-style = "bold yellow"
+style = "bold blue"
 context_alias = "test"
 symbol="󱌢 "
 
 [[kubernetes.contexts]]
 context_pattern = "demo"
-style = "bold cyan"
+style = "bold blue"
 context_alias = "demo"
 symbol="󰈏 "
 
@@ -59,28 +59,28 @@ context_alias = "prod"
 symbol=" "
 
 [python]
-format = '[$symbol${version}](bold #78997A) (\(${virtualenv}\)) '
+format = '[$symbol${version}](bold blue) (\(${virtualenv}\)) '
 symbol = '󱔎 '
 version_format = '${major}.${minor}'
 
 [character]
-success_symbol = "[:](bold #ECE1D7)"
-error_symbol = "[:](bold #ECE1D7)"
+success_symbol = "[:](bold fg)"
+error_symbol = "[:](bold fg)"
 
 [conda]
 symbol = ""
-format = " [$symbol $environment](bold #85B695) "
+format = " [$symbol $environment](bold  green) "
 
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
-style = "bold #85B695"
-repo_root_style = "bold #C1A78E"
+style = "bold green"
+repo_root_style = "bold yellow"
 repo_root_format = '[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 format = '[$path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
-style = "bold #7F91B2"
+style = "bold blue"
 format = "[$symbol$branch]($style) "
 # truncation_length = 3
 # truncation_symbol = "-"
@@ -92,8 +92,8 @@ only_detached = true
 [git_metrics]
 disabled = false
 only_nonzero_diffs = false
-added_style = "#78997A"
-deleted_style = "#D47766"
+added_style = "green"
+deleted_style = "red"
 format = '\(([+$added]($added_style)|([-$deleted]($deleted_style)))\)'
 
 [username]

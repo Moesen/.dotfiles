@@ -1,5 +1,6 @@
 # Xcliping to clipboard
 alias xc='xclip -selection clipboard'
+alias xo="xclip -selection clipboard -o"
 
 # Vim
 alias v="nvim"
@@ -33,14 +34,17 @@ alias kgn="kubectl get -n"
 alias kd="kubectl describe"
 alias kdn="kubectl describe -n"
 alias kpf="kubectl port-forward"
+alias kcu="kubectl config use-context"
 alias wp="watch kubectl get pods -n"
 alias cur_cluster="kubectl config current-context"
 ## helm
-alias i="cd ~/alvenir/ameya/infrastructure"
-alias gd="cd ~/alvenir/ameya-demo/"
-alias ga="cd ~/alvenir/ameya/"
+alias gti="cd ~/alvenir/ameya/infrastructure"
+alias gtd="cd ~/alvenir/ameya-demo/"
+alias gta="cd ~/alvenir/ameya/"
 alias hs="helmfile sync"
 alias hd="helmfile destroy"
+alias ht="helmfile template"
+alias hb="helmfile build"
 alias fl="kubectl logs -f -n"
 
 # Make -C
@@ -74,9 +78,10 @@ alias stop_docker_service="systemctl stop docker.service docker.socket"
 alias get_external_ip='kubectl get svc -n ameya -o jsonpath="{.status.loadBalancer.ingress[0].hostname}"'
 
 # media alias
-alias xo="xdg-open"
 alias pp="paplay"
 alias fp="ffplay -nodisp -stats"
+# goto sctrach
+alias gts="cd ~/alvenir/scratch/"
 
 # python alias
 alias pir="pip install -r requirements.txt"
