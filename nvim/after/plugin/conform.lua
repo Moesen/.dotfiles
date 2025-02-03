@@ -5,12 +5,8 @@ local format_on_save = true
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		python = function(bufnr)
-			if require("conform").get_formatter_info("ruff_format", bufnr).available then
-				return { "isort", "ruff_format" }
-			end
-		end,
-		javascript = { { "prettierd", "prettier" } },
+		python = { "isort", "ruff_format" },
+		javascript = { "prettierd", "prettier" },
 		json = { "jq" },
 		jsonl = { "jq" },
 		["_"] = { "trim_whitespace" },
