@@ -17,5 +17,6 @@ end)
 vim.keymap.set("n", "<leader>pc", builtin.spell_suggest, {})
 vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 vim.keymap.set("n", "<C-g>", builtin.git_files, {})
+vim.keymap.set("n", "<leader>pn", ":Telescope notify<CR>")
 
 require("telescope").load_extension("harpoon")
