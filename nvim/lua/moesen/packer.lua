@@ -27,9 +27,10 @@ return require("packer").startup(function(use)
 	--   end,
 	-- })
 
-	use({
-		"rebelot/kanagawa.nvim",
-	})
+	-- use({
+	-- 	"rebelot/kanagawa.nvim",
+	-- })
+	use("aliqyan-21/darkvoid.nvim")
 
 	-- Comment highlighter
 	use({
@@ -85,6 +86,8 @@ return require("packer").startup(function(use)
 			require("conform").setup()
 		end,
 	})
+
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",

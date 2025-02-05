@@ -1,1 +1,5 @@
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme darkvoid")
+require("darkvoid").setup({
+	glow = true,
+	transparent = true,
+})
