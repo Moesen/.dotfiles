@@ -13,8 +13,7 @@ user=$(whoami)
 # Starship used for custom prompt
 eval "$(starship init zsh)"
 
-# Setting python default path to pyenv
-export PATH="/home/${user}/.pyenv/versions/3.11.9/bin:$PATH"
+# export PATH="/home/snooze/.pyenv/shims/python3.11:$PATH"
 
 
 # zsh completions using zstyle and zshcompsys
