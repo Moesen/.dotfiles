@@ -53,7 +53,7 @@ alias mc="make -C"
 # ls -> exa
 alias ls="exa --icons"
 alias ll="exa -alh --git"
-alias tree="exa --tree"
+alias tree="exa --tree --git-ignore"
 
 # cd -> zoxide
 alias cd="z"
@@ -84,4 +84,4 @@ alias fp="ffplay -nodisp -stats"
 alias gts="cd ~/alvenir/scratch/"
 
 # python alias
-alias pir="pip install -r requirements.txt"
+alias pir="pip install -r"
