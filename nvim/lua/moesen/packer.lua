@@ -31,6 +31,7 @@ return require("packer").startup(function(use)
 	-- 	"rebelot/kanagawa.nvim",
 	-- })
 	use("aliqyan-21/darkvoid.nvim")
+	use("savq/melange-nvim")
 
 	-- Comment highlighter
 	use({

@@ -17,6 +17,6 @@ vi_mode_style = {shape="Beam", blinking="On"}
 
 live_config_reload = true
 import = [
-  "~/.config/alacritty/darkvoid.toml",
+  "~/.config/alacritty/melange.toml",
 ]
 

@@ -159,9 +159,9 @@ client.placeholder        #000000 #0c0c0c #a0a0a0 #000000
 
 client.background       #292522
 
-gaps inner 10
-gaps outer 10
-gaps top 35
+gaps inner 2
+gaps outer 2
+gaps top 28
 
 
 

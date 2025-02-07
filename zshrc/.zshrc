@@ -13,7 +13,8 @@ user=$(whoami)
 # Starship used for custom prompt
 eval "$(starship init zsh)"
 
-# export PATH="/home/snooze/.pyenv/shims/python3.11:$PATH"
+# Setting python default path to pyenv
+export PATH="/home/${user}/.pyenv/versions/3.11.9/bin:$PATH"
 
 
 # zsh completions using zstyle and zshcompsys
@@ -69,7 +70,7 @@ export PATH="/home/${user}/.cargo/bin:$PATH"
 
 # FuzzyFinder
 export FZF_DEFAULT_OPTS='
-    --color=bg:#1c1c1c,fg:#c0c0c0,hl:#f1f1f1
+    --color=bg:#292522,fg:#ECE1D7,hl:#C1A78E
 '
 nvimfzf() {
     local file
