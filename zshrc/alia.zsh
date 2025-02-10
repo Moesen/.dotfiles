@@ -81,6 +81,7 @@ alias get_external_ip='kubectl get svc -n ameya -o jsonpath="{.status.loadBalanc
 alias pp="paplay"
 alias fp="ffplay -nodisp -stats"
 # goto sctrach
+alias gt="cd ~/alvenir/"
 alias gts="cd ~/alvenir/scratch/"
 
 # python alias

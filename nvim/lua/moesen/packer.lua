@@ -56,6 +56,12 @@ return require("packer").startup(function(use)
 	-- 	},
 	-- })
 	use("nvim-tree/nvim-tree.lua")
+	use({
+		"notjedi/nvim-rooter.lua",
+		config = function()
+			require("nvim-rooter").setup()
+		end,
+	})
 
 	use({
 		"pwntester/octo.nvim",
