@@ -8,6 +8,9 @@ require("telescope").setup({
 		quickfix = {
 			theme = "dropdown",
 		},
+		diagnostics = {
+			cwd_only = true,
+		},
 	},
 })
 

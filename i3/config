@@ -151,11 +151,11 @@ exec_always --no-startup-id fix_xcursor
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused            #292522 #282828 #ECE1D7 #00000000
-client.focused_inactive   #292522 #292522 #78997A #454948
-client.unfocused          #292522 #292522 #403A36 #454948
-client.urgent             #D47766 #ECE1D7 #D47766 #268BD2
-client.placeholder        #000000 #0c0c0c #a0a0a0 #000000
+client.focused            #000000 #E49B5D #ECE1D7 #00000000
+client.focused_inactive   #000000 #C1A78E #78997A #454948
+client.unfocused          #000000 #292522 #403A36 #454948
+client.urgent             #000000 #BD8183 #D47766 #268BD2
+client.placeholder        #000000 #292522 #a0a0a0 #000000
 
 client.background       #292522
 

@@ -52,7 +52,8 @@ alias mc="make -C"
 
 # ls -> exa
 alias ls="exa --icons"
-alias ll="exa -alh --git"
+alias lg="exa --icons --git-ignore"
+alias ll="exa -alh --git --icons"
 alias tree="exa --tree --git-ignore"
 
 # cd -> zoxide
