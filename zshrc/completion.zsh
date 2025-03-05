@@ -60,3 +60,7 @@ fi
 if ! type "$pip" > /dev/null; then;
     source <(pip completion --zsh)
 fi
+
+if ! type "$just" > /dev/null; then;
+  source <(just --completions=zsh)
+fi

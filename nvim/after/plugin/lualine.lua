@@ -14,7 +14,25 @@ end
 require("lualine").setup({
 	sections = {
 		lualine_a = { { "mode", icons_enabled = true } },
-		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_b = {
+			{
+				"branch",
+				fmt = function(str)
+					local route_match = str:match("^(%w+)/(^-)+")
+					if route_match then
+						return str:match("^(%w+)/([^-]+)")
+					end
+
+					local number_match = str:match("(%d+)")
+					if number_match then
+						return "#" .. number_match
+					end
+					return str
+				end,
+			},
+			"diff",
+			"diagnostics",
+		},
 		lualine_c = { { "filename", file_status = true, path = 4 } },
 		lualine_x = { "encoding", { "filetype", icon = { align = "right" } } },
 		lualine_y = { "progress" },

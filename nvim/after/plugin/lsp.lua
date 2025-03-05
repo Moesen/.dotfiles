@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
 lsp.preset("recommended")
 
 require("mason").setup()
@@ -69,33 +70,10 @@ lsp.configure("lua_ls", {
 })
 
 lsp.configure("bashls", {})
--- lspconfig.ruff.setup {}
-
--- vim.api.nvim_create_autocmd("LspAttach", {
---   group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
---   callback = function(args)
---     local client = vim.lsp.get_client_by_id(args.data.client_id)
---     if client == nil then
---       return
---     end
---     if client.name == 'ruff' then
---       -- Disable hover in favor of Pyright
---       client.server_capabilities.hoverProvider = false
---     end
---   end,
---   desc = 'LSP: Disable hover capability from Ruff',
--- })
-
-lsp.configure("helm_ls", {
+lspconfig.helm_ls.setup({
 	settings = {
-		["helm-ls"] = {
-			yamlls = {
-				enabled = true,
-				path = "yaml-language-server",
-				config = {
-					schemas = true,
-				},
-			},
+		yamlls = {
+			path = "yaml-language-server",
 		},
 	},
 })

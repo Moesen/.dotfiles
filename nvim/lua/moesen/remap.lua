@@ -38,6 +38,6 @@ vim.keymap.set("n", "<C-Tab>", ":tabnext<CR>", { noremap = true, silent = true }
 vim.keymap.set("i", "<C-Tab>", "<C-\\><C-N>:tabnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("c", "<C-Tab>", "<C-C>:tabnext<CR>", { noremap = true, silent = true })
 -- Other way
-vim.keymap.set("n", "<C-Tab>", ":tabprevious<CR>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-Tab>", "<C-\\><C-N>:tabprevious<CR>", { noremap = true, silent = true })
-vim.keymap.set("c", "<C-Tab>", "<C-C>:tabprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-s-Tab>", ":tabprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-s-Tab>", "<C-\\><C-N>:tabprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("c", "<C-s-Tab>", "<C-C>:tabprevious<CR>", { noremap = true, silent = true })
