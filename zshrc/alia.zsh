@@ -13,7 +13,7 @@ alias tk="kill_tmux_server"
 
 # util
 alias to="touch"
-alias sv="source ./venv/bin/activate"
+alias sv="source_venv"
 alias da="deactivate"
 alias sz="source ~/.dotfiles/zshrc/.zshrc"
 
@@ -29,6 +29,7 @@ alias g="grafana"
 alias st="setup_tmux_cluster_test"
 ## k8s
 alias k="kubectl"
+alias ks="k9s"
 alias kg="kubectl get"
 alias kgn="kubectl get -n"
 alias kga="kubectl get -n ameya"
@@ -88,3 +89,4 @@ alias gts="cd ~/alvenir/scratch/"
 
 # python alias
 alias pir="pip install -r"
+alias ur="uv run"

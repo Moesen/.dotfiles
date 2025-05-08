@@ -4,7 +4,7 @@
 # Remove blank line between shell prompts
 add_newline = true
 
-format = """($python$time$kubernetes$aws $azure
+format = """($time$kubernetes$aws $azure
 )$directory$character"""
 
 right_format = """
@@ -16,14 +16,14 @@ style = "bold fg"
 
 [azure]
 disabled = false
-format = "[$symbol($subscription AS $username)]($style)"
+format = "[$symbol($subscription)]($style)"
 style = "blue bold"
 
 [azure.subscription_aliases]
-"Microsoft Azure Sponsorship" = "Alvenir"
+"Microsoft Azure Sponsorship" = "Alvenir Subscription"
 
 [aws]
-format = 'on [$symbol($profile)(\($region\))]($style)'
+format = 'on [$symbol($profile)(\($duration\))]($style)'
 style = 'bold yellow'
 symbol="  "
 
@@ -48,13 +48,16 @@ symbol="󰈏 "
 
 [[kubernetes.contexts]]
 context_pattern = "arn:aws:eks:eu-central-1:841162689808:cluster/ameya"
-style = "bold red"
+style = "bold yellow"
 context_alias = "velliv-ameya-cluster"
-symbol=" "
+
+[[kubernetes.contexts]]
+context_pattern = "arn:aws.*"
+symbol="  "
 
 [[kubernetes.contexts]]
 context_pattern = "production"
-style = "bold red"
+style = "bold blue"
 context_alias = "prod"
 symbol=" "
 
@@ -62,6 +65,7 @@ symbol=" "
 format = '[$symbol${version}](bold blue) (\(${virtualenv}\)) '
 symbol = '󱔎 '
 version_format = '${major}.${minor}'
+disabled=true
 
 [character]
 success_symbol = "[:](bold fg)"

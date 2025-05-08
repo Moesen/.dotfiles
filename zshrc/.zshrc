@@ -6,16 +6,14 @@ autoload -U compinit; compinit
 #############
 user=$(whoami)
 
-###########
-#  LOADS  #
+########### LOADS  #
 ###########
 
 # Starship used for custom prompt
 eval "$(starship init zsh)"
 
-# Setting python default path to pyenv
-export PATH="/home/${user}/.pyenv/versions/3.11.9/bin:$PATH"
-
+# # Setting python default path to pyenv
+# export PATH="/home/${user}/.pyenv/versions/3.11.9/bin:$PATH"
 
 # zsh completions using zstyle and zshcompsys
 source ~/.dotfiles/zshrc/completion.zsh
@@ -92,6 +90,7 @@ export BUN_INSTALL="$HOME/.local/share/reflex/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
 eval "$(zoxide init zsh)"
+eval "$(just --completions=zsh)"
 
 # Don't show files in .gitignore with fzf
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"
@@ -101,3 +100,6 @@ if [ -f '/home/moesen/tmp/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/home
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/moesen/tmp/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/moesen/tmp/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"

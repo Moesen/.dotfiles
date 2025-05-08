@@ -2,7 +2,7 @@ exec setxkbmap -option caps:escape
 
 set $mod Mod4
 font pango:SpaceMono Nerd Font Semi-Bold 12
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.dotfiles/i3/scripts/lock.sh
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 focus_follows_mouse no
@@ -69,10 +69,10 @@ bindsym $mod+minus scratchpad show
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3"
+set $ws3 "3:󰩃"
 set $ws4 "4:"
 set $ws5 "5"
-set $ws6 "6"
+set $ws6 "6:"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9:"
@@ -137,7 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock screen
-bindsym $mod+b exec --no-startup-id i3lock
+bindsym $mod+b exec --no-startup-id ~/.dotfiles/i3/scripts/lock.sh
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -173,6 +173,7 @@ assign [class="spotify"] $ws8
 assign [class="TelegramDesktop"] $ws9
 assign [class="Signal"] $ws9
 assign [class="Slack"] $ws9
+assign [class="mattermost-desktop"] $ws9
 assign [class="obsidian"] $ws10
 
 set_from_resource $primary_screen screen.primary eDP

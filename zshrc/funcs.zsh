@@ -139,7 +139,7 @@ kill_tmux_server (){
 }
 
 enable_velliv_profile (){
-  export AWS_PROFILE="AlvenirDeveloper"
+  export AWS_PROFILE="VellivSandboxAdmin"
 }
 
 disable_aws_profile (){
@@ -170,4 +170,14 @@ bind_wacom () {
   xsetwacom --set "$TABLET" Button 2 "key ctrl alt 2"
   xsetwacom --set "$TABLET" Button 3 "key ctrl alt 3"
   xsetwacom --set "$TABLET" Button 4 "key ctrl alt 4"
+}
+
+source_venv () {
+  if [ -d .venv ]; then
+    source ./.venv/bin/activate
+  elif [ -d venv ]; then
+    source ./venv/bin/activate
+  else
+    echo "no venv/ or .venv/ in current folder"
+  fi
 }
