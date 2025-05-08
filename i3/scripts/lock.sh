@@ -3,7 +3,7 @@
 i3lock --bar-indicator \
   -S 0 \
   -k \
-  -c 292522ff \
-  --bar-color E49B5D \
+  -c 161617ff \
+  --bar-color b9aeda \
   --time-color=ffffff \
   --date-color=eeeeee
