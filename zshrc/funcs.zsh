@@ -142,6 +142,10 @@ enable_velliv_profile (){
   export AWS_PROFILE="VellivSandboxAdmin"
 }
 
+enable_cicd_profile (){
+  export AWS_PROFILE="velliv-cicd-engineer"
+}
+
 disable_aws_profile (){
   unset AWS_PROFILE
 }

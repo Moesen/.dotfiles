@@ -6,7 +6,24 @@ return {
 			vim.g.startuptime_tries = 10
 		end,
 	},
-	{ "christoomey/vim-tmux-navigator" },
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+			"TmuxNavigatorProcessList",
+		},
+		keys = {
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
+	},
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
@@ -26,15 +43,6 @@ return {
 					cwd_only = true,
 				},
 			},
-		},
-	},
-
-	{
-		"echasnovski/mini.align",
-		opts = {},
-		keys = {
-			{ "ga", mode = { "n", "v" } },
-			{ "gA", mode = { "n", "v" } },
 		},
 	},
 	{
@@ -59,21 +67,36 @@ return {
 	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 		keys = {
 			{ "<c-n>", "<cmd>NvimTreeToggle<cr>" },
 		},
-		config = function()
-			require("nvim-tree").setup({
-				sync_root_with_cwd = true,
-				respect_buf_cwd = true,
-				update_focused_file = {
-					enable = true,
-					update_root = true,
-				},
-			})
-		end,
+		opts = {
+			sync_root_with_cwd = true,
+			respect_buf_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_root = true,
+			},
+		},
 	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {
+			size = function(term)
+				if term.directoin == "vertical" then
+					return vim.o.columns * 0.4
+				elseif term.direction == "horizontal" then
+					return 20
+				end
+			end,
+			open_mapping = [[<c-t>]],
+			shade_terminals = false,
+			direction = "horizontal",
+			autochdir = true,
+			start_in_insert = true,
+			persist_mode = false,
+		},
+	},
+	{ "mbbill/undotree", keys = { { "<leader>u", "<cmd>UndotreeToggle<CR>" } } },
 }

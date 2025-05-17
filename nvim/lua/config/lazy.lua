@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
+vim.g.python3_host_prog = "~/.dotfiles/nvim/env/.venv/bin/python3"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -31,4 +32,15 @@ require("lazy").setup({
 	install = { colorscheme = { "mellow" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
+})
+
+vim.lsp.config("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+				diagnosticMode = "openFilesOnly",
+				typeCheckingMode = "basic",
+			},
+		},
+	},
 })

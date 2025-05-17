@@ -103,3 +103,7 @@ if [ -f '/home/moesen/tmp/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+# Needed in order for basedpyright to work properly
+export NODE_OPTIONS=--max_old_space_size=24000
+
