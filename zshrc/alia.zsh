@@ -7,6 +7,10 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+# Rust replacements
+alias find=fd
+alias du=dust
+
 # Tmux
 alias t="tmux"
 alias tk="kill_tmux_server"

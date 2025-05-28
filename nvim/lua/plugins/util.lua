@@ -99,4 +99,30 @@ return {
 		},
 	},
 	{ "mbbill/undotree", keys = { { "<leader>u", "<cmd>UndotreeToggle<CR>" } } },
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*",
+		lazy = true,
+		event = {
+			"BufReadPre " .. vim.fn.expand("~") .. "/Vaults/vault-alvenir/*.md",
+			"BufReadPre " .. vim.fn.expand("~") .. "/EDU/vault/*.md",
+		},
+		dependencies = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
+		},
+		opts = {
+			workspaces = {
+				{
+					name = "edu",
+					path = "~/EDU/vault",
+				},
+				{
+					name = "work",
+					path = "~/Vaults/vault-alvenir/",
+				},
+			},
+		},
+	},
+	{ "bullets-vim/bullets.vim" },
 }
