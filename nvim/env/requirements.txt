@@ -1,5 +1,0 @@
-pynvim
-ruff
-pyright
-isort
-basedpyright
