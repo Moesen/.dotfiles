@@ -64,3 +64,7 @@ fi
 if ! type "$just" > /dev/null; then;
   source <(just --completions=zsh)
 fi
+
+if ! type "$rustup" > /dev/null; then
+  source <(rustup completions zsh)
+fi

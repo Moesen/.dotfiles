@@ -152,18 +152,20 @@ disable_aws_profile (){
 
 
 change_screen_normal () {
-    xrandr --output eDP-1 --mode 1920x1200 --pos 0x482 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-6 --off --output DVI-I-2-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-1-1 --mode 1920x1080 --pos 3840x0 --rotate normal
-    sed -i 's/screen.primary:.*$/screen.primary: DVI-I-2-2/' ~/.Xresources
-    sed -i 's/screen.secondary:.*$/screen.secondary: DVI-I-1-1/' ~/.Xresources
+    xrandr --output eDP-1 --primary --mode 1920x1200 --pos 3840x470 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-6 --off --output DVI-I-1-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-2-2 --mode 1920x1080 --pos 0x0 --rotate normal
+    sed -i 's/screen.primary:.*$/screen.primary: DVI-I-1-1/' ~/.Xresources
+    sed -i 's/screen.secondary:.*$/screen.secondary: DVI-I-2-2/' ~/.Xresources
+    sleep 1
     xrdb -merge ~/.Xresources
     nitrogen --restore
 }
 
 # Function to move workspaces to the opposite screen
 change_screen_mirrored () {
-    xrandr --output eDP --primary --mode 1920x1200 --pos 3840x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off --output DVI-I-2-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-1-1 --mode 1920x1080 --pos 0x0 --rotate normal
-    sed -i 's/screen.primary:.*$/screen.primary: DVI-I-1-1/' ~/.Xresources
-    sed -i 's/screen.secondary:.*$/screen.secondary: DVI-I-2-2/' ~/.Xresources
+    xrandr --output eDP-1 --primary --mode 1920x1200 --pos 3840x470 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-6 --off --output DVI-I-2-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-1-1 --mode 1920x1080 --pos 0x0 --rotate normal
+    sed -i 's/screen.primary:.*$/screen.primary: DVI-I-2-2/' ~/.Xresources
+    sed -i 's/screen.secondary:.*$/screen.secondary: DVI-I-1-1/' ~/.Xresources
+    sleep 1
     xrdb -merge ~/.Xresources
     nitrogen --restore
 }

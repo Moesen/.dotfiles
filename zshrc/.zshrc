@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.pre.zsh"
 autoload bashcompinit && bashcompinit
 autoload -U compinit; compinit
 
@@ -107,3 +109,13 @@ eval "$(uvx --generate-shell-completion zsh)"
 # Needed in order for basedpyright to work properly
 export NODE_OPTIONS=--max_old_space_size=24000
 
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh"
+
+# pnpm
+export PNPM_HOME="/home/moesen/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

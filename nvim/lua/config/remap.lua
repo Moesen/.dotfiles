@@ -41,3 +41,6 @@ vim.keymap.set("c", "<C-Tab>", "<C-C>:tabnext<CR>", { noremap = true, silent = t
 vim.keymap.set("n", "<C-s-Tab>", ":tabprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-s-Tab>", "<C-\\><C-N>:tabprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("c", "<C-s-Tab>", "<C-C>:tabprevious<CR>", { noremap = true, silent = true })
+
+-- Project Keymap
+vim.keymap.set("n", "<leader>pr", ":ProjectRoot<CR>", { noremap = true, silent = true })

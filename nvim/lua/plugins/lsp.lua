@@ -31,6 +31,7 @@ return {
 					vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 					vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 					vim.keymap.set("n", "<leader>vrn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+					vim.keymap.set("n", "<leader>vca", "<cmd> lua vim.lsp.buf.code_action()<cr>", opts)
 					vim.keymap.set("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 				end,
 			})
@@ -51,6 +52,7 @@ return {
 					"html",
 					"svelte",
 					"helm_ls",
+					"rust_analyzer",
 				},
 				handlers = {
 					function(server_name)

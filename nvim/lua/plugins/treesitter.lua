@@ -25,6 +25,7 @@ return {
 			"ninja",
 			"printf",
 			"python",
+			"rust",
 			"rst",
 			"query",
 			"regex",
