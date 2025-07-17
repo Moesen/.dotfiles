@@ -23,6 +23,7 @@ symlinks:
 	ln -sfn ~/.dotfiles/rofi ~/.config/
 # Alacritty
 	ln -sfn ~/.dotfiles/terms/alacritty ~/.config/
+	ln -sfn ~/.dotfiles/zellij/ ~/.config/
 
 conda_show:
 	conda config --set changeps1 true

@@ -70,7 +70,7 @@ export PATH="/home/${user}/.cargo/bin:$PATH"
 
 # FuzzyFinder
 export FZF_DEFAULT_OPTS='
-    --color=bg:#252623,fg:#f1e9d2,hl:#70c2be
+    --color=bg:#1f1f28,fg:#dcd7ba,hl:#ffa066,bg+:#2d4f67,fg+:#c8c093
 '
 nvimfzf() {
     local file
@@ -78,6 +78,13 @@ nvimfzf() {
     [[ -n $file ]] && nvim "$file"
 }
 alias f="nvimfzf"
+
+audiofzf() {
+  local audio_file
+  audio_file=$(fd -e mp3 -e flac -e wav -e m4a -e ogg -e aac -e wma -t f | fzf --preview 'echo "File: {}" && echo "Size: $(du -o mb {} | cut -f1 )" && echo "Modified: $( stat -c %y {} | cut -d. -f1 )"' --preview-window=up:3:wrap)
+  ff-play $audio_file
+}
+alias fp="audiofzf"
 
 # bun completions
 [ -s "/home/${user}/.local/share/reflex/bun/_bun" ] && source "/home/${user}/.local/share/reflex/bun/_bun"
@@ -109,9 +116,6 @@ eval "$(uvx --generate-shell-completion zsh)"
 # Needed in order for basedpyright to work properly
 export NODE_OPTIONS=--max_old_space_size=24000
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh"
-
 # pnpm
 export PNPM_HOME="/home/moesen/.local/share/pnpm"
 case ":$PATH:" in
@@ -119,3 +123,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="~/.dotfiles/nvim/env/.venv/bin/:$PATH"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh"
+
+export BROWSER="zen.desktop"

@@ -3,10 +3,10 @@ padding = { x = 1, y = 2 }
 
 
 [font]
-normal = { family="AnonymousPro", style="Regular" }
-bold = { family="AnonymousPro", style="Bold" }
-italic = { family="AnonymousPro", style="Italic" }
-bold_italic = { family="AnonymousPro", style="Bold" }
+normal = { family="AnonymicePro Nerd Font Mono", style="Normal" }
+bold = { family="AnonymicePro Nerd Font Mono", style="Bold" }
+italic = { family="AnonymicePro Nerd Font Mono", style="Italic" }
+bold_italic = { family="AnonymicePro Nerd Font Mono", style="Bold Italic" }
 size = 16
 
 [cursor]
@@ -17,5 +17,5 @@ vi_mode_style = {shape="Beam", blinking="On"}
 
 live_config_reload = true
 import = [
-  "~/.config/alacritty/bamboo.toml",
+  "~/.config/alacritty/kanagawa-wave.toml",
 ]

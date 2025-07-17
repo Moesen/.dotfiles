@@ -10,8 +10,8 @@ function _G.set_terminal_keymaps()
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
-vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>")
-vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>")
-vim.keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>")
+-- vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+--
+-- vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>")
+-- vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>")
+-- vim.keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>")

@@ -7,22 +7,16 @@ return {
 		end,
 	},
 	{
-		"christoomey/vim-tmux-navigator",
-		cmd = {
-			"TmuxNavigateLeft",
-			"TmuxNavigateDown",
-			"TmuxNavigateUp",
-			"TmuxNavigateRight",
-			"TmuxNavigatePrevious",
-			"TmuxNavigatorProcessList",
-		},
+		"swaits/zellij-nav.nvim",
+		lazy = true,
+		event = "VeryLazy",
 		keys = {
-			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+			{ "<c-h>", "<cmd>ZellijNavigateLeft<cr>", { silent = true, desc = "navigate left or tab" } },
+			{ "<c-j>", "<cmd>ZellijNavigateDown<cr>", { silent = true, desc = "navigate down" } },
+			{ "<c-k>", "<cmd>ZellijNavigateUp<cr>", { silent = true, desc = "navigate up" } },
+			{ "<c-l>", "<cmd>ZellijNavigateRight<cr>", { silent = true, desc = "navigate right or tab" } },
 		},
+		opts = {},
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -63,7 +57,15 @@ return {
 			triggers = {},
 		},
 	},
-	{ "ahmedkhalf/project.nvim" },
+	{
+		"ahmedkhalf/project.nvim",
+		cmd = { "ProjectRoot" },
+		config = function()
+			require("project_nvim").setup({
+				manual_mode = true,
+			})
+		end,
+	},
 	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
@@ -71,58 +73,58 @@ return {
 			{ "<c-n>", "<cmd>NvimTreeToggle<cr>" },
 		},
 		opts = {
-			sync_root_with_cwd = true,
-			respect_buf_cwd = true,
+			sync_root_with_cwd = false,
+			respect_buf_cwd = false,
 			update_focused_file = {
 				enable = true,
-				update_root = true,
+				update_root = false,
 			},
 		},
 	},
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {
-			size = function(term)
-				if term.directoin == "vertical" then
-					return vim.o.columns * 0.4
-				elseif term.direction == "horizontal" then
-					return 20
-				end
-			end,
-			open_mapping = [[<c-t>]],
-			shade_terminals = false,
-			direction = "horizontal",
-			autochdir = true,
-			start_in_insert = true,
-			persist_mode = false,
-		},
-	},
+	-- {
+	-- 	"akinsho/toggleterm.nvim",
+	-- 	version = "*",
+	-- 	opts = {
+	-- 		size = function(term)
+	-- 			if term.direction == "vertical" then
+	-- 				return vim.o.columns * 0.4
+	-- 			elseif term.direction == "horizontal" then
+	-- 				return 20
+	-- 			end
+	-- 		end,
+	-- 		open_mapping = [[<c-t>]],
+	-- 		shade_terminals = false,
+	-- 		direction = "horizontal",
+	-- 		autochdir = true,
+	-- 		start_in_insert = true,
+	-- 		persist_mode = false,
+	-- 	},
+	-- },
 	{ "mbbill/undotree", keys = { { "<leader>u", "<cmd>UndotreeToggle<CR>" } } },
-	{
-		"epwalsh/obsidian.nvim",
-		version = "*",
-		lazy = true,
-		event = {
-			"BufReadPre " .. vim.fn.expand("~") .. "/Vaults/vault-alvenir/*.md",
-			"BufReadPre " .. vim.fn.expand("~") .. "/EDU/vault/*.md",
-		},
-		dependencies = {
-			-- Required.
-			"nvim-lua/plenary.nvim",
-		},
-		opts = {
-			workspaces = {
-				{
-					name = "edu",
-					path = "~/EDU/vault",
-				},
-				{
-					name = "work",
-					path = "~/Vaults/vault-alvenir/",
-				},
-			},
-		},
-	},
+	-- {
+	-- 	"epwalsh/obsidian.nvim",
+	-- 	version = "*",
+	-- 	lazy = true,
+	-- 	event = {
+	-- 		"BufReadPre " .. vim.fn.expand("~") .. "/Vaults/vault-alvenir/*.md",
+	-- 		"BufReadPre " .. vim.fn.expand("~") .. "/EDU/vault/*.md",
+	-- 	},
+	-- 	dependencies = {
+	-- 		-- Required.
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- 	opts = {
+	-- 		workspaces = {
+	-- 			{
+	-- 				name = "edu",
+	-- 				path = "~/EDU/vault",
+	-- 			},
+	-- 			{
+	-- 				name = "work",
+	-- 				path = "~/Vaults/vault-alvenir/",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	{ "bullets-vim/bullets.vim" },
 }
